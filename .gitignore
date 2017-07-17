@@ -25,3 +25,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 # END OSX.gitignore
+
+# Misc
+*.swp
+*.swo
+**/css
+**/.sass-cache
