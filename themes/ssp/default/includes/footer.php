@@ -5,17 +5,13 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   }
 }
 ?>
-  </div><!-- #content -->
-  <div id="footer">
-    <hr />
-
-    Copyright &copy; 2016 <a href="https://openminted.eu/">OpenMinTeD</a> | Powered by <a href="https://github.com/rciam">RCIAM</a>
-
-    <br style="clear: right" /><br/>
-
-  </div><!-- #footer -->
-
-</div><!-- #wrap -->
-
+    </div><!-- #content -->
+  </div><!-- container -->
+  <footer class="b-footer text-center">
+    <div class="container b-footer__container">
+      <span class="row">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></span>
+      <span class="rowc">Powered by <a href="https://github.com/rciam">RCIAM</a></span>
+    </div>
+  </footer>
 </body>
 </html>
