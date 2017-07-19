@@ -122,89 +122,88 @@ if($onLoad !== '') {
 ?>
 <body<?php echo $onLoad; ?>>
 
-<div id="wrap">
+<div class="container">
 
   <div id="header">
-    <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/logo.png'); ?>" alt="OpenMinTeD" />
-    <h1><a style="text-decoration: none;" href="/<?php echo $this->data['baseurlpath']; ?>">OpenMinTeD SSO</a> | <?php
-    echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp');
-?></h1>
+    <h1 class="text-center">
+      <a href="/<?php echo $this->data['baseurlpath']; ?>">
+        <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/logo.png'); ?>" alt="OpenMinTeD" />
+      </a>
+    </h1>
+    <?php
+
+    $includeLanguageBar = TRUE;
+    if (!empty($_POST))
+      $includeLanguageBar = FALSE;
+    if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE)
+      $includeLanguageBar = FALSE;
+
+    if ($includeLanguageBar) {
+
+      $languages = $this->getLanguageList();
+      if ( count($languages) > 1 ) {
+        echo '<div id="languagebar">';
+        $langnames = array(
+          'no' => 'Bokmål', // Norwegian Bokmål
+          'nn' => 'Nynorsk', // Norwegian Nynorsk
+          'se' => 'Sámegiella', // Northern Sami
+          'sam' => 'Åarjelh-saemien giele', // Southern Sami
+          'da' => 'Dansk', // Danish
+          'en' => 'English',
+          'de' => 'Deutsch', // German
+          'sv' => 'Svenska', // Swedish
+          'fi' => 'Suomeksi', // Finnish
+          'es' => 'Español', // Spanish
+          'fr' => 'Français', // French
+          'it' => 'Italiano', // Italian
+          'nl' => 'Nederlands', // Dutch
+          'lb' => 'Lëtzebuergesch', // Luxembourgish
+          'cs' => 'Čeština', // Czech
+          'sl' => 'Slovenščina', // Slovensk
+          'lt' => 'Lietuvių kalba', // Lithuanian
+          'hr' => 'Hrvatski', // Croatian
+          'hu' => 'Magyar', // Hungarian
+          'pl' => 'Język polski', // Polish
+          'pt' => 'Português', // Portuguese
+          'pt-br' => 'Português brasileiro', // Portuguese
+          'ru' => 'русский язык', // Russian
+          'et' => 'eesti keel', // Estonian
+          'tr' => 'Türkçe', // Turkish
+          'el' => 'ελληνικά', // Greek
+          'ja' => '日本語', // Japanese
+          'zh' => '简体中文', // Chinese (simplified)
+          'zh-tw' => '繁體中文', // Chinese (traditional)
+          'ar' => 'العربية', // Arabic
+          'fa' => 'پارسی', // Persian
+          'ur' => 'اردو', // Urdu
+          'he' => 'עִבְרִית', // Hebrew
+          'id' => 'Bahasa Indonesia', // Indonesian
+          'sr' => 'Srpski', // Serbian
+          'lv' => 'Latviešu', // Latvian
+          'ro' => 'Românește', // Romanian
+          'eu' => 'Euskara', // Basque
+        );
+
+        $textarray = array();
+        foreach ($languages AS $lang => $current) {
+          $lang = strtolower($lang);
+          if ($current) {
+            $textarray[] = $langnames[$lang];
+          } else {
+            $textarray[] = '<a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
+              $langnames[$lang] . '</a>';
+          }
+        }
+        echo join(' | ', $textarray);
+        echo '</div>';
+      }
+    }
+
+    ?>
+    <h2 class="text-center"><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></h2>
   </div>
 
 
-<?php
-
-$includeLanguageBar = TRUE;
-if (!empty($_POST))
-  $includeLanguageBar = FALSE;
-if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE)
-  $includeLanguageBar = FALSE;
-
-if ($includeLanguageBar) {
-
-  $languages = $this->getLanguageList();
-  if ( count($languages) > 1 ) {
-    echo '<div id="languagebar">';
-    $langnames = array(
-      'no' => 'Bokmål', // Norwegian Bokmål
-      'nn' => 'Nynorsk', // Norwegian Nynorsk
-      'se' => 'Sámegiella', // Northern Sami
-      'sam' => 'Åarjelh-saemien giele', // Southern Sami
-      'da' => 'Dansk', // Danish
-      'en' => 'English',
-      'de' => 'Deutsch', // German
-      'sv' => 'Svenska', // Swedish
-      'fi' => 'Suomeksi', // Finnish
-      'es' => 'Español', // Spanish
-      'fr' => 'Français', // French
-      'it' => 'Italiano', // Italian
-      'nl' => 'Nederlands', // Dutch
-      'lb' => 'Lëtzebuergesch', // Luxembourgish
-      'cs' => 'Čeština', // Czech
-      'sl' => 'Slovenščina', // Slovensk
-      'lt' => 'Lietuvių kalba', // Lithuanian
-      'hr' => 'Hrvatski', // Croatian
-      'hu' => 'Magyar', // Hungarian
-      'pl' => 'Język polski', // Polish
-      'pt' => 'Português', // Portuguese
-      'pt-br' => 'Português brasileiro', // Portuguese
-      'ru' => 'русский язык', // Russian
-      'et' => 'eesti keel', // Estonian
-      'tr' => 'Türkçe', // Turkish
-      'el' => 'ελληνικά', // Greek
-      'ja' => '日本語', // Japanese
-      'zh' => '简体中文', // Chinese (simplified)
-      'zh-tw' => '繁體中文', // Chinese (traditional)
-      'ar' => 'العربية', // Arabic
-      'fa' => 'پارسی', // Persian
-      'ur' => 'اردو', // Urdu
-      'he' => 'עִבְרִית', // Hebrew
-      'id' => 'Bahasa Indonesia', // Indonesian
-      'sr' => 'Srpski', // Serbian
-      'lv' => 'Latviešu', // Latvian
-      'ro' => 'Românește', // Romanian
-      'eu' => 'Euskara', // Basque
-    );
-
-    $textarray = array();
-    foreach ($languages AS $lang => $current) {
-      $lang = strtolower($lang);
-      if ($current) {
-        $textarray[] = $langnames[$lang];
-      } else {
-        $textarray[] = '<a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
-          $langnames[$lang] . '</a>';
-      }
-    }
-    echo join(' | ', $textarray);
-    echo '</div>';
-  }
-
-}
-
-
-
-?>
   <div id="content">
 
 
