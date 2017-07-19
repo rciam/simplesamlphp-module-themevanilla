@@ -1,0 +1,15 @@
+/*
+ * Naming conventions: BEM with prefix "b" (b comes from bem).
+ * Using this method can also separate the custom css rules from bootstrap's
+ * rules.
+ */
+
+.b-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $brand-top-bottom;
+    @at-root #{&}__container {
+        padding: 1.5rem;
+    }
+}
