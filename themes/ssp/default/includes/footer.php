@@ -13,5 +13,9 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
       <span class="rowc">Powered by <a href="https://github.com/rciam">RCIAM</a></span>
     </div>
   </footer>
+  <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/dropdown.js')); ?>">
+  </script>
 </body>
+
 </html>

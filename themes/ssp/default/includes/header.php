@@ -142,7 +142,8 @@ if($onLoad !== '') {
 
       $languages = $this->getLanguageList();
       if ( count($languages) > 1 ) {
-        echo '<div id="languagebar">';
+        echo '<div class="text-right">
+                <div class="dropdown">';
         $langnames = array(
           'no' => 'Bokmål', // Norwegian Bokmål
           'nn' => 'Nynorsk', // Norwegian Nynorsk
@@ -188,14 +189,20 @@ if($onLoad !== '') {
         foreach ($languages AS $lang => $current) {
           $lang = strtolower($lang);
           if ($current) {
-            $textarray[] = $langnames[$lang];
+            $lang_current = $langnames[$lang];
           } else {
-            $textarray[] = '<a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
-              $langnames[$lang] . '</a>';
+            $textarray[] = '<li><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
+              $langnames[$lang] . '</a></li>';
           }
         }
-        echo join(' | ', $textarray);
-        echo '</div>';
+        echo '<span>Language:</span>
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+            . $lang_current
+            . '<span class="caret"></span>
+               </button>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">';
+        echo join(' ', $textarray);
+        echo '</ul></div></div>';
       }
     }
 
