@@ -13,20 +13,19 @@ if(!array_key_exists('header', $this->data)) {
 $this->data['header'] = $this->t($this->data['header']);
 $this->data['jquery'] = array('core' => TRUE, 'ui' => TRUE, 'css' => TRUE);
 
-// $this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' . SimpleSAML_Module::getModuleUrl('discopower/style.css')  . '" />';
 
 $this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/jquery.livesearch.js')  . '"></script>';
 $this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/' . $this->data['score'] . '.js')  . '"></script>';
 
 $this->data['head'] .= '<script type="text/javascript">
 
-  $(document).ready(function() {';
-
+  $(document).ready(function() { console.log("hello, i am here"); console.log($("#query_edugain").length); console.log($("#list_edugain").length);';
     $i = 0;
     foreach ($this->data['idplist'] AS $tab => $slist) {
+  if ($tab !== 'all') {
       $this->data['head'] .= "\n" . '$("#query_' . $tab . '").liveUpdate("#list_' . $tab . '")' .
-        (($i++ == 0) && (empty($faventry)) ? '.focus()' : '') .
-';';
+        (($i++ == 0) && (empty($faventry)) ? '.focus()' : '') . ';';
+  }
 
 
     }
@@ -107,7 +106,6 @@ if (!empty($faventry)) {
     <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
     <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
     <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-
     <input type="submit" name="formsubmit" id="favouritesubmit" class="btn btn-default" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
@@ -126,28 +124,25 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
               <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>' .
             '</div>';
     if (!empty($slist)) {
+      if($tab == 'edugain') {
+        echo('	<div class="inlinesearch">');
+        echo('	<p>Incremental search...</p>');
+        echo('	<form id="idpselectform" action="?" method="get"><input class="inlinesearchf" type="text" value="" name="query_' . $tab . '" id="query_' . $tab . '" /></form>');
+        echo('	</div>');
+      }
 
-      echo('	<div class="inlinesearch">');
-      echo('	<p>Incremental search...</p>');
-      echo('	<form id="idpselectform" action="?" method="get"><input class="inlinesearchf" type="text" value="" name="query_' . $tab . '" id="query_' . $tab . '" /></form>');
-      echo('	</div>');
-
-      echo('	<ul class="metalist b-panel-providers__list" id="list_' . $tab  . '">');
+      echo('	<div class="metalist b-panel-providers__list" id="list_' . $tab  . '">');
       if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
         $idpentry = $slist[$this->data['preferredidp']];
-        echo '<li style="background:yellow;">';
         echo (showEntry($this, $idpentry, TRUE));
-        echo '</li>';
       }
 
       foreach ($slist AS $idpentry) {
         if ($idpentry['entityid'] != $this->data['preferredidp']) {
-        echo '<li style="background:beige;">';
           echo (showEntry($this, $idpentry));
-        echo '</li>';
         }
       }
-      echo('	</ul>'); // /metalist
+      echo('	</div>'); // /metalist
     }
   echo '</div>'; // /panel
   }

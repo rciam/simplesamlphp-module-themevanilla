@@ -23,5 +23,8 @@
     @at-root #{&}__list {
         max-height: 15rem;
         overflow: scroll;
+        a {
+            display: block;
+        }
     }
 }
