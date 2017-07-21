@@ -50,10 +50,10 @@ function showEntry($t, $metadata, $favourite = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $extra = ($favourite ? ' favourite' : '');
-  $html = '<a class="metaentry' . $extra . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+  $extra = ($favourite ? '<span class="glyphicon glyphicon-star b-panel-providers__list__favourite__icon"></span>' : '');
+  $html = '<a class="metaentry" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
 
-  $html .= '' . htmlspecialchars(getTranslatedName($t, $metadata)) . '';
+  $html .= $extra . htmlspecialchars(getTranslatedName($t, $metadata)) . '';
 
   if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
     $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
@@ -98,6 +98,7 @@ if (!empty($faventry)) {
 
 
   echo('<div class="panel panel-default favourite">');
+  echo('<div class="panel-body">');
   echo($this->t('previous_auth'));
   echo(' <strong>' . htmlspecialchars(getTranslatedName($this, $faventry)) . '</strong>');
   echo('
@@ -109,6 +110,7 @@ if (!empty($faventry)) {
     <input type="submit" name="formsubmit" id="favouritesubmit" class="btn btn-default" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
+  echo('</div>'); // /panel-body
   echo('</div>'); // /panel
 }
 
@@ -120,18 +122,20 @@ if (!empty($faventry)) {
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
     echo '<div class="panel panel-default b-panel-providers">
-            <div class="panel=heading">
-              <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>' .
-            '</div>';
+            <div class="panel-heading b-panel-providers__heading">
+              <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
+            </div>
+            <div class="panel-body">';
     if (!empty($slist)) {
       if($tab == 'edugain') {
-        echo('	<div class="inlinesearch">');
-        echo('	<p>Incremental search...</p>');
-        echo('	<form id="idpselectform" action="?" method="get"><input class="inlinesearchf" type="text" value="" name="query_' . $tab . '" id="query_' . $tab . '" /></form>');
-        echo('	</div>');
-      }
+        echo('	<div class="input-group">');
+        echo('	<span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>');
+        echo('	<form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_' . $tab . '" id="query_' . $tab . '" /></form>');
+        echo('	</div>'); // /input-group
 
-      echo('	<div class="metalist b-panel-providers__list" id="list_' . $tab  . '">');
+      }
+      $list_cls = (($tab == 'edugain') ? 'b-panel-providers__list--edugain' : 'b-panel-providers__list');
+      echo('	<div class="metalist b-panel-providers__list '. $list_cls .' " id="list_' . $tab  . '">');
       if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
         $idpentry = $slist[$this->data['preferredidp']];
         echo (showEntry($this, $idpentry, TRUE));
@@ -144,6 +148,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
       }
       echo('	</div>'); // /metalist
     }
+  echo '</div>'; // /panel-body
   echo '</div>'; // /panel
   }
 
