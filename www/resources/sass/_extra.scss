@@ -5,11 +5,23 @@
  */
 
 .b-footer {
-    position: fixed;
+    // position: fixed;
     bottom: 0;
     width: 100%;
     background: $brand-top-bottom;
     @at-root #{&}__container {
         padding: 1.5rem;
+    }
+}
+
+.b-form-favourite {
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+.b-panel-providers {
+    @at-root #{&}__list {
+        max-height: 15rem;
+        overflow: scroll;
     }
 }
