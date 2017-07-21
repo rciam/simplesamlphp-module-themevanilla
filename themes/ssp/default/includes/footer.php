@@ -1,3 +1,4 @@
+
 <?php
 if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   foreach($this->data['htmlinject']['htmlContentPost'] AS $c) {
@@ -5,8 +6,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   }
 }
 ?>
-    </div><!-- #content -->
-  </div><!-- container -->
+  </div><!-- /container -->
   <footer class="b-footer text-center">
     <div class="container b-footer__container">
       <span class="row">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></span>
@@ -17,5 +17,4 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/dropdown.js')); ?>">
   </script>
 </body>
-
 </html>

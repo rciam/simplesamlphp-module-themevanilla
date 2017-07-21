@@ -149,8 +149,8 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
       }
       echo('	</ul>'); // /metalist
     }
-  }
   echo '</div>'; // /panel
+  }
 
 }
 

@@ -122,7 +122,7 @@ if($onLoad !== '') {
 ?>
 <body<?php echo $onLoad; ?>>
 
-<div class="container">
+<div class="container" id="content">
 
   <div id="header">
     <h1 class="text-center">
@@ -202,16 +202,15 @@ if($onLoad !== '') {
                </button>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">';
         echo join(' ', $textarray);
-        echo '</ul></div></div>';
+        echo '</ul></div></div>'; // /text-right /dropdown
       }
     }
 
     ?>
     <h2 class="text-center"><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></h2>
-  </div>
+  </div> <!-- /header -->
 
 
-  <div id="content">
 
 
 
