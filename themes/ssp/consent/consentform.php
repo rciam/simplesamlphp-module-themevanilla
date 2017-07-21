@@ -102,7 +102,7 @@ foreach ($this->data['yesData'] as $name => $value) {
 }
 ?>
     </p>
-    <button type="submit" name="yes" class="btn" id="yesbutton">
+    <button type="submit" name="yes" class="btn btn-default" id="yesbutton">
         <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
     </button>
 </form>
@@ -116,7 +116,7 @@ foreach ($this->data['noData'] as $name => $value) {
         '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-    <button type="submit" class="btn" name="no" id="nobutton">
+    <button type="submit" class="btn btn-default" name="no" id="nobutton">
         <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
     </button>
 </form>
@@ -135,7 +135,7 @@ if ($this->data['sppp'] !== false) {
  * @param array                     $attributes Attributes to be presented
  * @param string                    $nameParent Name of parent element
  *
- * @return string HTML representation of the attributes 
+ * @return string HTML representation of the attributes
  */
 function present_attributes($t, $attributes, $nameParent)
 {
