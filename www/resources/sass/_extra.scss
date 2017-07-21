@@ -21,10 +21,38 @@
 
 .b-panel-providers {
     @at-root #{&}__list {
-        max-height: 15rem;
+        max-height: 14rem;
         overflow: scroll;
+        padding-left: 4rem;
+        a {
+            display: inline-block;
+            position: relative;
+            margin-right: 2rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            &:hover {
+                background-color: $gray-lighter;
+            }
+        }
+        @at-root #{&}__favourite__icon {
+            color: $brand-warning;
+            position: absolute;
+            left: -2rem;
+            font-size: 1.7rem;
+            line-height: 1.2;
+        }
+    }
+    #{&}__heading {
+        background-color: $panel-heading-bg-color;
+        border: $panel-heading-border;
+    }
+    @at-root #{&}__list--edugain {
+        margin-top: $panel-body-padding;
         a {
             display: block;
         }
     }
+}
+::-webkit-input-placeholder {
+  color: $placeholder;
 }
