@@ -55,6 +55,7 @@ $dstName = htmlspecialchars($dstName);
 $attributes = $this->data['attributes'];
 
 $this->data['header'] = $this->t('{consent:consent:consent_header}');
+$this->data['jquery'] = array('core' => TRUE);
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
