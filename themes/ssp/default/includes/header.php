@@ -191,7 +191,7 @@ if($onLoad !== '') {
           if ($current) {
             $lang_current = $langnames[$lang];
           } else {
-            $textarray[] = '<li><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
+            $textarray[] = '<li class="b-dropdown__cols2--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
               $langnames[$lang] . '</a></li>';
           }
         }
@@ -200,7 +200,7 @@ if($onLoad !== '') {
             . $lang_current
             . '<span class="caret"></span>
                </button>
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">';
+              <ul class="dropdown-menu dropdown-menu-right b-dropdown__cols2 " aria-labelledby="dropdownMenu1">';
         echo join(' ', $textarray);
         echo '</ul></div></div>'; // /text-right /dropdown
       }

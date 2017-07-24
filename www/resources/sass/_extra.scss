@@ -92,3 +92,12 @@
 .b-no-radius {
     border-radius: 0;
 }
+
+.b-dropdown__cols2 {
+    width: 32rem;
+    padding: px2rem(5px);
+    @at-root #{&}--item {
+        width: 50%;
+        float: left;
+    }
+}
