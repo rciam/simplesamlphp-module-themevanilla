@@ -55,34 +55,9 @@ $dstName = htmlspecialchars($dstName);
 $attributes = $this->data['attributes'];
 
 $this->data['header'] = $this->t('{consent:consent:consent_header}');
-$this->data['head']  = '<link rel="stylesheet" type="text/css" href="/' .
-    $this->data['baseurlpath'] . 'module.php/consent/style.css" />' . "\n";
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
-<p>
-<?php
-echo $this->t(
-    '{consent:consent:consent_accept}',
-    array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
-);
-
-if (array_key_exists('descr_purpose', $this->data['dstMetadata'])) {
-    echo '</p><p>' . $this->t(
-        '{consent:consent:consent_purpose}',
-        array(
-            'SPNAME' => $dstName,
-            'SPDESC' => $this->getTranslation(
-                SimpleSAML\Utils\Arrays::arrayize(
-                    $this->data['dstMetadata']['descr_purpose'],
-                    'en'
-                )
-            ),
-        )
-    );
-}
-?>
-</p>
 
 <?php
 if ($this->data['sppp'] !== false) {
@@ -102,18 +77,16 @@ if ($this->data['sppp'] !== false) {
  */
 function present_attributes($t, $attributes, $nameParent)
 {
-    $alternate = array('odd', 'even');
+    $alternate = array('b-table--tr__odd', 'b-table--tr__even');
     $i = 0;
     $summary = 'summary="' . $t->t('{consent:consent:table_summary}') . '"';
 
     if (strlen($nameParent) > 0) {
         $parentStr = strtolower($nameParent) . '_';
-        $str = '<table class="attributes" ' . $summary . '>';
+        $str = '<table class="table" ' . $summary . '>';
     } else {
         $parentStr = '';
-        $str = '<table id="table_with_attributes"  class="attributes" '. $summary .'>';
-        $str .= "\n" . '<caption>' . $t->t('{consent:consent:table_caption}') .
-            '</caption>';
+        $str = '<table id="table_with_attributes"  class="table" '. $summary .'>';
     }
 
     foreach ($attributes as $name => $value) {
@@ -124,22 +97,22 @@ function present_attributes($t, $attributes, $nameParent)
             // insert child table
             $parentName = preg_replace('/^child_/', '', $nameraw);
             foreach ($value as $child) {
-                $str .= "\n" . '<tr class="odd"><td style="padding: 2em">' .
+                $str .= "\n" . '<tr class="odd b--table-tr__odd"><td style="padding: 2em">' .
                     present_attributes($t, $child, $parentName) . '</td></tr>';
             }
         } else {
             // insert values directly
 
             $str .= "\n" . '<tr class="' . $alternate[($i++ % 2)] .
-                '"><td><span class="attrname">' . htmlspecialchars($name) . '</span>';
+                '"><td><span class="attrname b-table--attrname">' . htmlspecialchars($name) . '</span>';
 
             $isHidden = in_array($nameraw, $t->data['hiddenAttributes'], true);
             if ($isHidden) {
                 $hiddenId = SimpleSAML\Utils\Random::generateID();
 
-                $str .= '<div class="attrvalue" style="display: none;" id="hidden_' . $hiddenId . '">';
+                $str .= '<div class="attrvalue b-table--attrvalue" style="display: none;" id="hidden_' . $hiddenId . '">';
             } else {
-                $str .= '<div class="attrvalue">';
+                $str .= '<div class="attrvalue b-table--attrvalue">';
             }
 
             if (sizeof($value) > 1) {
@@ -184,54 +157,85 @@ function present_attributes($t, $attributes, $nameParent)
     return $str;
 }
 
-echo '<h3 id="attributeheader">' .
-    $this->t(
-        '{consent:consent:consent_attributes_header}',
-        array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
-    ) .
-    '</h3>';
+echo '<div class="panel panel-default b-panel">
+          <div class="panel-heading b-panel__heading">
+            <h3 class="panel-title">' .
+              $this->t(
+                  '{consent:consent:consent_attributes_header}',
+                  array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
+              ) .
+            '</h3>
+          </div>
+          <div class="panel-body">';
 
+?>
+<p>
+<?php
+echo $this->t(
+    '{consent:consent:consent_accept}',
+    array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
+);
+
+if (array_key_exists('descr_purpose', $this->data['dstMetadata'])) {
+    echo '</p><p>' . $this->t(
+        '{consent:consent:consent_purpose}',
+        array(
+            'SPNAME' => $dstName,
+            'SPDESC' => $this->getTranslation(
+                SimpleSAML\Utils\Arrays::arrayize(
+                    $this->data['dstMetadata']['descr_purpose'],
+                    'en'
+                )
+            ),
+        )
+    );
+}
+?>
+</p>
+
+<?php
 echo present_attributes($this, $attributes, '');
 ?>
-
 <form style="display: inline; margin: 0px; padding: 0px"
-      action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
-<p style="margin: 1em">
+    action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
+<div class="b-btns-container">
+<p class"b-btns-container--checkbox>
 
 <?php
 if ($this->data['usestorage']) {
-    $checked = ($this->data['checked'] ? 'checked="checked"' : '');
-    echo '<input type="checkbox" name="saveconsent" ' . $checked .
-        ' value="1" /> ' . $this->t('{consent:consent:remember}');
+  $checked = ($this->data['checked'] ? 'checked="checked"' : '');
+  echo '<input type="checkbox" name="saveconsent" ' . $checked .
+      ' value="1" /> ' . $this->t('{consent:consent:remember}');
 }
 
 // Embed hidden fields...
 foreach ($this->data['yesData'] as $name => $value) {
-    echo '<input type="hidden" name="' . htmlspecialchars($name) .
-        '" value="' . htmlspecialchars($value) . '" />';
+  echo '<input type="hidden" name="' . htmlspecialchars($name) .
+      '" value="' . htmlspecialchars($value) . '" />';
 }
 ?>
-    </p>
-    <button type="submit" name="yes" class="btn btn-default" id="yesbutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
-    </button>
+  </p>
+  <button type="submit" name="yes" class="btn btn-primary b-btns-container--btn__left" id="yesbutton">
+      <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
+  </button>
 </form>
 
-<form style="display: inline; margin-left: .5em;" action="<?php echo htmlspecialchars($this->data['noTarget']); ?>"
-      method="get">
+<form style="display: inline-block;" action="<?php echo htmlspecialchars($this->data['noTarget']); ?>"
+    method="get">
 
 <?php
 foreach ($this->data['noData'] as $name => $value) {
-    echo('<input type="hidden" name="' . htmlspecialchars($name) .
-        '" value="' . htmlspecialchars($value) . '" />');
+  echo('<input type="hidden" name="' . htmlspecialchars($name) .
+      '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-    <button type="submit" class="btn btn-default" name="no" id="nobutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
-    </button>
+  <button type="submit" class="btn btn-default b-btns-container--btn__right" name="no" id="nobutton">
+      <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
+  </button>
 </form>
-
-
+</div> <!-- /b-btns-container -->
+</div> <!-- /panel-body -->
+</div> <!-- /panel -->
 <?php
 $this->includeAtTemplateBase('includes/footer.php');
 ?>

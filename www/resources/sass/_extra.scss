@@ -19,6 +19,12 @@
     padding-left: 1rem;
 }
 
+.b-panel {
+    #{&}__heading {
+        background-color: $panel-heading-bg-color;
+        border: $panel-heading-border;
+    }
+}
 .b-panel-providers {
     @at-root #{&}__list {
         max-height: 14rem;
@@ -55,4 +61,30 @@
 }
 ::-webkit-input-placeholder {
   color: $placeholder;
+}
+
+.b-table {
+    @at-root #{&}--tr__odd {
+        background-color: $gray-lighter;
+    }
+    @at-root #{&}--attrname {
+        display: inline-block;
+        width: 200px;
+    }
+    @at-root #{&}--attrvalue {
+        display: inline-block;
+    }
+}
+
+.b-btns-container {
+    text-align: center;
+    @at-root #{&}--checkbox {
+        margin: 3em 1em 2em 1em
+    }
+    @at-root #{&}--btn__right {
+        margin-left: 1em;
+    }
+    @at-root #{&}--btn__left {
+        margin-right: 1em;
+    }
 }
