@@ -207,7 +207,7 @@ if($onLoad !== '') {
     }
 
     ?>
-    <h2 class="text-center"><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></h2>
+    <h2 class="text-center"><small><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></small></h2>
   </div> <!-- /header -->
 
 
