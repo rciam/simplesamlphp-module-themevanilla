@@ -27,7 +27,6 @@
 }
 .b-panel-providers {
     @at-root #{&}__list {
-        max-height: 14rem;
         overflow: scroll;
         padding-left: 4rem;
         a {
@@ -53,6 +52,7 @@
         border: $panel-heading-border;
     }
     @at-root #{&}__list--edugain {
+        height: 14rem;
         margin-top: $panel-body-padding;
         a {
             display: block;

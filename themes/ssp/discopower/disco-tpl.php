@@ -50,10 +50,9 @@ function showEntry($t, $metadata, $favourite = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $extra = ($favourite ? '<span class="glyphicon glyphicon-star b-panel-providers__list__favourite__icon"></span>' : '');
   $html = '<a class="metaentry" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
 
-  $html .= $extra . htmlspecialchars(getTranslatedName($t, $metadata)) . '';
+  $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
 
   if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
     $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
