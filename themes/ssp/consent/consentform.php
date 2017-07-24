@@ -84,43 +84,6 @@ if (array_key_exists('descr_purpose', $this->data['dstMetadata'])) {
 ?>
 </p>
 
-<form style="display: inline; margin: 0px; padding: 0px"
-      action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
-<p style="margin: 1em">
-
-<?php
-if ($this->data['usestorage']) {
-    $checked = ($this->data['checked'] ? 'checked="checked"' : '');
-    echo '<input type="checkbox" name="saveconsent" ' . $checked .
-        ' value="1" /> ' . $this->t('{consent:consent:remember}');
-}
-
-// Embed hidden fields...
-foreach ($this->data['yesData'] as $name => $value) {
-    echo '<input type="hidden" name="' . htmlspecialchars($name) .
-        '" value="' . htmlspecialchars($value) . '" />';
-}
-?>
-    </p>
-    <button type="submit" name="yes" class="btn btn-default" id="yesbutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
-    </button>
-</form>
-
-<form style="display: inline; margin-left: .5em;" action="<?php echo htmlspecialchars($this->data['noTarget']); ?>"
-      method="get">
-
-<?php
-foreach ($this->data['noData'] as $name => $value) {
-    echo('<input type="hidden" name="' . htmlspecialchars($name) .
-        '" value="' . htmlspecialchars($value) . '" />');
-}
-?>
-    <button type="submit" class="btn btn-default" name="no" id="nobutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
-    </button>
-</form>
-
 <?php
 if ($this->data['sppp'] !== false) {
     echo "<p>" . htmlspecialchars($this->t('{consent:consent:consent_privacypolicy}')) . " ";
@@ -229,5 +192,46 @@ echo '<h3 id="attributeheader">' .
     '</h3>';
 
 echo present_attributes($this, $attributes, '');
+?>
 
+<form style="display: inline; margin: 0px; padding: 0px"
+      action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
+<p style="margin: 1em">
+
+<?php
+if ($this->data['usestorage']) {
+    $checked = ($this->data['checked'] ? 'checked="checked"' : '');
+    echo '<input type="checkbox" name="saveconsent" ' . $checked .
+        ' value="1" /> ' . $this->t('{consent:consent:remember}');
+}
+
+// Embed hidden fields...
+foreach ($this->data['yesData'] as $name => $value) {
+    echo '<input type="hidden" name="' . htmlspecialchars($name) .
+        '" value="' . htmlspecialchars($value) . '" />';
+}
+?>
+    </p>
+    <button type="submit" name="yes" class="btn btn-default" id="yesbutton">
+        <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
+    </button>
+</form>
+
+<form style="display: inline; margin-left: .5em;" action="<?php echo htmlspecialchars($this->data['noTarget']); ?>"
+      method="get">
+
+<?php
+foreach ($this->data['noData'] as $name => $value) {
+    echo('<input type="hidden" name="' . htmlspecialchars($name) .
+        '" value="' . htmlspecialchars($value) . '" />');
+}
+?>
+    <button type="submit" class="btn btn-default" name="no" id="nobutton">
+        <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
+    </button>
+</form>
+
+
+<?php
 $this->includeAtTemplateBase('includes/footer.php');
+?>
