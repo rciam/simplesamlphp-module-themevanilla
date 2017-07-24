@@ -216,7 +216,7 @@ foreach ($this->data['yesData'] as $name => $value) {
 }
 ?>
   </p>
-  <button type="submit" name="yes" class="btn btn-primary b-btns-container--btn__left" id="yesbutton">
+  <button type="submit" name="yes" class="b-no-radius btn btn-primary b-btns-container--btn__left" id="yesbutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
   </button>
 </form>
@@ -230,7 +230,7 @@ foreach ($this->data['noData'] as $name => $value) {
       '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-  <button type="submit" class="btn btn-default b-btns-container--btn__right" name="no" id="nobutton">
+  <button type="submit" class="b-no-radius btn btn-default b-btns-container--btn__right" name="no" id="nobutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
   </button>
 </form>

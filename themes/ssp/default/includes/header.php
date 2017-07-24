@@ -196,7 +196,7 @@ if($onLoad !== '') {
           }
         }
         echo '<span>Language:</span>
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+              <button class="b-no-radius btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
             . $lang_current
             . '<span class="caret"></span>
                </button>
