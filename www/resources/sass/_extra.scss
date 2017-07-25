@@ -8,7 +8,7 @@
     // position: fixed;
     bottom: 0;
     width: 100%;
-    background: $brand-top-bottom;
+    background: $footer-bg;
     @at-root #{&}__container {
         padding: 1.5rem;
     }
@@ -120,4 +120,10 @@
     border: 1px solid $gray-lighter;
     margin-bottom: 20px;
 }
+
+// Experiments
+*:focus {
+    outline: none !important;
+    border:1px solid $gray-lighter2 !important;
+    box-shadow: 0 0 10px $brand-primary !important;
 }
