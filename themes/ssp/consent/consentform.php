@@ -84,10 +84,10 @@ function present_attributes($t, $attributes, $nameParent)
 
     if (strlen($nameParent) > 0) {
         $parentStr = strtolower($nameParent) . '_';
-        $str = '<table class="table" ' . $summary . '>';
+        $str = '<div class="b-attrs--container"><table class="table" ' . $summary . '>';
     } else {
         $parentStr = '';
-        $str = '<table id="table_with_attributes"  class="table" '. $summary .'>';
+        $str = '<div class="b-attrs--container"><table id="table_with_attributes"  class="table" '. $summary .'>';
     }
 
     foreach ($attributes as $name => $value) {
@@ -105,7 +105,7 @@ function present_attributes($t, $attributes, $nameParent)
             // insert values directly
 
             $str .= "\n" . '<tr class="' . $alternate[($i++ % 2)] .
-                '"><td><span class="attrname b-table--attrname">' . htmlspecialchars($name) . '</span>';
+                '"><td><div class="attrname b-table--attrname">' . htmlspecialchars($name) . '</div>';
 
             $isHidden = in_array($nameraw, $t->data['hiddenAttributes'], true);
             if ($isHidden) {
@@ -118,14 +118,14 @@ function present_attributes($t, $attributes, $nameParent)
 
             if (sizeof($value) > 1) {
                 // we hawe several values
-                $str .= '<ul>';
+                $str .= '<ul class="list-unstyled b-table--attrvalue--list">';
                 foreach ($value as $listitem) {
                     if ($nameraw === 'jpegPhoto') {
-                        $str .= '<li><img src="data:image/jpeg;base64,' .
+                        $str .= '<li class="b-table--attrvalue--list--item"><img src="data:image/jpeg;base64,' .
                             htmlspecialchars($listitem) .
                             '" alt="User photo" /></li>';
                     } else {
-                        $str .= '<li>' . htmlspecialchars($listitem) . '</li>';
+                        $str .= '<li class="b-table--attrvalue--list--item">' . htmlspecialchars($listitem) . '</li>';
                     }
                 }
                 $str .= '</ul>';
@@ -154,7 +154,7 @@ function present_attributes($t, $attributes, $nameParent)
             $str .= '</td></tr>';
         }	// end else: not child table
     }	// end foreach
-    $str .= isset($attributes)? '</table>':'';
+    $str .= isset($attributes)? '</table></div>':'';
     return $str;
 }
 

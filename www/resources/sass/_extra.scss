@@ -68,11 +68,18 @@
         background-color: $gray-lighter;
     }
     @at-root #{&}--attrname {
-        display: inline-block;
-        width: 200px;
+        width: 300px;
+        overflow: hidden;
+        float: left;
+        word-break: break-word;
     }
     @at-root #{&}--attrvalue {
-        display: inline-block;
+        overflow: hidden;
+        word-break: break-word;
+        @at-root #{&}--list--item {
+            border-bottom: 1px solid $gray-lighter;
+            padding: 6px 0px;
+        }
     }
 }
 
@@ -100,4 +107,12 @@
         width: 50%;
         float: left;
     }
+}
+
+// TODO: update the classes of nested elemenets
+.b-attrs--container {
+    height: 26em;
+    overflow: scroll;
+    padding: 16px;
+    border: 1px solid $gray-lighter;
 }
