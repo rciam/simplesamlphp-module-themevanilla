@@ -19,7 +19,7 @@ $this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Modul
 
 $this->data['head'] .= '<script type="text/javascript">
 
-  $(document).ready(function() { console.log("hello, i am here"); console.log($("#query_edugain").length); console.log($("#list_edugain").length);';
+  $(document).ready(function() {';
     $i = 0;
     foreach ($this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
