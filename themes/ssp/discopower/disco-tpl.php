@@ -96,7 +96,7 @@ function getTranslatedName($t, $metadata) {
 if (!empty($faventry)) {
 
 
-  echo('<div class="panel panel-default favourite">');
+  echo('<div class="panel b-panel favourite">');
   echo('<div class="panel-body">');
   echo($this->t('previous_auth'));
   echo(' <strong>' . htmlspecialchars(getTranslatedName($this, $faventry)) . '</strong>');
@@ -120,7 +120,7 @@ if (!empty($faventry)) {
 
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
-    echo '<div class="panel panel-default b-panel-providers">
+    echo '<div class="panel b-panel b-panel-providers">
             <div class="panel-heading b-panel-providers__heading">
               <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
             </div>

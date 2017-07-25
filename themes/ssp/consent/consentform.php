@@ -158,7 +158,7 @@ function present_attributes($t, $attributes, $nameParent)
     return $str;
 }
 
-echo '<div class="panel panel-default b-panel">
+echo '<div class="panel b-panel">
           <div class="panel-heading b-panel__heading">
             <h3 class="panel-title">' .
               $this->t(

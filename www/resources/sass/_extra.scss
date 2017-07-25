@@ -20,6 +20,8 @@
 }
 
 .b-panel {
+    border: none;
+    box-shadow: none;
     #{&}__heading {
         background-color: $panel-heading-bg-color;
         border: $panel-heading-border;
@@ -64,6 +66,7 @@
 }
 
 .b-table {
+    margin-bottom: 0px;
     @at-root #{&}--tr__odd {
         background-color: $gray-lighter;
     }
@@ -115,4 +118,6 @@
     overflow: scroll;
     padding: 16px;
     border: 1px solid $gray-lighter;
+    margin-bottom: 20px;
+}
 }
