@@ -50,16 +50,28 @@ function showEntry($t, $metadata, $favourite = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $html = '<a class="metaentry ' . strtolower(getTranslatedName($t, $metadata)) . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+  $providersOnlyIcon = array("google", "linkedin", "facebook", "orcid");
+  $namelower = strtolower(getTranslatedName($t, $metadata));
 
-  $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
 
-  if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
-    $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . htmlspecialchars($iconUrl) . '" />';
+  if(in_array($namelower, $providersOnlyIcon)) {
+    $html = '<a class="metaentry provider-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/' . $namelower . '.jpg') . '" />';
+    $html .= '</a>';
+  }
+  else {
+    $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
+
+    if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
+      $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
+      $html .= '<img alt="Identity Provider" class="entryicon" src="' . htmlspecialchars($iconUrl) . '" />';
+    }
+
+    $html .= '</a>';
   }
 
-  $html .= '</a>';
+
 
   return $html;
 }

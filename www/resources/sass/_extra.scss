@@ -127,3 +127,13 @@
     border:1px solid $gray-lighter2 !important;
     box-shadow: 0 0 10px $brand-primary !important;
 }
+
+.metalist .provider-icon {
+    display: inline-block;
+    padding: 0;
+    margin-right: 2rem;
+    img {
+        height: 36px;
+        border-radius: 19px;
+    }
+}
