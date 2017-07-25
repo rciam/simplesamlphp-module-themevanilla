@@ -130,37 +130,75 @@ if (!empty($faventry)) {
 
 <?php
 
+$top = '<div class="panel b-panel b-panel-providers">
+      <div class="panel-heading b-panel-providers__heading">';
+$top_close = '</div>';
+$title = '';
+$title_html = '';
+$list_open = '<div class="panel-body"><div class="metalist b-panel-providers__list" id="list_other">';
+$providers = '';
+$close = '</div></div></div>'; // /metalist /panel-body /panel
+
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
-    echo '<div class="panel b-panel b-panel-providers">
-            <div class="panel-heading b-panel-providers__heading">
-              <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
-            </div>
-            <div class="panel-body">';
     if (!empty($slist)) {
       if($tab == 'edugain') {
-        echo('	<div class="input-group">');
-        echo('	<span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>');
-        echo('	<form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_' . $tab . '" id="query_' . $tab . '" /></form>');
-        echo('	</div>'); // /input-group
+        echo '<div class="panel b-panel b-panel-providers">
+                <div class="panel-heading b-panel-providers__heading">
+                  <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
+                </div>
+                <div class="panel-body">
+                <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                <form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_'
+                . $tab
+                . '" id="query_' . $tab . '" /></form>'
+                . '</div> <!-- /input-group -->
+                <div class="metalist b-panel-providers__list b-panel-providers__list--edugain" id="list_'
+                . $tab  . '">';
+        if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
+          $idpentry = $slist[$this->data['preferredidp']];
+          echo (showEntry($this, $idpentry, TRUE));
+        }
 
+        foreach ($slist AS $idpentry) {
+          if ($idpentry['entityid'] != $this->data['preferredidp']) {
+            echo (showEntry($this, $idpentry));
+          }
+        }
+        echo($close);
       }
-      $list_cls = (($tab == 'edugain') ? 'b-panel-providers__list--edugain' : 'b-panel-providers__list');
-      echo('	<div class="metalist b-panel-providers__list '. $list_cls .' " id="list_' . $tab  . '">');
-      if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
-        $idpentry = $slist[$this->data['preferredidp']];
-        echo (showEntry($this, $idpentry, TRUE));
-      }
+      else {
+        if($tab == "social") {
+          $title = $this->t('{discopower:tabs:' . $tab . '}') . ' / ';
+          if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
+            $idpentry = $slist[$this->data['preferredidp']];
+            $providers .=  (showEntry($this, $idpentry, TRUE));
+          }
 
-      foreach ($slist AS $idpentry) {
-        if ($idpentry['entityid'] != $this->data['preferredidp']) {
-          echo (showEntry($this, $idpentry));
+          foreach ($slist AS $idpentry) {
+            if ($idpentry['entityid'] != $this->data['preferredidp']) {
+              $providers .= (showEntry($this, $idpentry));
+            }
+          }
+        }
+        else if ($tab == "misc") {
+          $title .= $this->t('{discopower:tabs:' . $tab . '}');
+          if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
+            $idpentry = $slist[$this->data['preferredidp']];
+            $providers .=  (showEntry($this, $idpentry, TRUE));
+          }
+
+          foreach ($slist AS $idpentry) {
+            if ($idpentry['entityid'] != $this->data['preferredidp']) {
+              $providers .= (showEntry($this, $idpentry));
+            }
+          }
+          $title_html = '<h3 class="panel-title">' . $title . '</h3>';
+          echo $top . $title_html . $top_close . $list_open . $providers . $close;
         }
       }
-      echo('	</div>'); // /metalist
     }
-  echo '</div>'; // /panel-body
-  echo '</div>'; // /panel
   }
 
 }
