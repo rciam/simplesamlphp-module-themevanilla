@@ -50,7 +50,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $html = '<a class="metaentry" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+  $html = '<a class="metaentry ' . strtolower(getTranslatedName($t, $metadata)) . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
 
   $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
 
