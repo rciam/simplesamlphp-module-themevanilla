@@ -12,6 +12,10 @@ $footer-height: 68px;
     height: $footer-height;
     width: 100%;
     background: $footer-bg;
+    background: $btn-primary;
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
     @at-root #{&}__container {
         padding: 1.5rem;
     }
@@ -38,10 +42,11 @@ $footer-height: 68px;
             display: inline-block;
             position: relative;
             margin-right: 2rem;
-            padding-right: 1rem;
-            padding-left: 1rem;
+            // padding-right: 1rem;
+            // padding-left: 1rem;
+            padding: 8px;
             &:hover {
-                background-color: $gray-lighter;
+                background-color: $gray-lighter3;
             }
         }
         @at-root #{&}__favourite__icon {
