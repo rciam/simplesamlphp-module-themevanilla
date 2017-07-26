@@ -127,7 +127,8 @@ if($onLoad !== '') {
   <div id="header">
     <h1 class="text-center">
       <a href="/<?php echo $this->data['baseurlpath']; ?>">
-        <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/logo.png'); ?>" alt="OpenMinTeD" />
+        <img class="b-img" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
+        <img class="b-img b-img-right" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
       </a>
     </h1>
     <?php
@@ -206,8 +207,14 @@ if($onLoad !== '') {
       }
     }
 
-    ?>
-    <h2 class="text-center"><small><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></small></h2>
+?>
+    <h2 class="text-center">
+      Welcome to our Single Sign-On service
+      <small class="b-h2--small">Use the same credentials for all our services</small>
+      <?php
+        // echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp');
+      ?>
+    </h2>
   </div> <!-- /header -->
 
 
