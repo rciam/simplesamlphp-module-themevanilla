@@ -162,37 +162,12 @@ echo '<div class="panel b-panel">
           <div class="panel-heading b-panel__heading">
             <h3 class="panel-title">' .
               $this->t(
-                  '{consent:consent:consent_attributes_header}',
-                  array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
-              ) .
+                '{consent:consent:consent_accept}',
+                array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
             '</h3>
           </div>
           <div class="panel-body">';
-
 ?>
-<p>
-<?php
-echo $this->t(
-    '{consent:consent:consent_accept}',
-    array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
-);
-
-if (array_key_exists('descr_purpose', $this->data['dstMetadata'])) {
-    echo '</p><p>' . $this->t(
-        '{consent:consent:consent_purpose}',
-        array(
-            'SPNAME' => $dstName,
-            'SPDESC' => $this->getTranslation(
-                SimpleSAML\Utils\Arrays::arrayize(
-                    $this->data['dstMetadata']['descr_purpose'],
-                    'en'
-                )
-            ),
-        )
-    );
-}
-?>
-</p>
 
 <?php
 echo present_attributes($this, $attributes, '');
