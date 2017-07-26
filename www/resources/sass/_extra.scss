@@ -4,9 +4,12 @@
  * rules.
  */
 
+$footer-height: 68px;
+
 .b-footer {
-    // position: fixed;
+    position: absolute;
     bottom: 0;
+    height: $footer-height;
     width: 100%;
     background: $footer-bg;
     @at-root #{&}__container {
@@ -61,6 +64,7 @@
         }
     }
 }
+
 ::-webkit-input-placeholder {
   color: $placeholder;
 }
@@ -136,4 +140,13 @@
         height: 36px;
         border-radius: 19px;
     }
+}
+
+body {
+    margin-bottom: $footer-height;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
 }
