@@ -46,7 +46,7 @@ $footer-height: 68px;
             // padding-left: 1rem;
             padding: 8px;
             &:hover {
-                background-color: $gray-lighter3;
+                background-color: #f7f7f7;
             }
         }
         @at-root #{&}__favourite__icon {
@@ -163,7 +163,6 @@ html {
 .b-btn {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 300;
     font-size: 11px;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
