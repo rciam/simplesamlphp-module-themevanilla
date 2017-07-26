@@ -118,7 +118,7 @@ if (!empty($faventry)) {
     <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
     <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
     <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-    <input type="submit" name="formsubmit" id="favouritesubmit" class="b-no-radius btn btn-default" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+    <input type="submit" name="formsubmit" id="favouritesubmit" class="b-btn b-btn__action btn" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
   echo('</div>'); // /panel-body
@@ -135,7 +135,7 @@ $top = '<div class="panel b-panel b-panel-providers">
 $top_close = '</div>';
 $title = '';
 $title_html = '';
-$list_open = '<div class="panel-body"><div class="metalist b-panel-providers__list" id="list_other">';
+$list_open = '<div class="panel-body"><div class="metalist b-panel-providers__list b-panel-providers__list--other " id="list_other">';
 $providers = '';
 $close = '</div></div></div>'; // /metalist /panel-body /panel
 

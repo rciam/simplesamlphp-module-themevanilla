@@ -63,6 +63,9 @@ $footer-height: 68px;
             display: block;
         }
     }
+    @at-root #{&}__list--other {
+        height: 48px;
+    }
 }
 
 ::-webkit-input-placeholder {
@@ -72,13 +75,16 @@ $footer-height: 68px;
 .b-table {
     margin-bottom: 0px;
     @at-root #{&}--tr__odd {
-        background-color: $gray-lighter;
+        background-color: $gray-lighter3;
     }
     @at-root #{&}--attrname {
         width: 300px;
         overflow: hidden;
         float: left;
         word-break: break-word;
+        text-align: right;
+        padding-right: 20px;
+        font-weight: bold;
     }
     @at-root #{&}--attrvalue {
         overflow: hidden;
@@ -103,10 +109,6 @@ $footer-height: 68px;
     }
 }
 
-.b-no-radius {
-    border-radius: 0;
-}
-
 .b-dropdown__cols2 {
     width: 32rem;
     padding: px2rem(5px);
@@ -118,10 +120,9 @@ $footer-height: 68px;
 
 // TODO: update the classes of nested elemenets
 .b-attrs--container {
-    height: 26em;
+    height: 35rem;
     overflow: scroll;
     padding: 16px;
-    border: 1px solid $gray-lighter;
     margin-bottom: 20px;
 }
 
@@ -136,6 +137,8 @@ $footer-height: 68px;
     display: inline-block;
     padding: 0;
     margin-right: 2rem;
+    margin-top: 6px;
+    border-radius: 19px;
     img {
         height: 36px;
         border-radius: 19px;
@@ -151,3 +154,47 @@ html {
     min-height: 100%;
     position: relative;
 }
+
+.b-btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 11px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+    padding: 12px 18px;
+    line-height: 1.4;
+    border-radius: 0;
+    @at-root #{&}__action {
+        background-color: $btn-primary;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $btn-primary;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: darken($btn-primary, 10%);
+            border-color: $btn-primary;
+        }
+    }
+    @at-root #{&}__cancel {
+        background-color: $gray-light;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $gray-light;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: $gray;
+            border-color: $gray-light;
+        }
+    }
+}
+

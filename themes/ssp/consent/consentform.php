@@ -98,7 +98,7 @@ function present_attributes($t, $attributes, $nameParent)
             // insert child table
             $parentName = preg_replace('/^child_/', '', $nameraw);
             foreach ($value as $child) {
-                $str .= "\n" . '<tr class="odd b--table-tr__odd"><td style="padding: 2em">' .
+                $str .= "\n" . '<tr class="odd b--table--tr__odd"><td>' .
                     present_attributes($t, $child, $parentName) . '</td></tr>';
             }
         } else {
@@ -216,7 +216,7 @@ foreach ($this->data['yesData'] as $name => $value) {
 }
 ?>
   </p>
-  <button type="submit" name="yes" class="b-no-radius btn btn-primary b-btns-container--btn__left" id="yesbutton">
+  <button type="submit" name="yes" class=" b-btn btn b-btn__action b-btns-container--btn__left" id="yesbutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
   </button>
 </form>
@@ -230,7 +230,7 @@ foreach ($this->data['noData'] as $name => $value) {
       '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-  <button type="submit" class="b-no-radius btn btn-default b-btns-container--btn__right" name="no" id="nobutton">
+  <button type="submit" class="b-btn b-btn__cancel btn b-btns-container--btn__right" name="no" id="nobutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
   </button>
 </form>
