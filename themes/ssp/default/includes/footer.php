@@ -9,8 +9,8 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   </div><!-- /container -->
   <footer class="b-footer text-center">
     <div class="container b-footer__container">
-      <span class="row">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></span>
-      <span class="rowc">Powered by <a href="https://github.com/rciam">RCIAM</a></span>
+      <div class="row">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></div>
+      <div class="row">Powered by <a href="https://github.com/rciam">RCIAM</a></div>
     </div>
   </footer>
   <script type="text/javascript"
