@@ -77,7 +77,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
               $langnames[$lang] . '</a></li>';
           }
         }
-        echo '<button class="b-btn btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+        echo '<button class="b-btn btn b-btn__footer dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
             . $lang_current
             . '<span class="caret"></span>
                </button>

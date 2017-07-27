@@ -11,7 +11,7 @@ $footer-height: 68px;
     bottom: 0;
     height: $footer-height;
     width: 100%;
-    background: $footer-bg;
+    // background: $footer-bg;
     background: $btn-primary;
     color: $white;
     -webkit-font-smoothing: antialiased;
@@ -125,6 +125,8 @@ $footer-height: 68px;
     @at-root #{&}--item {
         width: 50%;
         float: left;
+        display: inline-block;
+        height: 30px;
     }
 }
 
@@ -175,6 +177,9 @@ html {
     padding: 12px 18px;
     line-height: 1.4;
     border-radius: 0;
+    .caret {
+        margin-left: 12px;
+    }
     @at-root #{&}__action {
         background-color: $btn-primary;
         color: $white;
@@ -203,6 +208,16 @@ html {
             background-color: $white;
             color: $gray;
             border-color: $gray-light;
+        }
+    }
+    @at-root #{&}__footer {
+        background-color: $btn-primary;
+        color: $white;
+        border-color: transparent;
+        &:hover {
+            color: $white;
+            border-color: $white;
+
         }
     }
 }
