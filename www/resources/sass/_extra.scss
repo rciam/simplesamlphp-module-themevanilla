@@ -219,7 +219,6 @@ html {
 }
 
 .b-img-right {
-    margin-left: 20px;
     position: relative;
     bottom: -10px;
 }
@@ -238,8 +237,11 @@ html {
     margin-bottom: 0px;
 }
 
-.b-h1--link:hover {
+.b-h1__link:hover {
     text-decoration: none;
+}
+.b-h1__link--right {
+    margin-left: 20px;
 }
 
 .b-h3 {

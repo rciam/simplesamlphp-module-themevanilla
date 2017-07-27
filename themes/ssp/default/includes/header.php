@@ -126,8 +126,10 @@ if($onLoad !== '') {
 
   <div id="header">
     <h1 class="text-center">
-      <a class="b-h1--link" href="/<?php echo $this->data['baseurlpath']; ?>">
+      <a class="b-h1__link" href="https://www.openaire.eu/">
         <img class="b-img" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
+      </a>
+      <a class="b-h1__link b-h1__link--right" href="openminted.eu">
         <img class="b-img b-img-right" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
       </a>
     </h1>
