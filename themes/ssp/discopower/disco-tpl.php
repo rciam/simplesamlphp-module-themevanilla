@@ -78,7 +78,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
 
 ?>
 
-
+<h3 class="b-h3 text-center">Choose your academic/social account</h3>
 
 
 <?php
@@ -145,7 +145,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
       if($tab == 'edugain') {
         echo '<div class="panel b-panel b-panel-providers">
                 <div class="panel-heading b-panel-providers__heading">
-                  <h3 class="panel-title">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
+                  <h4 class="panel-title b-h4">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
                 </div>
                 <div class="panel-body">
                 <div class="input-group">
@@ -194,7 +194,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
               $providers .= (showEntry($this, $idpentry));
             }
           }
-          $title_html = '<h3 class="panel-title">' . $title . '</h3>';
+          $title_html = '<h4 class="panel-title b-h4">' . $title . '</h4>';
           echo $top . $title_html . $top_close . $list_open . $providers . $close;
         }
       }

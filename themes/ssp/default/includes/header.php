@@ -126,89 +126,12 @@ if($onLoad !== '') {
 
   <div id="header">
     <h1 class="text-center">
-      <a href="/<?php echo $this->data['baseurlpath']; ?>">
+      <a class="b-h1--link" href="/<?php echo $this->data['baseurlpath']; ?>">
         <img class="b-img" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
         <img class="b-img b-img-right" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
       </a>
     </h1>
-    <?php
-
-    $includeLanguageBar = TRUE;
-    if (!empty($_POST))
-      $includeLanguageBar = FALSE;
-    if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE)
-      $includeLanguageBar = FALSE;
-
-    if ($includeLanguageBar) {
-
-      $languages = $this->getLanguageList();
-      if ( count($languages) > 1 ) {
-        echo '<div class="text-right">
-                <div class="dropdown">';
-        $langnames = array(
-          'no' => 'Bokmål', // Norwegian Bokmål
-          'nn' => 'Nynorsk', // Norwegian Nynorsk
-          'se' => 'Sámegiella', // Northern Sami
-          'sam' => 'Åarjelh-saemien giele', // Southern Sami
-          'da' => 'Dansk', // Danish
-          'en' => 'English',
-          'de' => 'Deutsch', // German
-          'sv' => 'Svenska', // Swedish
-          'fi' => 'Suomeksi', // Finnish
-          'es' => 'Español', // Spanish
-          'fr' => 'Français', // French
-          'it' => 'Italiano', // Italian
-          'nl' => 'Nederlands', // Dutch
-          'lb' => 'Lëtzebuergesch', // Luxembourgish
-          'cs' => 'Čeština', // Czech
-          'sl' => 'Slovenščina', // Slovensk
-          'lt' => 'Lietuvių kalba', // Lithuanian
-          'hr' => 'Hrvatski', // Croatian
-          'hu' => 'Magyar', // Hungarian
-          'pl' => 'Język polski', // Polish
-          'pt' => 'Português', // Portuguese
-          'pt-br' => 'Português brasileiro', // Portuguese
-          'ru' => 'русский язык', // Russian
-          'et' => 'eesti keel', // Estonian
-          'tr' => 'Türkçe', // Turkish
-          'el' => 'ελληνικά', // Greek
-          'ja' => '日本語', // Japanese
-          'zh' => '简体中文', // Chinese (simplified)
-          'zh-tw' => '繁體中文', // Chinese (traditional)
-          'ar' => 'العربية', // Arabic
-          'fa' => 'پارسی', // Persian
-          'ur' => 'اردو', // Urdu
-          'he' => 'עִבְרִית', // Hebrew
-          'id' => 'Bahasa Indonesia', // Indonesian
-          'sr' => 'Srpski', // Serbian
-          'lv' => 'Latviešu', // Latvian
-          'ro' => 'Românește', // Romanian
-          'eu' => 'Euskara', // Basque
-        );
-
-        $textarray = array();
-        foreach ($languages AS $lang => $current) {
-          $lang = strtolower($lang);
-          if ($current) {
-            $lang_current = $langnames[$lang];
-          } else {
-            $textarray[] = '<li class="b-dropdown__cols2--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
-              $langnames[$lang] . '</a></li>';
-          }
-        }
-        echo '<span>Language:</span>
-              <button class="b-btn btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-            . $lang_current
-            . '<span class="caret"></span>
-               </button>
-              <ul class="dropdown-menu dropdown-menu-right b-dropdown__cols2 " aria-labelledby="dropdownMenu1">';
-        echo join(' ', $textarray);
-        echo '</ul></div></div>'; // /text-right /dropdown
-      }
-    }
-
-?>
-    <h2 class="text-center">
+    <h2 class="b-h2 text-center">
       Welcome to our Single Sign-On service
       <small class="b-h2--small">Use the same credentials for all our services</small>
       <?php
@@ -216,10 +139,6 @@ if($onLoad !== '') {
       ?>
     </h2>
   </div> <!-- /header -->
-
-
-
-
 
 <?php
 

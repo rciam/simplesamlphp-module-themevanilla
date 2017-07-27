@@ -19,6 +19,10 @@ $footer-height: 68px;
     @at-root #{&}__container {
         padding: 1.5rem;
     }
+    @at-root #{&}__col1 {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }
 
 .b-form-favourite {
@@ -29,6 +33,7 @@ $footer-height: 68px;
 .b-panel {
     border: none;
     box-shadow: none;
+    margin-bottom: 0px;
     #{&}__heading {
         background-color: $panel-heading-bg-color;
         border: $panel-heading-border;
@@ -41,7 +46,7 @@ $footer-height: 68px;
         a {
             display: inline-block;
             position: relative;
-            margin-right: 2rem;
+            // margin-right: 2rem;
             // padding-right: 1rem;
             // padding-left: 1rem;
             padding: 8px;
@@ -62,7 +67,7 @@ $footer-height: 68px;
         border: $panel-heading-border;
     }
     @at-root #{&}__list--edugain {
-        height: 14rem;
+        height: 17rem;
         margin-top: $panel-body-padding;
         a {
             display: block;
@@ -125,10 +130,10 @@ $footer-height: 68px;
 
 // TODO: update the classes of nested elemenets
 .b-attrs--container {
-    height: 35rem;
+    height: 34rem;
     overflow: scroll;
     padding: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 29px;
 }
 
 // Experiments
@@ -204,14 +209,56 @@ html {
 
 .b-h2--small {
     display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #90929D;
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    font-family: 'Open Sans';
 }
 
 .b-img-right {
-    margin-left: 50px;
+    margin-left: 20px;
     position: relative;
     bottom: -10px;
 }
 
 .b-img {
    height: 60px;
+}
+
+.b-h2 {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-transform: none!important;
+    font-weight: 300;
+    color: #5b5b5b;
+    margin-bottom: 0px;
+}
+
+.b-h1--link:hover {
+    text-decoration: none;
+}
+
+.b-h3 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: none!important;
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.b-h4 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: none!important;
+    font-weight: 300;
+    font-size: 18px;
+
+}
+
+.b-dropdown-container {
+    // position: absolute;
+    // left: auto;
 }
