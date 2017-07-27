@@ -10,7 +10,8 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   <footer class="b-footer text-center">
     <div class="b-footer__container">
       <div class="row">
-        <div class="col-md-4 text-left b-footer__col1">
+        <!-- <div class="col&#45;md&#45;4 text&#45;left b&#45;footer__col1"> -->
+        <div class="tmp-lang">
 <?php
 
     $includeLanguageBar = TRUE;
@@ -87,14 +88,15 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
     }
 
 ?>
-      </div> <!-- col-md-4 -->
-      <div class="col-md-4">
+      </div> <!-- /tmp-lang -->
+      <!-- </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
+      <!-- <div class="col&#45;md&#45;4"> -->
         <div class="copy">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></div>
         <div class="powered">Powered by <a href="https://github.com/rciam">RCIAM</a></div>
-      </div> <!-- col-md-4 -->
-      <div class="col-md-4">
-      </div> <!-- col-md-4 -->
-    </div> <!-- /row -->
+    <!--   </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
+    <!--   <div class="col&#45;md&#45;4"> -->
+    <!--   </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
+    <!-- </div> <!&#45;&#45; /row &#45;&#45;> -->
     </div> <!-- /container -->
   </footer>
   <script type="text/javascript"
