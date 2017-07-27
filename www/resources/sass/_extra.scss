@@ -33,7 +33,7 @@ $footer-height: 68px;
 .b-panel {
     border: none;
     box-shadow: none;
-    margin-bottom: 0px;
+    margin-bottom: 6px;
     #{&}__heading {
         background-color: $panel-heading-bg-color;
         border: $panel-heading-border;
@@ -247,7 +247,7 @@ html {
     text-transform: none!important;
     font-weight: 300;
     font-size: 20px;
-    margin-top: 0px;
+    margin-top: 30px;
 }
 
 .b-h4 {
