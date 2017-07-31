@@ -158,14 +158,12 @@ function present_attributes($t, $attributes, $nameParent)
     return $str;
 }
 
- echo '<h3 class="panel-title b-h3 text-center">' .
+ echo '<h3 class="b-h3 text-center">' .
       $this->t(
         '{consent:consent:consent_accept}',
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
       '</h3>
       <div class="panel b-panel">
-          <div class="panel-heading b-panel__heading">
-          </div>
           <div class="panel-body">';
 ?>
 
