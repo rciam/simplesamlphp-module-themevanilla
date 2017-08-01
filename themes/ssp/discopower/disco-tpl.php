@@ -118,7 +118,7 @@ if (!empty($faventry)) {
     <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
     <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
     <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-    <input type="submit" name="formsubmit" id="favouritesubmit" class="b-btn b-btn__action btn" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+    <input type="submit" name="formsubmit" id="favouritesubmit" class="b-btn b-btn__action btn text-uppercase" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
   echo('</div>'); // /panel-body
