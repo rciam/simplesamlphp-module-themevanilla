@@ -55,7 +55,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
 
 
   if(in_array($namelower, $providersOnlyIcon)) {
-    $html = '<a class="metaentry provider-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html = '<a class="metaentry b-btn--round-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/' . $namelower . '.jpg') . '" />';
     $html .= '</a>';
   }
@@ -108,8 +108,8 @@ function getTranslatedName($t, $metadata) {
 if (!empty($faventry)) {
 
 
-  echo('<div class="panel b-panel favourite">');
-  echo('<div class="panel-body">');
+  echo('<div class="row favourite b-content-group">');
+  echo('<div class="col-sm-12">');
   echo($this->t('previous_auth'));
   echo(' <strong>' . htmlspecialchars(getTranslatedName($this, $faventry)) . '</strong>');
   echo('
@@ -121,8 +121,8 @@ if (!empty($faventry)) {
     <input type="submit" name="formsubmit" id="favouritesubmit" class="b-btn b-btn__action btn text-uppercase" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
-  echo('</div>'); // /panel-body
-  echo('</div>'); // /panel
+  echo('</div>'); // /b-content-group
+  echo('</div>'); // /row
 }
 
 
@@ -130,31 +130,28 @@ if (!empty($faventry)) {
 
 <?php
 
-$top = '<div class="panel b-panel b-panel-providers">
-      <div class="panel-heading b-panel-providers__heading">';
-$top_close = '</div>';
+$top = '<div class="row b-content-group">
+      <div class="col-sm-12">';
 $title = '';
 $title_html = '';
-$list_open = '<div class="panel-body"><div class="metalist b-panel-providers__list b-panel-providers__list--other " id="list_other">';
+$list_open = '<div class="metalist b-content-group__provider-list b-content-group__provider-list--other" id="list_other">';
 $providers = '';
-$close = '</div></div></div>'; // /metalist /panel-body /panel
+$close = '</div></div></div>'; // /metalist /b-content-group /row
 
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
     if (!empty($slist)) {
       if($tab == 'edugain') {
-        echo '<div class="panel b-panel b-panel-providers">
-                <div class="panel-heading b-panel-providers__heading">
-                  <h4 class="panel-title b-h4">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
-                </div>
-                <div class="panel-body">
+        echo '<div class="row b-content-group">
+                <div class="col-sm-12">
+                  <h4 class="b-h4">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
                 <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
                 <form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_'
                 . $tab
                 . '" id="query_' . $tab . '" /></form>'
                 . '</div> <!-- /input-group -->
-                <div class="metalist b-panel-providers__list b-panel-providers__list--edugain" id="list_'
+                <div class="metalist b-content-group__provider-list b-content-group__provider-list--edugain" id="list_'
                 . $tab  . '">';
         if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
           $idpentry = $slist[$this->data['preferredidp']];
@@ -194,7 +191,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
               $providers .= (showEntry($this, $idpentry));
             }
           }
-          $title_html = '<h4 class="panel-title b-h4">' . $title . '</h4>';
+          $title_html = '<h4 class="b-h4">' . $title . '</h4>';
           echo $top . $title_html . $top_close . $list_open . $providers . $close;
         }
       }

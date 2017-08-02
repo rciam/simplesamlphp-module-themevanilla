@@ -163,8 +163,8 @@ function present_attributes($t, $attributes, $nameParent)
         '{consent:consent:consent_accept}',
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
       '</h3>
-      <div class="panel b-panel">
-          <div class="panel-body">';
+      <div class="row">
+          <div class="col-sm-12 b-content-group">';
 ?>
 
 <?php
@@ -208,8 +208,8 @@ foreach ($this->data['noData'] as $name => $value) {
   </button>
 </form>
 </div> <!-- /b-btns-container -->
-</div> <!-- /panel-body -->
-</div> <!-- /panel -->
+</div> <!-- /b-content-group -->
+</div> <!-- /row -->
 <?php
 $this->includeAtTemplateBase('includes/footer.php');
 ?>

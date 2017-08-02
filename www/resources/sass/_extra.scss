@@ -36,44 +36,42 @@ $gray-light-header: #90929D;
     padding-left: 1rem;
 }
 
-.b-panel {
-    border: none;
-    box-shadow: none;
+.b-content-group {
     margin-bottom: 6px;
-}
-.b-panel-providers {
-    @at-root &__list {
+    padding: 6px 42px;
+    &__provider-list {
         overflow: scroll;
         padding-left: 4rem;
-        a {
-            display: inline-block;
-            position: relative;
-            padding: 8px;
-            &:hover {
-                background-color: $gray-providers;
+        &--edugain {
+            height: 17rem;
+            margin-top: $panel-body-padding;
+            a {
+                display: block;
+                position: relative;
+                padding: 6px 12px;
+                &:hover {
+                    background-color: $gray-providers;
+                }
             }
         }
-        @at-root &__favourite__icon {
-            color: $brand-warning;
-            position: absolute;
-            left: -2rem;
-            font-size: 1.7rem;
-            line-height: 1.2;
+        &--other {
+            a {
+                display: inline-block;
+                position: relative;
+                padding: 6px 12px;
+            }
         }
     }
-    &__heading {
-        background-color: $panel-heading-bg-color;
-        border: $panel-heading-border;
-    }
-    @at-root &__list--edugain {
-        height: 17rem;
-        margin-top: $panel-body-padding;
-        a {
-            display: block;
-        }
-    }
-    @at-root &__list--other {
-        height: 48px;
+}
+
+.b-btn--round-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 6px;
+    border-radius: 19px;
+    img {
+        height: 36px;
+        border-radius: 19px;
     }
 }
 
@@ -144,17 +142,6 @@ $gray-light-header: #90929D;
     box-shadow: 0 0 10px $brand-primary !important;
 }
 
-.metalist .provider-icon {
-    display: inline-block;
-    padding: 0;
-    margin-right: 2rem;
-    margin-top: 6px;
-    border-radius: 19px;
-    img {
-        height: 36px;
-        border-radius: 19px;
-    }
-}
 
 body {
     margin-bottom: $footer-height;
