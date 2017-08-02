@@ -41,8 +41,8 @@ $gray-light-header: #90929D;
     padding: 6px 42px;
     &__provider-list {
         overflow: scroll;
-        padding-left: 4rem;
         &--edugain {
+            padding-left: 42px;
             height: 17rem;
             margin-top: $panel-body-padding;
             a {
@@ -55,25 +55,16 @@ $gray-light-header: #90929D;
             }
         }
         &--other {
+            padding-left: 54px;
             a {
                 display: inline-block;
                 position: relative;
-                padding: 6px 12px;
+                padding: 0;
             }
         }
     }
 }
 
-.b-btn--round-icon {
-    display: inline-block;
-    margin-right: 0.5rem;
-    margin-top: 6px;
-    border-radius: 19px;
-    img {
-        height: 36px;
-        border-radius: 19px;
-    }
-}
 
 ::-webkit-input-placeholder {
   color: $placeholder;
@@ -204,6 +195,17 @@ html {
 
         }
     }
+    &--round-icon {
+        padding: 0;
+        display: inline-block;
+        margin-right: 24px;
+        margin-top: 6px;
+        border-radius: 19px;
+        img {
+            height: 36px;
+            border-radius: 19px;
+        }
+}
 }
 
 .b-h2--small {
