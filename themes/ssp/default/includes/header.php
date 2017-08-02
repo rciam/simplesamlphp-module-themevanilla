@@ -126,16 +126,16 @@ if($onLoad !== '') {
 
   <div id="header">
     <h1 class="text-center">
-      <a class="b-h1__link" href="https://www.openaire.eu/">
-        <img class="b-img" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
+      <a href="https://www.openaire.eu/">
+        <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
       </a>
-      <a class="b-h1__link b-h1__link--right" href="openminted.eu">
-        <img class="b-img b-img-right" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
+      <a class="b-h1__link--right" href="openminted.eu">
+        <img class="b-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
       </a>
     </h1>
-    <h2 class="b-h2 text-center">
+    <h2 class="text-center">
       Welcome to our Single Sign-On service
-      <small class="b-h2--small">Use the same credentials for all our services</small>
+      <small>Use the same credentials for all our services</small>
       <?php
         // echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp');
       ?>

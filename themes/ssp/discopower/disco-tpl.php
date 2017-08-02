@@ -78,7 +78,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
 
 ?>
 
-<h3 class="b-h3 text-center">Choose your academic/social account</h3>
+<h3 class="text-center">Choose your academic/social account</h3>
 
 
 <?php
@@ -144,7 +144,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
       if($tab == 'edugain') {
         echo '<div class="row b-content-group">
                 <div class="col-sm-12">
-                  <h4 class="b-h4">' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
+                  <h4>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
                 <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
                 <form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_'
@@ -191,7 +191,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
               $providers .= (showEntry($this, $idpentry));
             }
           }
-          $title_html = '<h4 class="b-h4">' . $title . '</h4>';
+          $title_html = '<h4>' . $title . '</h4>';
           echo $top . $title_html . $top_close . $list_open . $providers . $close;
         }
       }

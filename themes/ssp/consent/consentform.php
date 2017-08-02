@@ -158,7 +158,7 @@ function present_attributes($t, $attributes, $nameParent)
     return $str;
 }
 
- echo '<h3 class="b-h3 text-center">' .
+ echo '<h3 class="text-center">' .
       $this->t(
         '{consent:consent:consent_accept}',
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
