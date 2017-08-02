@@ -104,16 +104,10 @@ h4 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing:grayscale;
     font-weight: 300;
-    @at-root &__container {
-        padding: 1.5rem;
-    }
-    @at-root &__col1 {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
+    padding: 1.5rem;
 }
 
-.tmp-lang {
+.b-lang-container {
     position: absolute;
     left: 30px;
 }
@@ -178,7 +172,7 @@ h4 {
         }
     }
     @at-root &__footer {
-        background-color: $btn-primary;
+        background-color: transparent;
         color: $white;
         border-color: transparent;
         &:hover {
@@ -200,7 +194,7 @@ h4 {
 }
 }
 
-.b-dropdown__cols2 {
+.b-dropdown__two_cols {
     width: 32rem;
     padding: px2rem(5px);
     @at-root &--item {

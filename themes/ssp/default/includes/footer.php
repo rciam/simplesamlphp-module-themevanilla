@@ -8,10 +8,8 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 ?>
   </div><!-- /container -->
   <footer class="b-footer text-center">
-    <div class="b-footer__container">
-      <div class="row">
-        <!-- <div class="col&#45;md&#45;4 text&#45;left b&#45;footer__col1"> -->
-        <div class="tmp-lang">
+    <div class="container-fluid">
+
 <?php
 
     $includeLanguageBar = TRUE;
@@ -24,7 +22,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 
       $languages = $this->getLanguageList();
       if ( count($languages) > 1 ) {
-        echo '<div class="b-dropdown-container">
+        echo '<div class="b-lang-container">
                 <div class="dropup">';
         $langnames = array(
           'no' => 'Bokmål', // Norwegian Bokmål
@@ -73,7 +71,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
           if ($current) {
             $lang_current = $langnames[$lang];
           } else {
-            $textarray[] = '<li class="b-dropdown__cols2--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
+            $textarray[] = '<li class="b-dropdown__two_cols--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
               $langnames[$lang] . '</a></li>';
           }
         }
@@ -81,23 +79,16 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
             . $lang_current
             . '<span class="caret"></span>
                </button>
-              <ul class="dropdown-menu dropdown-menu-left b-dropdown__cols2 " aria-labelledby="dropdownMenu1">';
+              <ul class="dropdown-menu dropdown-menu-left b-dropdown__two_cols" aria-labelledby="dropdownMenu1">';
         echo join(' ', $textarray);
-        echo '</ul></div></div>'; // /text-right /dropdown
+        echo '</ul></div></div>'; // /dropup /b-lang-container
       }
     }
 
 ?>
-      </div> <!-- /tmp-lang -->
-      <!-- </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
-      <!-- <div class="col&#45;md&#45;4"> -->
         <div class="copy">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></div>
         <div class="powered">Powered by <a href="https://github.com/rciam">RCIAM</a></div>
-    <!--   </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
-    <!--   <div class="col&#45;md&#45;4"> -->
-    <!--   </div> <!&#45;&#45; col&#45;md&#45;4 &#45;&#45;> -->
-    <!-- </div> <!&#45;&#45; /row &#45;&#45;> -->
-    </div> <!-- /container -->
+      </div> <!-- /container-fluid -->
   </footer>
   <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/dropdown.js')); ?>">
