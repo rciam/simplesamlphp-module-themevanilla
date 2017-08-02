@@ -7,10 +7,92 @@
 
  */
 
+
+// Variables
+
 $footer-height: 68px;
 $gray-providers: #f7f7f7;
 $gray-header: #5b5b5b;
 $gray-light-header: #90929D;
+
+
+// Overall
+
+body {
+    margin-bottom: $footer-height;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+*:focus {
+    outline: none !important;
+    border:1px solid $gray-lighter2 !important;
+    box-shadow: 0 0 10px $brand-primary !important;
+}
+
+::-webkit-input-placeholder {
+  color: $placeholder;
+}
+
+
+// Headings
+// No use of bem, when we want to override every instance of them
+
+h1 {
+    a:hover {
+        text-decoration: none;
+    }
+    img {
+       height: 60px;
+    }
+
+    .b-h1__link--right {
+        margin-left: 20px;
+    }
+
+    .b-logo-openminted {
+        position: relative;
+        bottom: -10px;
+    }
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-transform: none!important;
+    color: $gray-header;
+    margin-bottom: 0px;
+}
+
+
+h2 small {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $gray-light-header;
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    font-family: 'Open Sans';
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: none!important;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+h4 {
+    text-transform: none!important;
+    font-weight: 300;
+}
+
+
+// Bottom
 
 .b-footer {
     position: absolute;
@@ -31,68 +113,13 @@ $gray-light-header: #90929D;
     }
 }
 
-.b-form-favourite {
-    display: inline-block;
-    padding-left: 1rem;
-}
-
-.b-content-group {
-    margin-bottom: 6px;
-    padding: 6px 42px;
-    &__provider-list {
-        overflow: scroll;
-        &--edugain {
-            padding-left: 42px;
-            height: 17rem;
-            margin-top: $panel-body-padding;
-            a {
-                display: block;
-                position: relative;
-                padding: 6px 12px;
-                &:hover {
-                    background-color: $gray-providers;
-                }
-            }
-        }
-        &--other {
-            padding-left: 54px;
-            a {
-                display: inline-block;
-                position: relative;
-                padding: 0;
-            }
-        }
-    }
+.tmp-lang {
+    position: absolute;
+    left: 30px;
 }
 
 
-::-webkit-input-placeholder {
-  color: $placeholder;
-}
-
-.b-table {
-    margin-bottom: 0px;
-    @at-root &--tr__odd {
-        background-color: $gray-lighter3;
-    }
-    @at-root &--attrname {
-        width: 300px;
-        overflow: hidden;
-        float: left;
-        word-break: break-word;
-        text-align: right;
-        padding-right: 20px;
-        font-weight: bold;
-    }
-    @at-root &--attrvalue {
-        overflow: hidden;
-        word-break: break-word;
-        @at-root &--list--item {
-            border-bottom: 1px solid $gray-lighter;
-            padding: 6px 0px;
-        }
-    }
-}
+// Buttons
 
 .b-btns-container {
     text-align: center;
@@ -107,41 +134,6 @@ $gray-light-header: #90929D;
     }
 }
 
-.b-dropdown__cols2 {
-    width: 32rem;
-    padding: px2rem(5px);
-    @at-root &--item {
-        width: 50%;
-        float: left;
-        display: inline-block;
-        height: 30px;
-    }
-}
-
-// TODO: update the classes of nested elemenets
-.b-attrs--container {
-    height: 34rem;
-    overflow: scroll;
-    padding: 16px;
-    margin-bottom: 29px;
-}
-
-// Experiments
-*:focus {
-    outline: none !important;
-    border:1px solid $gray-lighter2 !important;
-    box-shadow: 0 0 10px $brand-primary !important;
-}
-
-
-body {
-    margin-bottom: $footer-height;
-}
-
-html {
-    min-height: 100%;
-    position: relative;
-}
 
 .b-btn {
     letter-spacing: 1px;
@@ -208,58 +200,85 @@ html {
 }
 }
 
-.b-h2--small {
-    display: block;
-    font-size: 14px;
-    line-height: 1.4;
-    color: $gray-light-header;
-    text-transform: none;
-    letter-spacing: 0;
-    font-style: italic;
-    font-family: 'Open Sans';
+.b-dropdown__cols2 {
+    width: 32rem;
+    padding: px2rem(5px);
+    @at-root &--item {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        height: 30px;
+    }
 }
 
-.b-img-right {
-    position: relative;
-    bottom: -10px;
+
+// Content
+
+.b-form-favourite {
+    display: inline-block;
+    padding-left: 1rem;
 }
 
-.b-img {
-   height: 60px;
+.b-content-group {
+    margin-bottom: 6px;
+    padding: 6px 42px;
+    &__provider-list {
+        overflow: scroll;
+        &--edugain {
+            padding-left: 42px;
+            height: 17rem;
+            margin-top: $panel-body-padding;
+            a {
+                display: block;
+                position: relative;
+                padding: 6px 12px;
+                &:hover {
+                    background-color: $gray-providers;
+                }
+            }
+        }
+        &--other {
+            padding-left: 54px;
+            a {
+                display: inline-block;
+                position: relative;
+                padding: 0;
+            }
+        }
+    }
 }
 
-.b-h2 {
-    // font-size: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    text-transform: none!important;
-    font-weight: 300;
-    color: $gray-header;
+
+.b-table {
     margin-bottom: 0px;
+    @at-root &--tr__odd {
+        background-color: $gray-lighter3;
+    }
+    @at-root &--attrname {
+        width: 300px;
+        overflow: hidden;
+        float: left;
+        word-break: break-word;
+        text-align: right;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+    @at-root &--attrvalue {
+        overflow: hidden;
+        word-break: break-word;
+        @at-root &--list--item {
+            border-bottom: 1px solid $gray-lighter;
+            padding: 6px 0px;
+        }
+    }
 }
 
-.b-h1__link:hover {
-    text-decoration: none;
-}
-.b-h1__link--right {
-    margin-left: 20px;
-}
-
-.b-h3 {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: none!important;
-    font-weight: 300;
-    margin-top: 30px;
+// TODO: update the classes of nested elemenets
+.b-attrs--container {
+    height: 34rem;
+    overflow: scroll;
+    padding: 16px;
+    margin-bottom: 29px;
 }
 
-.b-h4 {
-    text-transform: none!important;
-    font-weight: 300;
-    font-size: 18px; //in panel
 
-}
-
-.tmp-lang {
-    position: absolute;
-    left: 30px;
-}
