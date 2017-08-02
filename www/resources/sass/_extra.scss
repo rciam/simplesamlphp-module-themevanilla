@@ -18,6 +18,11 @@ $gray-light-header: #90929D;
 
 // Overall
 
+.font-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
 body {
     margin-bottom: $footer-height;
 }
@@ -83,7 +88,7 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     text-transform: none!important;
     font-weight: 300;
-    margin-top: 30px;
+    // margin-top: 30px;
 }
 
 h4 {
@@ -95,16 +100,15 @@ h4 {
 // Bottom
 
 .b-footer {
+    @extend .font-smooth;
     position: absolute;
     bottom: 0;
     height: $footer-height;
     width: 100%;
     background: $btn-primary;
     color: $white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing:grayscale;
     font-weight: 300;
-    padding: 1.5rem;
+    padding: 16px;
 }
 
 .b-lang-container {
@@ -130,11 +134,9 @@ h4 {
 
 
 .b-btn {
+    @extend .font-smooth;
     letter-spacing: 1px;
     font-size: 11px;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    text-rendering:optimizeLegibility;
     padding: 12px 18px;
     line-height: 1.4;
     border-radius: 0;
@@ -242,6 +244,12 @@ h4 {
     }
 }
 
+.b-attrs--container {
+    height: 30rem;
+    overflow: scroll;
+    padding: 16px;
+    margin-bottom: 29px;
+}
 
 .b-table {
     margin-bottom: 0px;
@@ -266,13 +274,3 @@ h4 {
         }
     }
 }
-
-// TODO: update the classes of nested elemenets
-.b-attrs--container {
-    height: 34rem;
-    overflow: scroll;
-    padding: 16px;
-    margin-bottom: 29px;
-}
-
-
