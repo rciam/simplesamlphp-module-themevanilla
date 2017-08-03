@@ -55,7 +55,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
 
 
   if(in_array($namelower, $providersOnlyIcon)) {
-    $html = '<a class="metaentry b-btn--round-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html = '<a class="metaentry ssp-btn--round-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/' . $namelower . '.jpg') . '" />';
     $html .= '</a>';
   }
@@ -108,20 +108,20 @@ function getTranslatedName($t, $metadata) {
 if (!empty($faventry)) {
 
 
-  echo('<div class="row favourite b-content-group">');
+  echo('<div class="row favourite ssp-content-group">');
   echo('<div class="col-sm-12">');
   echo($this->t('previous_auth'));
   echo(' <strong>' . htmlspecialchars(getTranslatedName($this, $faventry)) . '</strong>');
   echo('
-  <form id="idpselectform" method="get" action="' . $this->data['urlpattern'] . '" class="b-form-favourite">
+  <form id="idpselectform" method="get" action="' . $this->data['urlpattern'] . '" class="ssp-form-favourite">
     <input type="hidden" name="entityID" value="' . htmlspecialchars($this->data['entityID']) . '" />
     <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
     <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
     <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-    <input type="submit" name="formsubmit" id="favouritesubmit" class="b-btn b-btn__action btn text-uppercase" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+    <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action btn text-uppercase" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
   </form>');
 
-  echo('</div>'); // /b-content-group
+  echo('</div>'); // /ssp-content-group
   echo('</div>'); // /row
 }
 
@@ -130,19 +130,19 @@ if (!empty($faventry)) {
 
 <?php
 
-$top = '<div class="row b-content-group">
+$top = '<div class="row ssp-content-group">
       <div class="col-sm-12">';
 $title = '';
 $title_html = '';
-$list_open = '<div class="metalist b-content-group__provider-list b-content-group__provider-list--other" id="list_other">';
+$list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other" id="list_other">';
 $providers = '';
-$close = '</div></div></div>'; // /metalist /b-content-group /row
+$close = '</div></div></div>'; // /metalist /ssp-content-group /row
 
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
     if (!empty($slist)) {
       if($tab == 'edugain') {
-        echo '<div class="row b-content-group">
+        echo '<div class="row ssp-content-group">
                 <div class="col-sm-12">
                   <h4>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h4>
                 <div class="input-group">
@@ -151,7 +151,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
                 . $tab
                 . '" id="query_' . $tab . '" /></form>'
                 . '</div> <!-- /input-group -->
-                <div class="metalist b-content-group__provider-list b-content-group__provider-list--edugain" id="list_'
+                <div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--edugain" id="list_'
                 . $tab  . '">';
         if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
           $idpentry = $slist[$this->data['preferredidp']];

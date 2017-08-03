@@ -7,7 +7,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 }
 ?>
   </div><!-- /container -->
-  <footer class="b-footer text-center">
+  <footer class="ssp-footer text-center">
     <div class="container-fluid">
 
 <?php
@@ -22,7 +22,7 @@ if ($includeLanguageBar) {
 
   $languages = $this->getLanguageList();
   if ( count($languages) > 1 ) {
-    echo '<div class="b-lang-container">
+    echo '<div class="ssp-lang-container">
       <div class="dropup">';
     $langnames = array(
       'no' => 'Bokmål', // Norwegian Bokmål
@@ -71,17 +71,17 @@ if ($includeLanguageBar) {
       if ($current) {
         $lang_current = $langnames[$lang];
       } else {
-        $textarray[] = '<li class="b-dropdown__two_cols--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
+        $textarray[] = '<li class="ssp-dropdown__two_cols--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->languageParameterName => $lang))) . '">' .
           $langnames[$lang] . '</a></li>';
       }
     }
-    echo '<button class="b-btn btn b-btn__footer dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+    echo '<button class="ssp-btn btn ssp-btn__footer dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
       . $lang_current
       . '<span class="caret"></span>
       </button>
-      <ul class="dropdown-menu dropdown-menu-left b-dropdown__two_cols" aria-labelledby="dropdownMenu1">';
+      <ul class="dropdown-menu dropdown-menu-left ssp-dropdown__two_cols" aria-labelledby="dropdownMenu1">';
     echo join(' ', $textarray);
-    echo '</ul></div></div>'; // /dropup /b-lang-container
+    echo '</ul></div></div>'; // /dropup /ssp-lang-container
   }
 }
 

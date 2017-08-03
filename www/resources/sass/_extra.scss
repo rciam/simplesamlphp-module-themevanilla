@@ -47,11 +47,11 @@ h1 {
        height: 60px;
     }
 
-    .b-h1__link--right {
+    .ssp-h1__link--right {
         margin-left: 20px;
     }
 
-    .b-logo-openminted {
+    .ssp-logo-openminted {
         position: relative;
         bottom: -10px;
     }
@@ -91,7 +91,7 @@ h4 {
 
 // Bottom
 
-.b-footer {
+.ssp-footer {
     @extend .font-smooth;
     position: absolute;
     bottom: 0;
@@ -109,7 +109,7 @@ h4 {
     }
 }
 
-.b-lang-container {
+.ssp-lang-container {
     position: absolute;
     left: 30px;
 }
@@ -117,7 +117,7 @@ h4 {
 
 // Buttons
 
-.b-btns-container {
+.ssp-btns-container {
     text-align: center;
     @at-root &--btn__right {
         margin-left: 12px;
@@ -128,7 +128,7 @@ h4 {
 }
 
 
-.b-btn {
+.ssp-btn {
     @extend .font-smooth;
     letter-spacing: 1px;
     font-size: 11px;
@@ -190,7 +190,7 @@ h4 {
 }
 }
 
-.b-dropdown__two_cols {
+.ssp-dropdown__two_cols {
     width: 320px;
     padding: 6px;
     @at-root &--item {
@@ -204,12 +204,12 @@ h4 {
 
 // Content
 
-.b-form-favourite {
+.ssp-form-favourite {
     display: inline-block;
     padding-left: 18px;
 }
 
-.b-content-group {
+.ssp-content-group {
     margin-bottom: 6px;
     padding: 6px 42px;
     &__provider-list {
@@ -238,14 +238,14 @@ h4 {
     }
 }
 
-.b-attrs--container {
+.ssp-attrs--container {
     height: 300px;
     overflow: scroll;
     padding: 16px;
     margin-bottom: 29px;
 }
 
-.b-table {
+.ssp-table {
     margin-bottom: 0px;
     @at-root &--tr__odd {
         background-color: lighten($alabaster, 1%);

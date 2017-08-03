@@ -78,16 +78,16 @@ if ($this->data['sppp'] !== false) {
  */
 function present_attributes($t, $attributes, $nameParent)
 {
-    $alternate = array('b-table--tr__odd', 'b-table--tr__even');
+    $alternate = array('ssp-table--tr__odd', 'ssp-table--tr__even');
     $i = 0;
     $summary = 'summary="' . $t->t('{consent:consent:table_summary}') . '"';
 
     if (strlen($nameParent) > 0) {
         $parentStr = strtolower($nameParent) . '_';
-        $str = '<div class="b-attrs--container"><table class="table" ' . $summary . '>';
+        $str = '<div class="ssp-attrs--container"><table class="table" ' . $summary . '>';
     } else {
         $parentStr = '';
-        $str = '<div class="b-attrs--container"><table id="table_with_attributes"  class="table" '. $summary .'>';
+        $str = '<div class="ssp-attrs--container"><table id="table_with_attributes"  class="table" '. $summary .'>';
     }
 
     foreach ($attributes as $name => $value) {
@@ -98,34 +98,34 @@ function present_attributes($t, $attributes, $nameParent)
             // insert child table
             $parentName = preg_replace('/^child_/', '', $nameraw);
             foreach ($value as $child) {
-                $str .= "\n" . '<tr class="odd b--table--tr__odd"><td>' .
+                $str .= "\n" . '<tr class="odd ssp--table--tr__odd"><td>' .
                     present_attributes($t, $child, $parentName) . '</td></tr>';
             }
         } else {
             // insert values directly
 
             $str .= "\n" . '<tr class="' . $alternate[($i++ % 2)] .
-                '"><td><div class="attrname b-table--attrname">' . htmlspecialchars($name) . '</div>';
+                '"><td><div class="attrname ssp-table--attrname">' . htmlspecialchars($name) . '</div>';
 
             $isHidden = in_array($nameraw, $t->data['hiddenAttributes'], true);
             if ($isHidden) {
                 $hiddenId = SimpleSAML\Utils\Random::generateID();
 
-                $str .= '<div class="attrvalue b-table--attrvalue" style="display: none;" id="hidden_' . $hiddenId . '">';
+                $str .= '<div class="attrvalue ssp-table--attrvalue" style="display: none;" id="hidden_' . $hiddenId . '">';
             } else {
-                $str .= '<div class="attrvalue b-table--attrvalue">';
+                $str .= '<div class="attrvalue ssp-table--attrvalue">';
             }
 
             if (sizeof($value) > 1) {
                 // we hawe several values
-                $str .= '<ul class="list-unstyled b-table--attrvalue--list">';
+                $str .= '<ul class="list-unstyled ssp-table--attrvalue--list">';
                 foreach ($value as $listitem) {
                     if ($nameraw === 'jpegPhoto') {
-                        $str .= '<li class="b-table--attrvalue--list--item"><img src="data:image/jpeg;base64,' .
+                        $str .= '<li class="ssp-table--attrvalue--list--item"><img src="data:image/jpeg;base64,' .
                             htmlspecialchars($listitem) .
                             '" alt="User photo" /></li>';
                     } else {
-                        $str .= '<li class="b-table--attrvalue--list--item">' . htmlspecialchars($listitem) . '</li>';
+                        $str .= '<li class="ssp-table--attrvalue--list--item">' . htmlspecialchars($listitem) . '</li>';
                     }
                 }
                 $str .= '</ul>';
@@ -164,7 +164,7 @@ function present_attributes($t, $attributes, $nameParent)
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
       '</h3>
       <div class="row">
-          <div class="col-sm-12 b-content-group">';
+          <div class="col-sm-12 ssp-content-group">';
 ?>
 
 <?php
@@ -172,8 +172,8 @@ echo present_attributes($this, $attributes, '');
 ?>
 <form style="display: inline; margin: 0px; padding: 0px"
     action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
-<div class="b-btns-container">
-<p class"b-btns-container--checkbox>
+<div class="ssp-btns-container">
+<p class"ssp-btns-container--checkbox>
 
 <?php
 if ($this->data['usestorage']) {
@@ -189,7 +189,7 @@ foreach ($this->data['yesData'] as $name => $value) {
 }
 ?>
   </p>
-  <button type="submit" name="yes" class=" b-btn btn b-btn__action b-btns-container--btn__left text-uppercase" id="yesbutton">
+  <button type="submit" name="yes" class=" ssp-btn btn ssp-btn__action ssp-btns-container--btn__left text-uppercase" id="yesbutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
   </button>
 </form>
@@ -203,12 +203,12 @@ foreach ($this->data['noData'] as $name => $value) {
       '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-  <button type="submit" class="b-btn b-btn__cancel btn b-btns-container--btn__right text-uppercase" name="no" id="nobutton">
+  <button type="submit" class="ssp-btn ssp-btn__cancel btn ssp-btns-container--btn__right text-uppercase" name="no" id="nobutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
   </button>
 </form>
-</div> <!-- /b-btns-container -->
-</div> <!-- /b-content-group -->
+</div> <!-- /ssp-btns-container -->
+</div> <!-- /ssp-content-group -->
 </div> <!-- /row -->
 <?php
 $this->includeAtTemplateBase('includes/footer.php');
