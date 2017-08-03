@@ -81,7 +81,6 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     text-transform: none!important;
     font-weight: 300;
-    // margin-top: 30px;
 }
 
 h4 {
@@ -120,14 +119,11 @@ h4 {
 
 .b-btns-container {
     text-align: center;
-    @at-root &--checkbox {
-        margin: 3em 1em 2em 1em
-    }
     @at-root &--btn__right {
-        margin-left: 1em;
+        margin-left: 12px;
     }
     @at-root &--btn__left {
-        margin-right: 1em;
+        margin-right: 12px;
     }
 }
 
@@ -195,8 +191,8 @@ h4 {
 }
 
 .b-dropdown__two_cols {
-    width: 32rem;
-    padding: px2rem(5px);
+    width: 320px;
+    padding: 6px;
     @at-root &--item {
         width: 50%;
         float: left;
@@ -210,7 +206,7 @@ h4 {
 
 .b-form-favourite {
     display: inline-block;
-    padding-left: 1rem;
+    padding-left: 18px;
 }
 
 .b-content-group {
@@ -220,7 +216,7 @@ h4 {
         overflow: scroll;
         &--edugain {
             padding-left: 42px;
-            height: 17rem;
+            height: 170px;
             margin-top: $panel-body-padding;
             a {
                 display: block;
@@ -243,7 +239,7 @@ h4 {
 }
 
 .b-attrs--container {
-    height: 30rem;
+    height: 300px;
     overflow: scroll;
     padding: 16px;
     margin-bottom: 29px;
