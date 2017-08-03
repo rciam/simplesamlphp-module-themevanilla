@@ -11,9 +11,6 @@
 // Variables
 
 $footer-height: 68px;
-$gray-providers: #f7f7f7;
-$gray-header: #5b5b5b;
-$gray-light-header: #90929D;
 
 
 // Overall
@@ -34,12 +31,8 @@ html {
 
 *:focus {
     outline: none !important;
-    border:1px solid $gray-lighter2 !important;
-    box-shadow: 0 0 10px $brand-primary !important;
-}
-
-::-webkit-input-placeholder {
-  color: $placeholder;
+    border:1px solid $silver !important;
+    box-shadow: 0 0 10px $focus-shadow !important;
 }
 
 
@@ -68,7 +61,7 @@ h2 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     text-transform: none!important;
-    color: $gray-header;
+    color: $scorpion;
     margin-bottom: 0px;
 }
 
@@ -77,7 +70,7 @@ h2 small {
     display: block;
     font-size: 14px;
     line-height: 1.4;
-    color: $gray-light-header;
+    color: $manatee;
     text-transform: none;
     letter-spacing: 0;
     font-style: italic;
@@ -105,10 +98,16 @@ h4 {
     bottom: 0;
     height: $footer-height;
     width: 100%;
-    background: $btn-primary;
-    color: $white;
+    background: $footer-bg;
+    color: $footer-text;
     font-weight: 300;
     padding: 16px;
+    a {
+        color: $footer-link;
+        &:hover {
+            color: darken($footer-link, 10%);
+        }
+    }
 }
 
 .b-lang-container {
@@ -144,18 +143,18 @@ h4 {
         margin-left: 12px;
     }
     @at-root &__action {
-        background-color: $btn-primary;
+        background-color: $btn-action;
         color: $white;
         border-color: transparent;
         &:focus, &:active {
-            background-color: $btn-primary;
+            background-color: $btn-action;
             color: $white;
             border-color: transparent;
         }
         &:hover {
             background-color: $white;
-            color: darken($btn-primary, 10%);
-            border-color: $btn-primary;
+            color: darken($btn-action, 10%);
+            border-color: $btn-action;
         }
     }
     @at-root &__cancel {
@@ -175,12 +174,11 @@ h4 {
     }
     @at-root &__footer {
         background-color: transparent;
-        color: $white;
+        color: $btn-footer;
         border-color: transparent;
         &:hover {
-            color: $white;
-            border-color: $white;
-
+            color: $btn-footer;
+            border-color: $btn-footer;
         }
     }
     &--round-icon {
@@ -229,7 +227,7 @@ h4 {
                 position: relative;
                 padding: 6px 12px;
                 &:hover {
-                    background-color: $gray-providers;
+                    background-color: $alabaster;
                 }
             }
         }
@@ -254,7 +252,7 @@ h4 {
 .b-table {
     margin-bottom: 0px;
     @at-root &--tr__odd {
-        background-color: $gray-lighter3;
+        background-color: lighten($alabaster, 1%);
     }
     @at-root &--attrname {
         width: 300px;

@@ -1,20 +1,18 @@
-$brand-top-bottom: #fff;
-$panel-heading-bg-color: #fff;
-$panel-heading-border: none;
+// Colors
+// Color names from: http://chir.ag/projects/name-that-color
 
-// colors for experiments
-
-$brand-primary: #56bdb9;
-$brand-text: #199F9A;
-$footer-bg: $brand-primary;
-$gray-lighter2: #cdc9c9;
-$gray-lighter3: #fafafa;
-$link-color: #1f5481 !global;
-
-$placeholder: $brand-primary;
-
-$table-border-color: transparent;
-$btn-primary: #68b8b3;
+$tradewind: #68b8b3; //green blue
 $white: #fff;
-$link-color: #0d6fcc;
-$container-lg: 970px;;
+$denim: #0d6fcc;
+
+// Gray
+$alabaster: #f7f7f7;
+$silver: #cdc9c9;
+$scorpion: #5b5b5b;
+$manatee: #90929D;
+
+// Bootstrap variables
+$link-color: $denim;
+$table-border-color: transparent;
+$container-lg: 970px;
+
