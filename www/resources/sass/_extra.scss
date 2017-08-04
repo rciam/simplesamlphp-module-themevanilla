@@ -111,6 +111,12 @@ h4 {
     left: 30px;
 }
 
+@media screen and (max-width: 600px) {
+    .ssp-lang-container {
+        position: static;;
+    }
+}
+
 
 // Buttons
 
@@ -124,7 +130,6 @@ $btn-distance: 12px;
         margin-right: $btn-distance;
     }
 }
-
 
 .ssp-btn {
     @extend .font-smooth;
