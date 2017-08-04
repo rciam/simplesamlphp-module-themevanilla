@@ -63,7 +63,7 @@ h2 {
     font-weight: $header-font-weight;
     text-transform: none!important;
     color: $scorpion;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 
@@ -252,7 +252,7 @@ $btn-distance: 12px;
 }
 
 .ssp-table {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     @at-root &--tr__odd {
         background-color: lighten($alabaster, 1%);
     }
@@ -270,7 +270,7 @@ $btn-distance: 12px;
         word-break: break-word;
         @at-root &--list--item {
             border-bottom: 1px solid $gray-lighter;
-            padding: 6px 0px;
+            padding: 6px 0;
         }
     }
 }
