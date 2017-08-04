@@ -172,6 +172,9 @@ h4 {
         background-color: transparent;
         color: $btn-footer;
         border-color: transparent;
+        &:focus, &:active {
+            color: $btn-footer;
+        }
         &:hover {
             color: $btn-footer;
             border-color: $btn-footer;
@@ -251,7 +254,7 @@ h4 {
         background-color: lighten($alabaster, 1%);
     }
     @at-root &--attrname {
-        width: 300px;
+        width: 35%;
         overflow: hidden;
         float: left;
         word-break: break-word;
