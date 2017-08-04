@@ -1,9 +1,10 @@
-$btn-action: $tradewind;
-$focus-shadow: $tradewind;
+// background color pf primary button
+$btn-action: $tradewind; // #68b8b3
 
 $footer-bg: $tradewind;
-$footer-text: $white;
-$footer-link: $link-color;
+$footer-text: $white; // #fff
+$footer-link: $link-color; // #0d6fcc
+// text and border color of button that is in the footer
 $btn-footer: $white;
 
 $logo-height: 60px;
