@@ -8,11 +8,6 @@
  */
 
 
-// Variables
-
-$footer-height: 68px;
-
-
 // Overall
 
 .font-smooth {
@@ -20,13 +15,18 @@ $footer-height: 68px;
     -moz-osx-font-smoothing:grayscale;
 }
 
-body {
-    margin-bottom: $footer-height;
+html, body {
+    height: 100%;
 }
 
-html {
-    min-height: 100%;
-    position: relative;
+body {
+    display: table;
+    width: 100%;
+    margin: 0;
+}
+
+.header, .footer {
+    display: table-row;
 }
 
 *:focus {
@@ -94,10 +94,6 @@ h4 {
 
 .ssp-footer {
     @extend .font-smooth;
-    position: absolute;
-    bottom: 0;
-    height: $footer-height;
-    width: 100%;
     background: $footer-bg;
     color: $footer-text;
     font-weight: 300;
@@ -248,7 +244,7 @@ $btn-distance: 12px;
     height: 300px;
     overflow: scroll;
     padding: 16px;
-    margin-bottom: 29px;
+    margin-bottom: 32px;
 }
 
 .ssp-table {

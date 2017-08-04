@@ -122,7 +122,7 @@ if($onLoad !== '') {
 ?>
 <body<?php echo $onLoad; ?>>
 
-<div id="header">
+<div class="header">
   <h1 class="text-center">
     <a href="https://www.openaire.eu/">
       <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
