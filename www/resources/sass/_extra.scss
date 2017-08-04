@@ -39,12 +39,13 @@ html {
 // Headings
 // No use of bem, when we want to override every instance of them
 
+$header-font-weight: 300;
 h1 {
     a:hover {
         text-decoration: none;
     }
     img {
-       height: 60px;
+       height: $logo-height;
     }
 
     .ssp-h1__link--right {
@@ -59,7 +60,7 @@ h1 {
 
 h2 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-weight: $header-font-weight;
     text-transform: none!important;
     color: $scorpion;
     margin-bottom: 0px;
@@ -80,12 +81,12 @@ h2 small {
 h3 {
     font-family: 'Open Sans', sans-serif;
     text-transform: none!important;
-    font-weight: 300;
+    font-weight: $header-font-weight;
 }
 
 h4 {
     text-transform: none!important;
-    font-weight: 300;
+    font-weight: $header-font-weight;
 }
 
 
@@ -117,13 +118,14 @@ h4 {
 
 // Buttons
 
+$btn-distance: 12px;
 .ssp-btns-container {
     text-align: center;
     @at-root &--btn__right {
-        margin-left: 12px;
+        margin-left: $btn-distance;
     }
     @at-root &--btn__left {
-        margin-right: 12px;
+        margin-right: $btn-distance;
     }
 }
 
@@ -180,15 +182,16 @@ h4 {
             border-color: $btn-footer;
         }
     }
+    $img-height: 36px;
     &--round-icon {
         padding: 0;
         display: inline-block;
-        margin-right: 24px;
-        margin-top: 6px;
-        border-radius: 19px;
+        margin-right: $btn-distance*2;
+        margin-top: $btn-distance/2;
+        border-radius: $img-height/2;
         img {
-            height: 36px;
-            border-radius: 19px;
+            height: $img-height;
+            border-radius: $img-height/2;
         }
 }
 }
