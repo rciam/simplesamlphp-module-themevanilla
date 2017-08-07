@@ -54,7 +54,7 @@ if(array_key_exists('header', $this->data)) {
 ?></title>
 
   <link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/css/app.css')); ?>" />
-  <link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/favicon-16x16.png')); ?>"  />
+  <link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/favicon-16x16.png')); ?>"  />
 
 <?php
 
@@ -125,10 +125,10 @@ if($onLoad !== '') {
 <div class="header">
   <h1 class="text-center">
     <a href="https://www.openaire.eu/">
-      <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_horizontal.png'); ?>" alt="OpenAIRE" />
+      <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_horizontal.png'); ?>" alt="OpenAIRE" />
     </a>
     <a class="ssp-h1__link--right" href="openminted.eu">
-      <img class="ssp-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/icons/logo_openminted.png'); ?>" alt="OpenMinTeD" />
+      <img class="ssp-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_openminted.png'); ?>" alt="OpenMinTeD" />
     </a>
   </h1>
   <h2 class="text-center">
