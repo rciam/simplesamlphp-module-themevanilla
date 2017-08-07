@@ -136,6 +136,7 @@ if($onLoad !== '') {
     <small>Use the same credentials for all our services</small>
   </h2>
 </div> <!-- /header -->
+<div class="ssp-container" id="content">
 <div class="container" id="content">
 
 

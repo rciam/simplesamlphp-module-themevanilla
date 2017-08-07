@@ -25,14 +25,20 @@ body {
     margin: 0;
 }
 
-.header, .footer {
+.header, .ssp-footer {
     display: table-row;
+    height: 1px;
 }
 
 *:focus {
     outline: none !important;
     border:1px solid $silver !important;
     box-shadow: 0 0 10px $btn-action !important;
+}
+
+.ssp-container {
+    display: table-row;
+    height: auto;
 }
 
 
@@ -97,7 +103,9 @@ h4 {
     background: $footer-bg;
     color: $footer-text;
     font-weight: 300;
-    padding: 16px;
+    &--container {
+        padding: 16px;
+    }
     a {
         color: $footer-link;
         &:hover {
@@ -220,10 +228,11 @@ $btn-distance: 12px;
     margin-bottom: 6px;
     padding: 6px 42px;
     &__provider-list {
-        overflow: scroll;
+        overflow: auto;
         &--edugain {
             padding-left: 42px;
-            height: 170px;
+            padding-right: 6px;
+            height: 23vh;
             margin-top: $panel-body-padding;
             a {
                 display: block;
@@ -246,8 +255,8 @@ $btn-distance: 12px;
 }
 
 .ssp-attrs--container {
-    height: 300px;
-    overflow: scroll;
+    height: 43vh;
+    overflow: auto;
     padding: 16px;
     margin-bottom: 32px;
 }

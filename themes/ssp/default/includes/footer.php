@@ -7,8 +7,9 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 }
 ?>
   </div><!-- /container -->
+  </div><!-- /container -->
   <footer class="ssp-footer text-center">
-    <div class="container-fluid">
+    <div class="container-fluid ssp-footer--container">
 
 <?php
 
