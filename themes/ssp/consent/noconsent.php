@@ -17,22 +17,22 @@ $this->data['header'] = $this->t('{consent:consent:noconsent_title}');;
 
 $this->includeAtTemplateBase('includes/header.php');
 
-echo '<h2>' . $this->data['header'] . '</h2>';
+echo '<h3>' . $this->data['header'] . '</h3>';
 echo '<p>' . $this->t('{consent:consent:noconsent_text}', array('SPNAME' => $dstName)) . '</p>';
 
+echo '<div class="ssp-btns-container">';
 if ($this->data['resumeFrom']) {
-    echo('<p><a href="' . htmlspecialchars($this->data['resumeFrom']) . '">');
+    echo('<a href="' . htmlspecialchars($this->data['resumeFrom']) . '" class="ssp-btn btn ssp-btn__action ssp-btns-container--btn__left text-uppercase">');
     echo($this->t('{consent:consent:noconsent_return}'));
-    echo('</a></p>');
+    echo('</a>');
 }
 
 if ($this->data['aboutService']) {
-    echo('<p><a href="' . htmlspecialchars($this->data['aboutService']) . '">');
+    echo('<a href="' . htmlspecialchars($this->data['aboutService']) . '" class="ssp-btn btn text-uppercase">');
     echo($this->t('{consent:consent:noconsent_goto_about}'));
-    echo('</a></p>');
+    echo('</a>');
 }
-
-echo('<p><a href="' . htmlspecialchars($this->data['logoutLink']) . '">' . $this->t('{consent:consent:abort}', array('SPNAME' => $dstName)) . '</a></p>');
-
+echo('<a href="' . htmlspecialchars($this->data['logoutLink']) . '" class="ssp-btn btn ssp-btn__warning text-uppercase ssp-btns-container--btn__right">' . $this->t('{consent:consent:abort}', array('SPNAME' => $dstName)) . '</a>');
+echo '</div>'; //ssp-btns-container
 
 $this->includeAtTemplateBase('includes/footer.php');

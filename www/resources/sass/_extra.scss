@@ -128,17 +128,8 @@ h4 {
 
 // Buttons
 
+$margin-btn: 2px;
 $btn-distance: 12px;
-.ssp-btns-container {
-    text-align: center;
-    @at-root &--btn__right {
-        margin-left: $btn-distance;
-    }
-    @at-root &--btn__left {
-        margin-right: $btn-distance;
-    }
-}
-
 .ssp-btn {
     @extend .font-smooth;
     letter-spacing: 1px;
@@ -146,6 +137,8 @@ $btn-distance: 12px;
     padding: 12px 18px;
     line-height: 1.4;
     border-radius: 0;
+    border: 1px solid;
+    margin: $margin-btn;
     .caret {
         margin-left: 12px;
     }
@@ -179,6 +172,21 @@ $btn-distance: 12px;
             border-color: $gray-light;
         }
     }
+    @at-root &__warning {
+        background-color: $btn-warning;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $btn-warning;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: $btn-warning;
+            border-color: $btn-warning;
+        }
+    }
     @at-root &__footer {
         background-color: transparent;
         color: $btn-footer;
@@ -204,6 +212,17 @@ $btn-distance: 12px;
         }
 }
 }
+
+.ssp-btns-container {
+    text-align: center;
+    @at-root &--btn__right.ssp-btn {
+        margin-left:  $btn-distance;
+    }
+    @at-root &--btn__left.ssp-btn {
+        margin-right: $btn-distance;
+    }
+}
+
 
 .ssp-dropdown__two_cols {
     width: 320px;
