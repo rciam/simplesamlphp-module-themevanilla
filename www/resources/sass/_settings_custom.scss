@@ -1,9 +1,9 @@
 // background color of primary button
-$btn-action: $tradewind; // #68b8b3
-$btn-warning: $carrot-orange;
-$footer-bg: $tradewind;
-$footer-text: $white; // #fff
-$footer-link: $link-color; // #0d6fcc
+$btn-action: $curious-blue; // #349bdb
+$btn-warning: $carrot-orange; // #ec971f
+$footer-bg: $white;
+$footer-text: $black;
+$footer-link: darken($link-color, 10%); // #349bdb
 // text and border color of button that is in the footer
 $btn-footer-text: $black;
 $btn-footer-border: $silver; // #cdc9c9
