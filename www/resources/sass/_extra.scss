@@ -209,14 +209,14 @@ $btn-distance: 12px;
     }
     @at-root &__footer {
         background-color: transparent;
-        color: $btn-footer;
+        color: $btn-footer-text;
         border-color: transparent;
         &:focus, &:active {
-            color: $btn-footer;
+            color: $btn-footer-text;
         }
         &:hover {
-            color: $btn-footer;
-            border-color: $btn-footer;
+            color: $btn-footer-text;
+            border-color: $btn-footer-border;
         }
     }
     $btn-img-height: 36px;
