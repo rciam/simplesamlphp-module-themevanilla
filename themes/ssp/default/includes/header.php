@@ -45,16 +45,13 @@ header('X-Frame-Options: SAMEORIGIN');
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 <script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/script.js"></script>
-<title>OpenMinTeD SSO | <?php
-if(array_key_exists('header', $this->data)) {
-  echo $this->data['header'];
-} else {
-  echo 'SimpleSAMLphp';
-}
-?></title>
+<title>
+  SimpleSAMLphp
+  <?php if(array_key_exists('header', $this->data)) { echo (' | ' . $this->data['header']); } ?>
+</title>
 
-  <link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/css/app.css')); ?>" />
-  <link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/favicon-16x16.png')); ?>"  />
+<link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/css/app.css')); ?>" />
+<link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/favicon.png')); ?>"  />
 
 <?php
 
@@ -124,11 +121,8 @@ if($onLoad !== '') {
 
 <div class="header">
   <div class="text-center ssp-logo">
-    <a href="https://www.openaire.eu/">
-      <img src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/logo_horizontal.png'); ?>" alt="OpenAIRE" />
-    </a>
-    <a class="ssp-logo__link--right" href="http://openminted.eu/">
-      <img class="ssp-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/logo_openminted.png'); ?>" alt="OpenMinTeD" />
+    <a href="https://simplesamlphp.org/">
+      <img src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
     </a>
   </div>
   <h1 class="text-center">
