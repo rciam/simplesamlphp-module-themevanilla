@@ -51,10 +51,6 @@ $this->data['head'] .= '<script type="text/javascript">
 
 </script>';
 
-
-
-
-
 if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 
 $this->includeAtTemplateBase('includes/header.php');
@@ -71,9 +67,9 @@ function showEntry($t, $metadata, $favourite = FALSE) {
 
 
   if(in_array($namelower, $providersOnlyIcon)) {
-    $html = '<a class="metaentry ssp-btn--round-icon" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/' . $namelower . '.jpg') . '" />';
-    $html .= '</a>';
+    $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $namelower . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/' . $namelower . '.svg') . '" />';
+    $html .= getTranslatedName($t, $metadata) . '</a>';
   }
   else {
     $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';

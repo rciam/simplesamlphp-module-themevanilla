@@ -219,7 +219,7 @@ $btn-distance: 12px;
             border-color: $btn-footer-border;
         }
     }
-    $btn-img-height: 36px;
+    $btn-img-height: 24px;
     $btn-img-copy-height: 20px;
     &--round-icon {
         padding: 0;
@@ -235,6 +235,38 @@ $btn-distance: 12px;
     &--copy {
         img {
             height: $btn-img-copy-height;
+        }
+    }
+    &__icon-with-label {
+        color: $white;
+        display: inline-block;
+        position: relative;
+        padding: 6px;
+        background-color: $denim;
+        margin-right: 18px;
+        border: 1px solid;
+        &:hover, &:focus {
+            color: $white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        img {
+            height: $btn-img-height;
+            margin-right: 12px
+        }
+        &.google {
+            background-color: $google;
+        }
+        &.orcid {
+            color: darken($orcid, 10%);
+            background-color: $white;
+            border: 1px solid $orcid;
+        }
+        &.linkedin {
+            background-color: $linkedin;
+        }
+        &.facebook {
+            background-color: $facebook;
         }
     }
 }
@@ -283,11 +315,6 @@ $btn-distance: 12px;
         }
         &--other {
             padding: 2px 6px 2px 54px;
-            a {
-                display: inline-block;
-                position: relative;
-                padding: 0;
-            }
         }
     }
 }
