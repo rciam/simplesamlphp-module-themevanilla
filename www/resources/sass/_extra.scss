@@ -46,7 +46,8 @@ body {
 // No use of bem, when we want to override every instance of them
 
 $header-font-weight: 300;
-h1 {
+.ssp-logo {
+    margin-top: 20px; // as h1, h2, etc...
     a:hover {
         text-decoration: none;
     }
@@ -54,7 +55,7 @@ h1 {
        height: $logo-height;
     }
 
-    .ssp-h1__link--right {
+    .ssp-logo__link--right {
         margin-left: 20px;
     }
 
@@ -64,16 +65,17 @@ h1 {
     }
 }
 
-h2 {
+h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: $header-font-weight;
+    font-size: 30px;
     text-transform: none!important;
     color: $scorpion;
     margin-bottom: 0;
 }
 
 
-h2 small {
+h1 small {
     display: block;
     font-size: 14px;
     line-height: 1.4;
@@ -84,17 +86,22 @@ h2 small {
     font-family: 'Open Sans';
 }
 
-h3 {
+h2 {
     font-family: 'Open Sans', sans-serif;
-    text-transform: none!important;
     font-weight: $header-font-weight;
+    font-size: 22px;
+    text-transform: none!important;
+}
+
+h3 {
+    font-weight: $header-font-weight;
+    font-size: 18px;
+    text-transform: none!important;
 }
 
 h4 {
-    text-transform: none!important;
-    font-weight: $header-font-weight;
+    font-size: 16px;
 }
-
 
 // Bottom
 

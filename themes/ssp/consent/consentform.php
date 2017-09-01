@@ -158,11 +158,11 @@ function present_attributes($t, $attributes, $nameParent)
     return $str;
 }
 
- echo '<h3 class="text-center">' .
+ echo '<h2 class="text-center">' .
       $this->t(
         '{consent:consent:consent_accept}',
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
-      '</h3>
+      '</h2>
       <div class="row">
           <div class="col-sm-12 ssp-content-group">';
 ?>

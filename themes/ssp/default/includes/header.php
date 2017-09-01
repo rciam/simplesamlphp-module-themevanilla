@@ -123,18 +123,18 @@ if($onLoad !== '') {
 <body<?php echo $onLoad; ?>>
 
 <div class="header">
-  <h1 class="text-center">
+  <div class="text-center ssp-logo">
     <a href="https://www.openaire.eu/">
       <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_horizontal.png'); ?>" alt="OpenAIRE" />
     </a>
-    <a class="ssp-h1__link--right" href="openminted.eu">
+    <a class="ssp-logo__link--right" href="openminted.eu">
       <img class="ssp-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_openminted.png'); ?>" alt="OpenMinTeD" />
     </a>
-  </h1>
-  <h2 class="text-center">
+  </div>
+  <h1 class="text-center">
     Welcome to our Single Sign-On service
     <small>Use the same credentials for all our services</small>
-  </h2>
+  </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">
 <div class="container" id="content">
