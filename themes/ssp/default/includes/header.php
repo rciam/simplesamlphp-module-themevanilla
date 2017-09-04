@@ -127,7 +127,7 @@ if($onLoad !== '') {
     <a href="https://www.openaire.eu/">
       <img src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_horizontal.png'); ?>" alt="OpenAIRE" />
     </a>
-    <a class="ssp-logo__link--right" href="openminted.eu">
+    <a class="ssp-logo__link--right" href="http://openminted.eu/">
       <img class="ssp-logo-openminted" src="<?php echo SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/images/logo_openminted.png'); ?>" alt="OpenMinTeD" />
     </a>
   </div>
