@@ -219,18 +219,24 @@ $btn-distance: 12px;
             border-color: $btn-footer;
         }
     }
-    $img-height: 36px;
+    $btn-img-height: 36px;
+    $btn-img-copy-height: 20px;
     &--round-icon {
         padding: 0;
         display: inline-block;
         margin-right: $btn-distance*2;
         margin-top: $btn-distance/2;
-        border-radius: $img-height/2;
+        border-radius: $btn-img-height/2;
         img {
-            height: $img-height;
-            border-radius: $img-height/2;
+            height: $btn-img-height;
+            border-radius: $btn-img-height/2;
         }
-}
+    }
+    &--copy {
+        img {
+            height: $btn-img-copy-height;
+        }
+    }
 }
 
 .ssp-btns-container {

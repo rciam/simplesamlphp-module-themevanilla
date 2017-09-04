@@ -1,5 +1,6 @@
 <?php
 $this->data['header'] = $this->t($this->data['dictTitle']);
+$this->data['jquery'] = array('core' => TRUE);
 
 $this->data['head'] = <<<EOF
 <meta name="robots" content="noindex, nofollow" />
@@ -19,12 +20,15 @@ if (isset($this->data['includeTemplate'])) {
 ?>
     <div class="trackidtext">
         <p><?php echo $this->t('report_trackid'); ?></p>
-        <div class="input-group" style="width: 1em;">
-            <pre id="trackid" class="input-left"><?php echo $this->data['error']['trackId']; ?></pre>
-            <button data-clipboard-target="#trackid" id="btntrackid" class="btnaddonright">
-                <img src="/<?php echo $this->data['baseurlpath'].'resources/icons/clipboard.svg'; ?>"
-                     alt="Copy to clipboard" />
+        <div class="input-group">
+          <input class="form-control" type="text" readonly id="trackid" value="<?php echo $this->data['error']['trackId']; ?>">
+          <span class="input-group-btn" aria-hidden="true">
+            <button data-clipboard-target="#trackid" id="btntrackid" class="btn btn-default ssp-btn--copy">
+              <img src="/<?php echo $this->data['baseurlpath'].'resources/icons/clipboard.svg'; ?>"
+                   alt="Copy to clipboard" />
             </button>
+          </span>
+
         </div>
     </div>
 <?php
