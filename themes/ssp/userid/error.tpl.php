@@ -1,5 +1,6 @@
 <?php
 $this->data['header'] = $this->t('{userid:error:header}');
+$this->data['jquery'] = array('core' => TRUE);
 
 $this->data['head'] = <<<EOF
 <meta name="robots" content="noindex, nofollow" />
