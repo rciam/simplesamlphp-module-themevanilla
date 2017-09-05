@@ -15,30 +15,26 @@
     -moz-osx-font-smoothing:grayscale;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
-    display: table;
     width: 100%;
     margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ssp-container {
+    flex: 1;
 }
 
 .header, .ssp-footer {
-    display: table-row;
-    height: 1px;
+    flex: none;
 }
 
 *:focus {
     outline: none !important;
     border:1px solid $silver !important;
     box-shadow: 0 0 10px $btn-action !important;
-}
-
-.ssp-container {
-    display: table-row;
-    height: auto;
 }
 
 
