@@ -94,5 +94,8 @@ if ($includeLanguageBar) {
   <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/dropdown.js')); ?>">
   </script>
+  <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/theme.js')); ?>">
+  </script>
 </body>
 </html>
