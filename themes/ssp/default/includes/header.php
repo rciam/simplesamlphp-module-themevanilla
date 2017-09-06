@@ -137,7 +137,7 @@ if($onLoad !== '') {
   </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">
-<div class="container" id="content">
+<div class="container">
 
 
 <?php

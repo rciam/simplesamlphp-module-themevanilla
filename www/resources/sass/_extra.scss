@@ -165,19 +165,19 @@ $btn-distance: 12px;
             border-color: $btn-action;
         }
     }
-    @at-root &__cancel {
-        background-color: $gray-light;
+    @at-root &__secondary {
+        background-color: $mouse;
         color: $white;
         border-color: transparent;
         &:focus, &:active {
-            background-color: $gray-light;
+            background-color: $mouse;
             color: $white;
             border-color: transparent;
         }
         &:hover {
             background-color: $white;
             color: $gray;
-            border-color: $gray-light;
+            border-color: $mouse;
         }
     }
     @at-root &__warning {
@@ -246,11 +246,6 @@ $btn-distance: 12px;
 
 // Content
 
-.ssp-form-favourite {
-    display: inline-block;
-    padding-left: 18px;
-}
-
 .ssp-content-group {
     margin-bottom: 6px;
     padding: 6px 42px;
@@ -310,4 +305,14 @@ $btn-distance: 12px;
             padding: 6px 0;
         }
     }
+}
+
+.ssp-or {
+    font-size: 22px;
+    color: $manatee;
+    margin: 15px;
+}
+
+body .ssp-modal-body {
+    padding: 30px;
 }

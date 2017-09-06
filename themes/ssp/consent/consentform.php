@@ -203,7 +203,7 @@ foreach ($this->data['noData'] as $name => $value) {
       '" value="' . htmlspecialchars($value) . '" />');
 }
 ?>
-  <button type="submit" class="ssp-btn ssp-btn__cancel btn ssp-btns-container--btn__right text-uppercase" name="no" id="nobutton">
+  <button type="submit" class="ssp-btn ssp-btn__secondary btn ssp-btns-container--btn__right text-uppercase" name="no" id="nobutton">
       <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
   </button>
 </form>

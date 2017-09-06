@@ -7,7 +7,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 }
 ?>
   </div><!-- /container -->
-  </div><!-- /container -->
+  </div><!-- /ssp-container -->
   <footer class="ssp-footer text-center">
     <div class="container-fluid ssp-footer--container">
 
@@ -95,7 +95,11 @@ if ($includeLanguageBar) {
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/dropdown.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/theme.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/modal.js')); ?>">
   </script>
+  <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/theme.js')); ?>">
+  </script>
+
 </body>
 </html>

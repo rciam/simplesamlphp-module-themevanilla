@@ -106,29 +106,33 @@ function getTranslatedName($t, $metadata) {
 
 
 if (!empty($faventry)) {
-
-
-  echo('<div class="row favourite ssp-content-group">');
-  echo('<div class="col-sm-12">');
-  echo($this->t('previous_auth'));
-  echo(' <strong>' . htmlspecialchars(getTranslatedName($this, $faventry)) . '</strong>');
   echo('
-  <form id="idpselectform" method="get" action="' . $this->data['urlpattern'] . '" class="ssp-form-favourite">
-    <input type="hidden" name="entityID" value="' . htmlspecialchars($this->data['entityID']) . '" />
-    <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
-    <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
-    <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-    <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action btn text-uppercase" value="' . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
-  </form>');
-
-  echo('</div>'); // /ssp-content-group
-  echo('</div>'); // /row
+    <div class="modal fade" id="favourite-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title">Login</h2>
+          </div>
+          <div class="modal-body ssp-modal-body">
+            <div class="row text-center">
+              <form id="idpselectform" method="get" action="' . $this->data['urlpattern'] . '" class="ssp-form-favourite">
+                <input type="hidden" name="entityID" value="' . htmlspecialchars($this->data['entityID']) . '" />
+                <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
+                <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
+                <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
+                <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action btn text-uppercase" value="'
+                  . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+              </form>
+            </div>
+            <div class="row text-center ssp-or">or</div>
+            <div class="row text-center"><button class="btn ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">Choose an other account</button></div>
+          </div> <!-- /modal-body -->
+        </div> <!-- /modal-content -->
+      </div> <!-- /modal-dialog -->
+    </div> <!-- /modal -->
+  ');
 }
-
-
-?>
-
-<?php
 
 $top = '<div class="row ssp-content-group">
       <div class="col-sm-12">';
