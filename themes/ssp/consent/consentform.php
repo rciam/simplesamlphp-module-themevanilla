@@ -1,3 +1,19 @@
+<div id="loader">
+  <div class="sk-circle">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
+  </div>
+</div>
 <?php
 /**
  * Template form for giving consent.
@@ -87,7 +103,7 @@ function present_attributes($t, $attributes, $nameParent)
         $str = '<div class="ssp-attrs--container"><table class="table" ' . $summary . '>';
     } else {
         $parentStr = '';
-        $str = '<div class="ssp-attrs--container"><table id="table_with_attributes"  class="table" '. $summary .'>';
+        $str = '<div class="ssp-attrs--container js-spread"><table id="table_with_attributes"  class="table" '. $summary .'>';
     }
 
     foreach ($attributes as $name => $value) {
@@ -163,14 +179,14 @@ function present_attributes($t, $attributes, $nameParent)
         '{consent:consent:consent_accept}',
           array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)).
       '</h2>
-      <div class="row">
-          <div class="col-sm-12 ssp-content-group">';
+      <div class="row js-spread">
+          <div class="col-sm-12 ssp-content-group js-spread">';
 ?>
 
 <?php
 echo present_attributes($this, $attributes, '');
 ?>
-<form style="display: inline; margin: 0px; padding: 0px"
+<form style="margin-bottom: 32px; padding: 0px"
     action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
 <div class="ssp-btns-container">
 <p class"ssp-btns-container--checkbox>

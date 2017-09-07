@@ -42,8 +42,9 @@ body {
 // No use of bem, when we want to override every instance of them
 
 $header-font-weight: 300;
+$headers_margin_top: 10px;
 .ssp-logo {
-    margin-top: 20px; // as h1, h2, etc...
+    margin-top: $headers_margin_top;
     a {
         display: inline-block;
         padding: 10px;
@@ -101,6 +102,9 @@ h3 {
 
 h4 {
     font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: $headers_margin_top;
 }
 
 // Bottom
@@ -248,7 +252,7 @@ $btn-distance: 12px;
 
 .ssp-content-group {
     margin-bottom: 6px;
-    padding: 6px 42px;
+    padding: 12px 42px;
     &__provider-list {
         overflow: auto;
         &--edugain {
@@ -266,7 +270,7 @@ $btn-distance: 12px;
             }
         }
         &--other {
-            padding-left: 54px;
+            padding: 2px 6px 2px 54px;
             a {
                 display: inline-block;
                 position: relative;
@@ -277,7 +281,7 @@ $btn-distance: 12px;
 }
 
 .ssp-attrs--container {
-    height: 43vh;
+    height: 34vh;
     overflow: auto;
     padding: 16px;
     margin-bottom: 32px;

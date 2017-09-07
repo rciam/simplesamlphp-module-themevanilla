@@ -1,3 +1,19 @@
+<div id="loader">
+  <div class="sk-circle">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
+  </div>
+</div>
 <?php
 
 $faventry = NULL;
@@ -146,8 +162,8 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
   if ($tab !== 'all') {
     if (!empty($slist)) {
       if($tab == 'edugain') {
-        echo '<div class="row ssp-content-group">
-                <div class="col-sm-12">
+        echo '<div class="row ssp-content-group js-spread">
+                <div class="col-sm-12 js-spread">
                   <h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
                 <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
@@ -155,7 +171,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
                 . $tab
                 . '" id="query_' . $tab . '" /></form>'
                 . '</div> <!-- /input-group -->
-                <div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--edugain" id="list_'
+                <div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--edugain js-spread" id="list_'
                 . $tab  . '">';
         if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
           $idpentry = $slist[$this->data['preferredidp']];
