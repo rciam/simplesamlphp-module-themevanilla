@@ -92,7 +92,7 @@ if ($includeLanguageBar) {
       </div> <!-- /container-fluid -->
   </footer>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('simplesamlphp-module-theme-openminted/resources/js/dropdown.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/dropdown.js')); ?>">
   </script>
 </body>
 </html>
