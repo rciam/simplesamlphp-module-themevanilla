@@ -11,16 +11,19 @@ $this->includeAtTemplateBase('includes/header.php');
 ?>
 <div class="row">
   <div class="col-sm-12">
-    <h2><?php echo $this->t('{userid:error:title}'); ?></h2>
-<?php
-  echo $this->t('{userid:error:descr_'.$this->data['errorCode'].'}', $this->data['parameters']);
-?>
+    <h2><?php echo $this->t('{themeopenminted:userid_error:friendly_title}'); ?></h2>
+    <p><?php echo $this->t('{themeopenminted:userid_error:friendly_description}'); ?></p>
+    <div class="text-center">
+      <a href="/" class="ssp-btn btn ssp-btn__action text-uppercase">
+        <?php echo $this->t('{themeopenminted:userid_error:go2disco}'); ?>
+      </a>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <h2>Error details</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...</p>
+    <h2><?php echo $this->t('{themeopenminted:userid_error:details_title}'); ?></h2>
+    <p><?php echo $this->t('{themeopenminted:userid_error:details_description}'); ?></p>
     <pre class="ssp-error-code">
       eduPersonUniqueId
       eduPersonPrincipalName
@@ -31,8 +34,8 @@ $this->includeAtTemplateBase('includes/header.php');
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <h2>How to get help</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <h2><?php echo $this->t('{themeopenminted:userid_error:contact_title}'); ?></h2>
+    <p><?php echo $this->t('{themeopenminted:userid_error:contact_description}'); ?></p>
   </div>
 </div>
 <?php
