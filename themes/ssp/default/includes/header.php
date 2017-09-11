@@ -126,8 +126,8 @@ if($onLoad !== '') {
     </a>
   </div>
   <h1 class="text-center">
-    Welcome to our Single Sign-On service
-    <small>Use the same credentials for all our services</small>
+    <?php echo $this->t('{themeopenminted:default:header_title}'); ?>
+    <small><?php echo $this->t('{themeopenminted:default:header_subtitle}'); ?></small>
   </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">
