@@ -25,6 +25,7 @@ body {
 
 .ssp-container {
     flex: 1;
+    margin-top: 12px;
 }
 
 .header, .ssp-footer {
@@ -263,7 +264,7 @@ $btn-distance: 12px;
             a {
                 display: block;
                 position: relative;
-                padding: 6px 12px;
+                padding: 5px 12px;
                 &:hover {
                     background-color: $alabaster;
                 }
