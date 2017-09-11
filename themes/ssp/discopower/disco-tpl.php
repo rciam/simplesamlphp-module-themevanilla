@@ -38,7 +38,7 @@ $this->data['head'] .= '<script type="text/javascript">
   $(document).ready(function() {';
     $i = 0;
     foreach ($this->data['idplist'] AS $tab => $slist) {
-  if ($tab !== 'all') {
+  if ($tab == 'all') {
       $this->data['head'] .= "\n" . '$("#query_' . $tab . '").liveUpdate("#list_' . $tab . '")' .
         (($i++ == 0) && (empty($faventry)) ? '.focus()' : '') . ';';
   }
@@ -55,7 +55,7 @@ if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 
 $this->includeAtTemplateBase('includes/header.php');
 
-function showEntry($t, $metadata, $favourite = FALSE) {
+function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
   $basequerystring = '?' .
     'entityID=' . urlencode($t->data['entityID']) . '&amp;' .
@@ -66,7 +66,7 @@ function showEntry($t, $metadata, $favourite = FALSE) {
   $namelower = strtolower(getTranslatedName($t, $metadata));
 
 
-  if(in_array($namelower, $providersOnlyIcon)) {
+  if($withIcon && in_array($namelower, $providersOnlyIcon)) {
     $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $namelower . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/' . $namelower . '.svg') . '" />';
     $html .= getTranslatedName($t, $metadata) . '</a>';
@@ -155,9 +155,8 @@ $providers = '';
 $close = '</div></div></div>'; // /metalist /ssp-content-group /row
 
 foreach( $this->data['idplist'] AS $tab => $slist) {
-  if ($tab !== 'all') {
     if (!empty($slist)) {
-      if($tab == 'edugain') {
+      if($tab == 'all') {
         echo '<div class="row ssp-content-group js-spread">
                 <div class="col-sm-12 js-spread">
                   <h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
@@ -186,12 +185,12 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $title = $this->t('{discopower:tabs:' . $tab . '}') . ' / ';
           if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
             $idpentry = $slist[$this->data['preferredidp']];
-            $providers .=  (showEntry($this, $idpentry, TRUE));
+            $providers .=  (showEntry($this, $idpentry, TRUE, TRUE));
           }
 
           foreach ($slist AS $idpentry) {
             if ($idpentry['entityid'] != $this->data['preferredidp']) {
-              $providers .= (showEntry($this, $idpentry));
+              $providers .= (showEntry($this, $idpentry, FALSE, TRUE));
             }
           }
         }
@@ -199,12 +198,12 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $title .= $this->t('{discopower:tabs:' . $tab . '}');
           if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
             $idpentry = $slist[$this->data['preferredidp']];
-            $providers .=  (showEntry($this, $idpentry, TRUE));
+            $providers .=  (showEntry($this, $idpentry, TRUE, TRUE));
           }
 
           foreach ($slist AS $idpentry) {
             if ($idpentry['entityid'] != $this->data['preferredidp']) {
-              $providers .= (showEntry($this, $idpentry));
+              $providers .= (showEntry($this, $idpentry, FALSE, TRUE));
             }
           }
           $title_html = '<h3>' . $title . '</h3>';
@@ -212,7 +211,6 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
         }
       }
     }
-  }
 
 }
 
