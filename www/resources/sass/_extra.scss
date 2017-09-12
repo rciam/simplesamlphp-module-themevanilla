@@ -301,8 +301,9 @@ $btn-distance: 12px;
     padding: 12px 42px;
     &__provider-list {
         overflow: auto;
-        &--edugain {
-            padding: 6px 6px 6px 42px;
+        &--all {
+            padding-left: 42px;
+            padding-right: 6px;
             height: 23vh;
             a {
                 display: block;

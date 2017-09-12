@@ -62,11 +62,10 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $providersOnlyIcon = array("google", "linkedin", "facebook", "orcid");
   $namelower = strtolower(getTranslatedName($t, $metadata));
 
 
-  if($withIcon && in_array($namelower, $providersOnlyIcon)) {
+  if($withIcon) {
     $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $namelower . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/' . $namelower . '.svg') . '" />';
     $html .= getTranslatedName($t, $metadata) . '</a>';
@@ -146,72 +145,57 @@ if (!empty($faventry)) {
   ');
 }
 
-$top = '<div class="row ssp-content-group">
-      <div class="col-sm-12">';
-$title = '';
-$title_html = '';
-$list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other" id="list_other">';
-$providers = '';
-$close = '</div></div></div>'; // /metalist /ssp-content-group /row
 
 foreach( $this->data['idplist'] AS $tab => $slist) {
-    if (!empty($slist)) {
-      if($tab == 'all') {
-        echo '<div class="row ssp-content-group js-spread">
-                <div class="col-sm-12 js-spread">
-                  <h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>
-                <div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-                <form id="idpselectform" action="?" method="get"><input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="query_'
-                . $tab
-                . '" id="query_' . $tab . '" /></form>'
-                . '</div> <!-- /input-group -->
-                <div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--edugain js-spread" id="list_'
-                . $tab  . '">';
-        if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
-          $idpentry = $slist[$this->data['preferredidp']];
-          echo (showEntry($this, $idpentry, TRUE));
-        }
+  if (!empty($slist)) {
+    if($tab == 'all') {
+      $top = '<div class="row ssp-content-group js-spread">
+                <div class="col-sm-12 js-spread">';
+      $title = '<h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>';
+      $search_name = 'query_' . $tab;
+      $search = '<div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                  <form id="idpselectform" action="?" method="get">
+                    <input class="form-control" aria-describedby="search institutions" placeholder="Search..." type="text" value="" name="'
+                    . $search_name . '" id="' . $search_name . '" />'
+                . '</form>'
+                . '</div>';
+      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--all js-spread" id="list_' . $tab . '">';
+      $list_items = '';
+      $close = '</div></div></div>'; // /metalist /ssp-content-group /row
 
-        foreach ($slist AS $idpentry) {
-          if ($idpentry['entityid'] != $this->data['preferredidp']) {
-            echo (showEntry($this, $idpentry));
-          }
-        }
-        echo($close);
+      if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
+        $idpentry = $slist[$this->data['preferredidp']];
+        $list_items .= (showEntry($this, $idpentry, TRUE));
       }
-      else {
-        if($tab == "social") {
-          $title = $this->t('{discopower:tabs:' . $tab . '}') . ' / ';
-          if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
-            $idpentry = $slist[$this->data['preferredidp']];
-            $providers .=  (showEntry($this, $idpentry, TRUE, TRUE));
-          }
 
-          foreach ($slist AS $idpentry) {
-            if ($idpentry['entityid'] != $this->data['preferredidp']) {
-              $providers .= (showEntry($this, $idpentry, FALSE, TRUE));
-            }
-          }
-        }
-        else if ($tab == "misc") {
-          $title .= $this->t('{discopower:tabs:' . $tab . '}');
-          if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
-            $idpentry = $slist[$this->data['preferredidp']];
-            $providers .=  (showEntry($this, $idpentry, TRUE, TRUE));
-          }
-
-          foreach ($slist AS $idpentry) {
-            if ($idpentry['entityid'] != $this->data['preferredidp']) {
-              $providers .= (showEntry($this, $idpentry, FALSE, TRUE));
-            }
-          }
-          $title_html = '<h3>' . $title . '</h3>';
-          echo $top . $title_html . $top_close . $list_open . $providers . $close;
+      foreach ($slist AS $idpentry) {
+        if ($idpentry['entityid'] != $this->data['preferredidp']) {
+          $list_items .= (showEntry($this, $idpentry));
         }
       }
+      echo($top . $title . $search . $list_open . $list_items . $close);
     }
+    else if($tab == "idps_with_logos") {
+      $top = '<div class="row ssp-content-group">
+            <div class="col-sm-12">';
+      $title = '<h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>';
+      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
+      $list_items = '';
+      $close = '</div></div></div>'; // /metalist /ssp-content-group /row
+      if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
+        $idpentry = $slist[$this->data['preferredidp']];
+        $list_items .=  (showEntry($this, $idpentry, TRUE, TRUE));
+      }
 
+      foreach ($slist AS $idpentry) {
+        if ($idpentry['entityid'] != $this->data['preferredidp']) {
+          $list_items .= (showEntry($this, $idpentry, FALSE, TRUE));
+        }
+      }
+      echo $top . $title . $list_open . $list_items . $close;
+    }
+  }
 }
 
 ?>
