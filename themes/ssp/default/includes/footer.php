@@ -9,7 +9,8 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   </div><!-- /container -->
   </div><!-- /ssp-container -->
   <footer class="ssp-footer text-center">
-    <div class="container-fluid ssp-footer--container">
+    <div class="container ssp-footer--container">
+      <div class="row ssp-content-group--footer">
 
 <?php
 
@@ -23,8 +24,8 @@ if ($includeLanguageBar) {
 
   $languages = $this->getLanguageList();
   if ( count($languages) > 1 ) {
-    echo '<div class="ssp-lang-container">
-      <div class="dropup">';
+    echo '<div class="col-sm-3 ssp-footer__item">
+      <div class="dropup ssp-footer__item__lang">';
     $langnames = array(
       'no' => 'Bokmål', // Norwegian Bokmål
       'nn' => 'Nynorsk', // Norwegian Nynorsk
@@ -82,15 +83,27 @@ if ($includeLanguageBar) {
       </button>
       <ul class="dropdown-menu dropdown-menu-left ssp-dropdown__two_cols" aria-labelledby="dropdownMenu1">';
     echo join(' ', $textarray);
-    echo '</ul></div></div>'; // /dropup /ssp-lang-container
+    echo '</ul></div></div>'; // /dropup /col-sm-4
   }
 }
 
 ?>
-        <div class="copy">Copyright &copy; 2016-2017 <a href="https://openminted.eu/">OpenMinTeD</a></div>
-        <div class="powered">Powered by <a href="https://github.com/rciam">RCIAM</a></div>
-      </div> <!-- /container-fluid -->
-  </footer>
+    <div class="copy col-sm-6 ssp-footer__item">
+      <a href="https://grnet.gr/">
+        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
+      </a>
+      <div class="ssp-footer__item__copyright">
+        Copyright &copy; 2016-2017
+      </div>
+    </div>
+    <div class="col-sm-3 ssp-footer__item">
+      <div class="ssp-footer__item__powered">
+        Powered by <a href="https://github.com/rciam">RCIAM</a>
+      </div>
+    </div>
+  </div> <!-- /container-fluid -->
+</footer>
+
   <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/dropdown.js')); ?>">
   </script>

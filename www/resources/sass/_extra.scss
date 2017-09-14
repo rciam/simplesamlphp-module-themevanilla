@@ -4,7 +4,13 @@
  * rules.
  * Form:
  * block--modifier__element
-
+ *
+ * Sections in this file:
+ * - Overall
+ * - Headings
+ * - Bottom
+ * - Buttons
+ * - Content
  */
 
 
@@ -49,10 +55,8 @@ form {
 // Headings
 // No use of bem, when we want to override every instance of them
 
-$header-font-weight: 300;
-$headers_margin_top: 10px;
 .ssp-logo {
-    margin-top: $headers_margin_top;
+    margin-top: $header-margin-top;
     a {
         display: inline-block;
         padding: 10px;
@@ -112,8 +116,9 @@ h4 {
     font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
-    margin-top: $headers_margin_top;
+    margin-top: $header-margin-top;
 }
+
 
 // Bottom
 
@@ -121,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     @extend .font-smooth;
     background: $footer-bg;
     color: $footer-text;
-    font-weight: 300;
+    font-weight: $footer-font-weight;
     &--container {
         padding: 16px;
     }
@@ -133,31 +138,55 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.ssp-lang-container {
-    position: absolute;
-    left: 30px;
+@media screen and (min-width: 768px ) {
+    .ssp-footer__item {
+        min-height: $footer-logo-height + 20px;
+        font-size: $footer-font-size;
+        letter-spacing: 1px;
+        &__powered {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &__lang {
+            position: absolute;
+            bottom: -($btn-padding-y-axis + 2px); // padding + borders
+            left: -($btn-padding-x-axis + 2px); // padding + borders
+        }
+
+        &__copyright {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        &__logo {
+            height: $footer-logo-height;
+        }
+    }
 }
 
-@media screen and (max-width: 600px) {
-    .ssp-lang-container {
-        position: static;
+@media screen and (max-width: 768px) {
+    .ssp-footer__item {
+        margin-bottom: 6px;
+    }
+    .ssp-content-group--footer {
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 }
 
 
 // Buttons
 
-$margin-btn: 2px;
-$btn-distance: 12px;
 .ssp-btn {
     @extend .font-smooth;
     letter-spacing: 1px;
     font-size: 11px;
-    padding: 12px 18px;
+    padding: $btn-padding-y-axis $btn-padding-x-axis;
     line-height: 1.4;
-    border-radius: 0;
     border: 1px solid;
-    margin: $margin-btn;
+    margin: $btn-margin;
     white-space: normal;
     .caret {
         margin-left: 12px;
@@ -211,6 +240,8 @@ $btn-distance: 12px;
         background-color: transparent;
         color: $btn-footer-text;
         border-color: transparent;
+        font-size: $footer-font-size;
+        font-weight: $footer-font-weight;
         &:focus, &:active {
             color: $btn-footer-text;
         }
@@ -219,8 +250,6 @@ $btn-distance: 12px;
             border-color: $btn-footer-border;
         }
     }
-    $btn-img-height: 24px;
-    $btn-img-copy-height: 20px;
     &--round-icon {
         padding: 0;
         display: inline-block;
@@ -349,12 +378,6 @@ $btn-distance: 12px;
             padding: 6px 0;
         }
     }
-}
-
-.ssp-or {
-    font-size: 22px;
-    color: $manatee;
-    margin: 15px;
 }
 
 body .ssp-modal-body {
