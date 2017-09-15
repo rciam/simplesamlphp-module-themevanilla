@@ -51,7 +51,6 @@ form {
     margin: 0;
 }
 
-
 // Headings
 // No use of bem, when we want to override every instance of them
 
@@ -128,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
     color: $footer-text;
     font-weight: $footer-font-weight;
     &--container {
-        padding: 16px;
+        padding: 32px 18px 18px;
     }
     a {
         color: $footer-link;
@@ -186,6 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: $btn-padding-y-axis $btn-padding-x-axis;
     line-height: 1.4;
     border: 1px solid;
+    border-radius: 0;
     margin: $btn-margin;
     white-space: normal;
     .caret {
@@ -326,25 +326,23 @@ h1, h2, h3, h4, h5, h6 {
 // Content
 
 .ssp-content-group {
-    margin-bottom: 6px;
-    padding: 12px 42px;
+    padding: 0px 42px;
     &__provider-list {
         overflow: auto;
         &--all {
-            padding-left: 42px;
-            padding-right: 6px;
+            margin: 6px 6px 6px 42px;
             height: 23vh;
             a {
                 display: block;
                 position: relative;
-                padding: 4px 12px;
+                padding: 5px 12px;
                 &:hover {
                     background-color: $alabaster;
                 }
             }
         }
         &--other {
-            padding: 2px 6px 2px 54px;
+            margin: 2px 6px 2px 54px;
         }
     }
 }
@@ -380,6 +378,21 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.ssp-line-or-line {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+    margin-top: 6px;
+    .ssp-line-or-line__or {
+        @extend h2;
+        position: relative;
+        background: $white;
+        padding: 0 24px;
+        bottom: -10px;
+
+    }
+}
+
 body .ssp-modal-body {
     padding: 30px;
 }
@@ -387,4 +400,10 @@ body .ssp-modal-body {
 .ssp-error-code {
     padding: 18px;
     white-space: pre-line;
+}
+
+.ssp-modal-or {
+    font-size: 22px;
+    color: $manatee;
+    margin: 18px;
 }

@@ -1,5 +1,14 @@
 {
   "title": {
     "en": "Choose your academic/social account"
+  },
+  "or": {
+    "en": "or"
+  },
+  "favourite_dialog_title": {
+    "en": "Login"
+  },
+  "favourite_dialog_button_close": {
+    "en": "Choose another account"
   }
 }

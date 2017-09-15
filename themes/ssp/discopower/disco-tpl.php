@@ -123,7 +123,7 @@ if (!empty($faventry)) {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title">Login</h2>
+            <h2 class="modal-title">' . $this->t('{themeopenminted:discopower:favourite_dialog_title}') . '</h2>
           </div>
           <div class="modal-body ssp-modal-body">
             <div class="row text-center">
@@ -132,12 +132,14 @@ if (!empty($faventry)) {
                 <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
                 <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
                 <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
-                <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action btn text-uppercase" value="'
+                <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action text-uppercase" value="'
                   . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
               </form>
             </div>
-            <div class="row text-center ssp-or">or</div>
-            <div class="row text-center"><button class="btn ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">Choose an other account</button></div>
+            <div class="row text-center ssp-modal-or">' . $this->t('{themeopenminted:discopower:or}') . '</div>
+            <div class="row text-center">
+              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">' . $this->t('{themeopenminted:discopower:favourite_dialog_button_close}')  . '</button>
+            </div>
           </div> <!-- /modal-body -->
         </div> <!-- /modal-content -->
       </div> <!-- /modal-dialog -->
@@ -151,7 +153,6 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
     if($tab == 'all') {
       $top = '<div class="row ssp-content-group js-spread">
                 <div class="col-sm-12 js-spread">';
-      $title = '<h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>';
       $search_name = 'query_' . $tab;
       $search = '<div class="input-group">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
@@ -174,12 +175,12 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $list_items .= (showEntry($this, $idpentry));
         }
       }
-      echo($top . $title . $search . $list_open . $list_items . $close);
+      echo($top . $search . $list_open . $list_items . $close);
     }
     else if($tab == "idps_with_logos") {
       $top = '<div class="row ssp-content-group">
             <div class="col-sm-12">';
-      $title = '<h3>' . $this->t('{discopower:tabs:' . $tab . '}') . '</h3>';
+      $or = '<div class="text-center ssp-line-or-line"><span class="ssp-line-or-line__or">' . $this->t('{themeopenminted:discopower:or}') . '</span></div>';
       $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
       $list_items = '';
       $close = '</div></div></div>'; // /metalist /ssp-content-group /row
@@ -193,7 +194,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $list_items .= (showEntry($this, $idpentry, FALSE, TRUE));
         }
       }
-      echo $top . $title . $list_open . $list_items . $close;
+      echo $top . $or . $list_open . $list_items . $close;
     }
   }
 }
