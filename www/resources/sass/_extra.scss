@@ -41,6 +41,10 @@ a {
     box-shadow: 0 0 10px $btn-action !important;
 }
 
+form {
+    margin: 0;
+}
+
 
 // Headings
 // No use of bem, when we want to override every instance of them
@@ -260,14 +264,12 @@ $btn-distance: 12px;
     &__provider-list {
         overflow: auto;
         &--edugain {
-            padding-left: 42px;
-            padding-right: 6px;
+            padding: 6px 6px 6px 42px;
             height: 23vh;
-            margin-top: $panel-body-padding;
             a {
                 display: block;
                 position: relative;
-                padding: 5px 12px;
+                padding: 4px 12px;
                 &:hover {
                     background-color: $alabaster;
                 }
