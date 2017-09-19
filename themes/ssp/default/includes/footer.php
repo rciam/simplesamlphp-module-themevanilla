@@ -90,7 +90,7 @@ if ($includeLanguageBar) {
 ?>
     <div class="copy col-sm-6 ssp-footer__item">
       <a href="https://grnet.gr/">
-        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
+        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
       </a>
       <div class="ssp-footer__item__copyright">
         Copyright &copy; 2016-2017
@@ -105,13 +105,13 @@ if ($includeLanguageBar) {
 </footer>
 
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/dropdown.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/modal.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/modal.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/js/theme.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/theme.js')); ?>">
   </script>
 
 </body>

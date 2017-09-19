@@ -67,7 +67,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
   if($withIcon) {
     $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $namelower . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/' . $namelower . '.svg') . '" />';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $namelower . '.svg') . '" />';
     $html .= getTranslatedName($t, $metadata) . '</a>';
   }
   else {
@@ -89,7 +89,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
 ?>
 
-  <h2 class="text-center"><?php echo $this->t('{themeopenminted:discopower:title}'); ?></h2>
+  <h2 class="text-center"><?php echo $this->t('{themevanilla:discopower:title}'); ?></h2>
 
 
 <?php
@@ -123,7 +123,7 @@ if (!empty($faventry)) {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title">' . $this->t('{themeopenminted:discopower:favourite_dialog_title}') . '</h2>
+            <h2 class="modal-title">' . $this->t('{themevanilla:discopower:favourite_dialog_title}') . '</h2>
           </div>
           <div class="modal-body ssp-modal-body">
             <div class="row text-center">
@@ -136,9 +136,9 @@ if (!empty($faventry)) {
                   . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
               </form>
             </div>
-            <div class="row text-center ssp-modal-or">' . $this->t('{themeopenminted:discopower:or}') . '</div>
+            <div class="row text-center ssp-modal-or">' . $this->t('{themevanilla:discopower:or}') . '</div>
             <div class="row text-center">
-              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">' . $this->t('{themeopenminted:discopower:favourite_dialog_button_close}')  . '</button>
+              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">' . $this->t('{themevanilla:discopower:favourite_dialog_button_close}')  . '</button>
             </div>
           </div> <!-- /modal-body -->
         </div> <!-- /modal-content -->
@@ -180,7 +180,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
     else if($tab == "idps_with_logos") {
       $top = '<div class="row ssp-content-group">
             <div class="col-sm-12">';
-      $or = '<div class="text-center ssp-line-or-line"><span class="ssp-line-or-line__or">' . $this->t('{themeopenminted:discopower:or}') . '</span></div>';
+      $or = '<div class="text-center ssp-line-or-line"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
       $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
       $list_items = '';
       $close = '</div></div></div>'; // /metalist /ssp-content-group /row

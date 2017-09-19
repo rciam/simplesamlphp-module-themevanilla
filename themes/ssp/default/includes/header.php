@@ -50,8 +50,8 @@ header('X-Frame-Options: SAMEORIGIN');
   <?php if(array_key_exists('header', $this->data)) { echo (' | ' . $this->data['header']); } ?>
 </title>
 
-<link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/css/app.css')); ?>" />
-<link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/favicon.png')); ?>"  />
+<link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/css/app.css')); ?>" />
+<link rel="shortcut icon" href="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/images/favicon.png')); ?>"  />
 
 <?php
 
@@ -122,12 +122,12 @@ if($onLoad !== '') {
 <div class="header">
   <div class="text-center ssp-logo">
     <a href="https://simplesamlphp.org/">
-      <img src="<?php echo SimpleSAML_Module::getModuleURL('themeopenminted/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
+      <img src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
     </a>
   </div>
   <h1 class="text-center">
-    <?php echo $this->t('{themeopenminted:default:header_title}'); ?>
-    <small><?php echo $this->t('{themeopenminted:default:header_subtitle}'); ?></small>
+    <?php echo $this->t('{themevanilla:default:header_title}'); ?>
+    <small><?php echo $this->t('{themevanilla:default:header_subtitle}'); ?></small>
   </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">
