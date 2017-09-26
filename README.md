@@ -1,2 +1,3 @@
-# simplesamlphp-module-openminted
-OpenMinTeD theme for SimpleSAMLphp
+# simplesamlphp-module-themevanilla
+
+A customizable theme for SimpleSAMLphp.
