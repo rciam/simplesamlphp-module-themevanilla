@@ -1,0 +1,20 @@
+{
+  "name": "rciam/simplesamlphp-module-themevanilla",
+  "description": "A customizable theme for SimpleSAMLphp",
+  "type": "simplesamlphp-module",
+  "keywords": ["theme", "simplesamlphp"],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Athina Bekakou",
+      "email": "athinabek@grnet.gr"
+    },
+    {
+      "name": "Nicolas Liampotis",
+      "email": "nliam@grnet.gr"
+    }
+  ],
+  "require": {
+    "simplesamlphp/composer-module-installer": "~1.0"
+  }
+}
