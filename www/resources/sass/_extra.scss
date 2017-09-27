@@ -77,19 +77,23 @@ form {
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: $header-margin-top;
+    margin-bottom: $header-margin-bottom;
+}
+
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: $header-font-weight;
-    font-size: 30px;
+    font-size: 26px;
     text-transform: none!important;
     color: $scorpion;
-    margin-bottom: 0;
 }
 
 
 h1 small {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
     color: $manatee;
     text-transform: none;
@@ -101,7 +105,7 @@ h1 small {
 h2 {
     font-family: 'Open Sans', sans-serif;
     font-weight: $header-font-weight;
-    font-size: 22px;
+    font-size: 20px;
     text-transform: none!important;
 }
 
@@ -114,9 +118,6 @@ h3 {
 h4 {
     font-size: 16px;
 }
-h1, h2, h3, h4, h5, h6 {
-    margin-top: $header-margin-top;
-}
 
 
 // Bottom
@@ -126,8 +127,9 @@ h1, h2, h3, h4, h5, h6 {
     background: $footer-bg;
     color: $footer-text;
     font-weight: $footer-font-weight;
+    margin-top: 12px;
     &--container {
-        padding: 32px 18px 18px;
+        padding: 12px 18px 18px;
     }
     a {
         color: $footer-link;
@@ -135,13 +137,18 @@ h1, h2, h3, h4, h5, h6 {
             color: darken($footer-link, 10%);
         }
     }
+    &__item {
+        font-size: $footer-font-size;
+        letter-spacing: 1px;
+        &__logo {
+            height: $footer-logo-height;
+        }
+    }
 }
 
 @media screen and (min-width: 768px ) {
     .ssp-footer__item {
         min-height: $footer-logo-height + 20px;
-        font-size: $footer-font-size;
-        letter-spacing: 1px;
         &__powered {
             position: absolute;
             bottom: 0;
@@ -159,15 +166,12 @@ h1, h2, h3, h4, h5, h6 {
             left: 0;
             width: 100%;
         }
-        &__logo {
-            height: $footer-logo-height;
-        }
     }
 }
 
 @media screen and (max-width: 768px) {
-    .ssp-footer__item {
-        margin-bottom: 6px;
+    .ssp-footer__item:not(:last-child) {
+        margin-bottom: 12px;
     }
     .ssp-content-group--footer {
         padding-bottom: 0;
@@ -247,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
         }
         &:hover {
             color: $btn-footer-text;
-            border-color: $btn-footer-border;
+            border-color: $btn-footer-border-hover;
         }
     }
     &--round-icon {
@@ -335,7 +339,7 @@ h1, h2, h3, h4, h5, h6 {
             a {
                 display: block;
                 position: relative;
-                padding: 5px 12px;
+                padding: 4px 12px;
                 &:hover {
                     background-color: $alabaster;
                 }
