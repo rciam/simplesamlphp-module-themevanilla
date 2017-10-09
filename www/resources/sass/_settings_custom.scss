@@ -9,4 +9,8 @@ $footer-link: darken($link-color, 10%); // #349bdb
 $btn-footer-text: $black;
 $btn-footer-border-hover: $silver; // #cdc9c9
 
+// tooltip colors
+$tooltip-bg: darken($curious-blue, 20%);
+$tooltip-color: $white;
+
 $logo-height: 60px;

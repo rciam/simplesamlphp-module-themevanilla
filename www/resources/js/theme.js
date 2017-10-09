@@ -47,4 +47,7 @@ $(document).ready(function() {
   $(window).resize(function() {
     resizeAll();
   });
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
 });

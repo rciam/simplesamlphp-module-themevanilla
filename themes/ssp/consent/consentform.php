@@ -159,10 +159,10 @@ function present_attributes($t, $attributes, $nameParent)
 
             if ($isHidden) {
                 $str .= '<div class="attrvalue consent_showattribute" id="visible_' . $hiddenId . '">';
-                $str .= '... ';
-                $str .= '<a class="consent_showattributelink" href="javascript:SimpleSAML_show(\'hidden_' . $hiddenId;
-                $str .= '\'); SimpleSAML_hide(\'visible_' . $hiddenId . '\');">';
-                $str .= $t->t('{consent:consent:show_attribute}');
+                $str .= '<a class="consent_showattributelink ssp-btn__show-more" href="javascript:SimpleSAML_show(\'hidden_' . $hiddenId;
+                $str .= '\'); SimpleSAML_hide(\'visible_' . $hiddenId . '\');"'
+                  .' data-toggle="tooltip" data-placement="right" title="'. $t->t('{consent:consent:show_attribute}') .'">';
+                $str .= '<span class="glyphicon glyphicon-eye-open ssp-show-more" aria-hidden="true"></span>';
                 $str .= '</a>';
                 $str .= '</div>';
             }

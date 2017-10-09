@@ -111,6 +111,9 @@ if ($includeLanguageBar) {
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/modal.js')); ?>">
   </script>
   <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/tooltip.js')); ?>">
+  </script>
+  <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/theme.js')); ?>">
   </script>
 

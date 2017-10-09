@@ -304,6 +304,13 @@ h4 {
     }
 }
 
+.ssp-btn__show-more {
+    color: $text-color;
+    &:hover {
+        color: $curious-blue;
+    }
+}
+
 .ssp-btns-container {
     text-align: center;
     @at-root &--btn__right.ssp-btn {
