@@ -1,6 +1,14 @@
 // Color rules for the buttons that have icons
 
 .ssp-btn {
+    &.elixir {
+        background-color: $elixir;
+    }
+    &.igtf {
+        color: $igtf;
+        background-color: $white;
+        border: 1px solid $igtf;
+    }
     &.google {
         background-color: $google;
     }
