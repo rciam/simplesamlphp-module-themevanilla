@@ -62,17 +62,20 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
     'return=' . urlencode($t->data['return']) . '&amp;' .
     'returnIDParam=' . urlencode($t->data['returnIDParam']) . '&amp;idpentityid=';
 
-  $namelower = strtolower(getTranslatedName($t, $metadata));
 
 
   if($withIcon) {
-    $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $namelower . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $namelower . '.svg') . '" />';
-    $html .= getTranslatedName($t, $metadata) . '</a>';
+    $label =  $metadata['login_button']['label'];
+    $filename = $metadata['login_button']['icon_filename'];
+    $classname = $metadata['login_button']['css_classname'];
+
+    $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
+    $html .= $label . '</a>';
   }
   else {
     $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
+    $html .= htmlspecialchars($metadata['UIInfo']['DisplayName']['en']) . '';
 
     if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
       $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
