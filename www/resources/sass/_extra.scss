@@ -287,20 +287,6 @@ h4 {
             height: $btn-img-height;
             margin-right: 12px
         }
-        &.google {
-            background-color: $google;
-        }
-        &.orcid {
-            color: darken($orcid, 10%);
-            background-color: $white;
-            border: 1px solid $orcid;
-        }
-        &.linkedin {
-            background-color: $linkedin;
-        }
-        &.facebook {
-            background-color: $facebook;
-        }
     }
 }
 
