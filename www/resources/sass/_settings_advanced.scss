@@ -1,35 +1,9 @@
-// Colors
-// Color names from: http://chir.ag/projects/name-that-color
-
-$white: #fff;
-$black: #000;
-$denim: #0d6fcc;
-$carrot-orange: #ec971f;
-$curious-blue: #349bdb;
-// Gray
-$alabaster: #f7f7f7;
-$silver: #cdc9c9;
-$scorpion: #5b5b5b;
-$manatee: #90929D;
-$mouse: #848484;
-$emperor: #515151;
-
-// Bootstrap variables
-$link-color: $denim;
-$table-border-color: transparent;
-$container-lg: 970px;
-
-// Social and MISC providers colors
-$orcid: #a7cc46;
-$facebook: #3d5a96;
-$linkedin: #1178b3;
-$google: #da4b3e;
-
-// Other
+// Header
 $header-font-weight: 300;
 $header-margin-top: 10px;
 $header-margin-bottom: 10px;
 
+// Buttons
 $btn-margin: 2px;
 $btn-padding-y-axis: 15px;
 $btn-padding-x-axis: 18px;
@@ -38,7 +12,10 @@ $btn-img-with-label-height: 24px;
 $btn-img-no-label-height: 36px;
 $btn-img-copy-height: 20px;
 
+// Footer variables
 $footer-font-size: 12px;
 $footer-font-weight: 300;
 $footer-logo-height: 40px;
 
+// Bootstrap variables
+$container-lg: 970px;
