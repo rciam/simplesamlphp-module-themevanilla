@@ -35,8 +35,29 @@ below.
 
 ## Configuration
 
+### Use this theme
 In order to use this module as theme you need to set in the
-config/config.php`: `'theme.use' => 'simplesamlphp-module-themevanilla:ssp'`
+`config/config.php`: `'theme.use' => 'themevanilla:ssp'`
+
+### Use for an IDP login button with icon
+In the discopower view, where the user selects the IDP that will use to login,
+there are 2 sections. The first section has all providers in a simple list of
+links and the second one has for each IDP a button with an icon and a label.
+
+If you want to add an IDP in the second section open the file
+`config/config-metarefresh.php`. For the selected IDP add the tag
+"idps_with_logos" and add an array with the name "login_button" as the
+following:
+```
+'login_button' => array(
+  'css_classname' => 'orcid',
+  'icon_filename' => 'orcid.svg',
+  'label' => 'ORCID',
+)
+```
+The css_classname use it in the `idps_buttons.scss` file with to set style rules
+for the button. See more information bellow.
+-
 
 ---
 
@@ -71,18 +92,26 @@ To produce the css files for this theme follow these steps:
 After these steps the css files will be in the directory
 `themevanilla/www/resources/css`
 
-You can change the settings of this theme from the file:
-`themevanilla/www/resources/sass/_settings_custom.scss`
+You can change the settings of this theme from the files:
+* `themevanilla/www/resources/sass/_settings.scss`
 
 There you will see the following variables:
 
-- $btn-action: background color of primary button
-- $btn-warning: $carrot-orange;
-- $footer-bg: footer background color
-- $footer-text: color of the text in the footer
-- $footer-link: color of the links in the footer
-- $btn-footer-text: text color of button that is in the footer
-- $btn-footer-border: border color of button that is in the footer
+  - $btn-action: background color of primary button
+  - $btn-warning: $carrot-orange;
+  - $footer-bg: footer background color
+  - $footer-text: color of the text in the footer
+  - $footer-link: color of the links in the footer
+  - $btn-footer-text: text color of button that is in the footer
+  - $btn-footer-border: border color of button that is in the footer
+
+* `themevanilla/www/resources/sass/_colors.scss`
+
+In this file you can add or change color settings.
+
+* `themevanilla/www/resources/sass/_idps_buttons.scss`
+In this file you can add or modify settings that are related with the login
+buttons that have a logo.
 
 After you change this file you need to produce the css file that the browser
 will serve. You can do that by running: `sass --update sass:css`, as mentioned
