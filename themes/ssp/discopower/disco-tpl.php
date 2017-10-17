@@ -67,9 +67,18 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
   if($withIcon) {
     $label =  $metadata['login_button']['label'];
     $filename = $metadata['login_button']['icon_filename'];
-    $classname = $metadata['login_button']['css_classname'];
+    $css_classname = $metadata['login_button']['css_classname'];
+    $css_button_type = '';
 
-    $html = '<a class="metaentry ssp-btn ssp-btn__icon-with-label ' . $classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
+    // is $label empty string
+    if(!isset($label) || trim($label) == '') {
+      $css_button_type = 'ssp-btn__icon-no-label';
+    }
+    else {
+      $css_button_type = 'ssp-btn__icon-with-label';
+    }
+
+    $html = '<a class="metaentry ssp-btn ' . $css_button_type  .  ' ' . $css_classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
     $html .= $label . '</a>';
   }

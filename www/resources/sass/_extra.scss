@@ -259,10 +259,10 @@ h4 {
         display: inline-block;
         margin-right: $btn-distance*2;
         margin-top: $btn-distance/2;
-        border-radius: $btn-img-height/2;
+        border-radius: $btn-img-no-label-height/2;
         img {
-            height: $btn-img-height;
-            border-radius: $btn-img-height/2;
+            height: $btn-img-no-label-height;
+            border-radius: $btn-img-no-label-height/2;
         }
     }
     &--copy {
@@ -284,8 +284,26 @@ h4 {
             opacity: 0.9;
         }
         img {
-            height: $btn-img-height;
+            height: $btn-img-with-label-height;
             margin-right: 12px
+        }
+    }
+    &__icon-no-label {
+        color: $white;
+        display: inline-block;
+        position: relative;
+        padding: 0px 6px;
+        background-color: $denim;
+        margin-right: 18px;
+        border: 1px solid;
+        &:hover, &:focus {
+            color: $white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        img {
+            height: $btn-img-no-label-height;
+            margin: 0px;
         }
     }
 }
