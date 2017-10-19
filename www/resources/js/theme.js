@@ -12,10 +12,9 @@ function spreadHeight($el2spread) {
       siblings_height += $(this).outerHeight(true);
     });
   }
+
   available_height = parent_height - siblings_height;
-  if(available_height > el2spread_height ){
-    $el2spread.outerHeight(available_height);
-  }
+  $el2spread.height(available_height);
 };
 
 // Apply spreadHeight in html of discopower and consent
