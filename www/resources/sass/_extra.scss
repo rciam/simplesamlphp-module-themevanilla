@@ -127,7 +127,7 @@ h4 {
     background: $footer-bg;
     color: $footer-text;
     font-weight: $footer-font-weight;
-    margin-top: 12px;
+    margin-top: 32px;
     &--container {
         padding: 12px 18px 18px;
     }
@@ -317,6 +317,7 @@ h4 {
 
 .ssp-btns-container {
     text-align: center;
+    padding-top: 32px;
     @at-root &--btn__right.ssp-btn {
         margin-left:  $btn-distance;
     }
@@ -366,7 +367,6 @@ h4 {
     height: 34vh;
     overflow: auto;
     padding: 16px;
-    margin-bottom: 32px;
 }
 
 .ssp-table {
