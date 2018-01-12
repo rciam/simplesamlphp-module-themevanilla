@@ -107,8 +107,8 @@ After these steps the css files will be in the directory
 `themevanilla/www/resources/css`
 
 You can change the settings of this theme from the files:
-* `themevanilla/www/resources/sass/_settings.scss`
-  There you will see the following variables:
+* `themevanilla/www/resources/sass/_settings.scss`: Here you will see the
+  following variables:
   - $btn-action: background color of primary button
   - $btn-warning: background color of warning button
   - $footer-bg: footer background color
@@ -117,12 +117,12 @@ You can change the settings of this theme from the files:
   - $btn-footer-text: text color of button that is in the footer
   - $btn-footer-border: border color of button that is in the footer
 
-* `themevanilla/www/resources/sass/_colors.scss`
-  In this file you can add or change color settings.
+* `themevanilla/www/resources/sass/_colors.scss`: Here you can add or change
+  color settings.
 
-* `themevanilla/www/resources/sass/_idps_buttons.scss`
-  In this file you can add or modify settings that are related with the buttons
-  of the selected subset of IdPs.
+* `themevanilla/www/resources/sass/_idps_buttons.scss`: Here you can add or
+  modify settings that are related with the buttons of the selected subset of
+  IdPs.
 
 After you change any of these files you need to produce the css file that the
 browser will serve. You can do that by running: `sass --update sass:css`, as
