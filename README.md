@@ -1,12 +1,14 @@
 # simplesamlphp-module-themevanilla
 
-A customizable theme for SimpleSAMLphp.
+A customisable theme for SimpleSAMLphp based on Bootstrap.
 
 ## Installation
 
+You can install the theme using any of the methods below.
+
 ### Composer
 
-Add the following lines in the file composer.json that is located in your
+Add the following lines in the `composer.json` file that is located in your
 SimpleSAMLphp installation:
 ```
 "repositories": [
@@ -14,50 +16,55 @@ SimpleSAMLphp installation:
         "type": "vcs",
         "url": "https://github.com/rciam/simplesamlphp-module-themevanilla"
     }
-    ]
+  ]
 ```
 
 ### Direct download
 
-You can download the theme with its compiled files from the [release page]().
-There you will see that you can download a zip file for each release. Download
-the zip file you prefer and extract it in the `modules` directory of your
-SimpleSAMLphp installation.
+You can download the theme with its compiled files from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
+Download the zip file of the preferred release and extract its contents in the
+`modules` directory of your SimpleSAMLphp installation.
 
 ### Clone repository
 
-Clone and copy this repository in the directory `modules` of your SimpleSAMLphp
-installation. Note that now you do not have css files of minified javascript
-files. You will need to produce them according to the customization instructions
-below.
+Clone this repository into the `modules` directory of your SimpleSAMLphp
+installation as follows:
+```
+cd /path/to/simplesamlphp/modules
+git clone https://github.com/rciam/simplesamlphp-module-themevanilla.git themevanilla
+```
+Note that the cloned repository will not include the css files or minified
+javascript files.
+You will need to produce them based on the customisation instructions below.
 
 ---
 
 ## Configuration
 
-### Use this theme
+### Basic usage
 In order to use this module as theme you need to set in the
 `config/config.php`: `'theme.use' => 'themevanilla:ssp'`
 
-### Use for an IDP login button with icon
-In the discopower view, where the user selects the IDP that will use to login,
-there are 2 sections. The first section has all providers in a simple list of
-links and the second one has for each IDP a button with an icon and a label.
+### Using IdP login buttons with icons
+The theme splits the discopower IdP discovery page into 2 sections.
+The first section contains all IdPs in a simple list of links, while the second
+one contains login buttons for a selected subset of the IdPs.
 
-If you want to add an IDP in the second section open the file
-`config/config-metarefresh.php`. For the selected IDP add the tag
-"idps_with_logos" and add an array with the name "login_button" as the
-following:
+If you want to include an IdP in the second section, you need to attach the
+`idps_with_logos` tag to that IdP. The css class name, icon and label of the IdP login
+button can then be specified using the `login_button` configuration as follows:
 ```
+'tags' => array(
+  'idps_with_logos',
+),
 'login_button' => array(
   'css_classname' => 'orcid',
   'icon_filename' => 'orcid.svg',
   'label' => 'ORCID',
 )
 ```
-The css_classname use it in the `idps_buttons.scss` file with to set style rules
-for the button. See more information bellow.
--
+To set style rules for the button, the configured css_classname value must be
+defined in the `idps_buttons.scss` file. See more information bellow.
 
 ---
 
@@ -65,7 +72,7 @@ for the button. See more information bellow.
 
 ### Wording
 
-You can find definitions and dictionaries in the directory `dictionaries`.
+You can find definitions and dictionaries in the `dictionaries` directory.
 
 ### Images
 
@@ -94,11 +101,9 @@ After these steps the css files will be in the directory
 
 You can change the settings of this theme from the files:
 * `themevanilla/www/resources/sass/_settings.scss`
-
-There you will see the following variables:
-
+  There you will see the following variables:
   - $btn-action: background color of primary button
-  - $btn-warning: $carrot-orange;
+  - $btn-warning: background color of warning button
   - $footer-bg: footer background color
   - $footer-text: color of the text in the footer
   - $footer-link: color of the links in the footer
@@ -106,16 +111,15 @@ There you will see the following variables:
   - $btn-footer-border: border color of button that is in the footer
 
 * `themevanilla/www/resources/sass/_colors.scss`
-
-In this file you can add or change color settings.
+  In this file you can add or change color settings.
 
 * `themevanilla/www/resources/sass/_idps_buttons.scss`
-In this file you can add or modify settings that are related with the login
-buttons that have a logo.
+  In this file you can add or modify settings that are related with the buttons
+  of the selected subset of IdPs.
 
-After you change this file you need to produce the css file that the browser
-will serve. You can do that by running: `sass --update sass:css`, as mentioned
-above.
+After you change any of these files you need to produce the css file that the
+browser will serve. You can do that by running: `sass --update sass:css`, as
+mentioned above.
 
 Please, check the help page of the cli tool sass if you want to use more
 compiling options.
@@ -126,3 +130,7 @@ compiling options.
 
 You can read more about themes in a SimpleSAMLphp installation from the
 [official documentation](https://simplesamlphp.org/docs/stable/simplesamlphp-theming).
+
+## License
+
+Licensed under the Apache 2.0 license, for details see `LICENSE`.
