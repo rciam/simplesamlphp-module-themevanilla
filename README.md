@@ -18,6 +18,11 @@ SimpleSAMLphp installation:
     }
   ]
 ```
+Note that composer will include in the module the css files or the minified
+javascript files.
+You'll need to download or produce them. You can download the compressed directories
+from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
+If you want to produce them, you may read the customisation instructions below.
 
 ### Direct download
 
@@ -35,7 +40,9 @@ git clone https://github.com/rciam/simplesamlphp-module-themevanilla.git themeva
 ```
 Note that the cloned repository will not include the css files or minified
 javascript files.
-You will need to produce them based on the customisation instructions below.
+You'll need to download or produce them. You can download the compressed directories
+from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
+If you want to produce them, you may read the customisation instructions below.
 
 ---
 
