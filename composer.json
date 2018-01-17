@@ -1,9 +1,9 @@
 {
   "name": "rciam/simplesamlphp-module-themevanilla",
-  "description": "A customizable theme for SimpleSAMLphp",
+  "description": "A customisable theme for SimpleSAMLphp based on Bootstrap",
   "type": "simplesamlphp-module",
-  "keywords": ["theme", "simplesamlphp"],
-  "license": "Apache-2.0",
+  "keywords": ["simplesamlphp", "module", "theme", "bootsrtap"],
+  "license": "Apache License 2.0",
   "authors": [
     {
       "name": "Athina Bekakou",
