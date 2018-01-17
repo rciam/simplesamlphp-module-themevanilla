@@ -26,7 +26,7 @@ If you want to produce them, you may read the customisation instructions below.
 
 ### Direct download
 
-You can download the theme with its compiled files from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
+You can download `themevanilla.zip` from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
 Download the zip file of the preferred release and extract its contents in the
 `modules` directory of your SimpleSAMLphp installation.
 
@@ -40,8 +40,8 @@ git clone https://github.com/rciam/simplesamlphp-module-themevanilla.git themeva
 ```
 Note that the cloned repository will not include the css files or minified
 javascript files.
-You'll need to download or produce them. You can download the compressed directories
-from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
+You'll need to download or produce them. You can download the compressed directories (`js.zip` and `css.zip`)
+from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases) and extract them under `modules/themevanilla/www/resources`.
 If you want to produce them, you may read the customisation instructions below.
 
 ---
