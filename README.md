@@ -34,7 +34,7 @@ SimpleSAMLphp installation:
         "version": "1.0.0",
         "dist": {
           "type": "zip",
-          "url": "<zip file url>"
+          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/files/1642891/css.zip"
         }
       }
     },
@@ -45,7 +45,7 @@ SimpleSAMLphp installation:
         "version": "1.0.0",
         "dist": {
           "type": "zip",
-          "url": "<zip file url>"
+          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/files/1642892/js.zip"
         }
       }
     }
