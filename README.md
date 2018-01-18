@@ -69,7 +69,6 @@ With the above configuration composer will do several operations:
   in the `themevanilla/www/resources` directory, where the static files of the
   theme should be placed.
 
-
 ### Direct download
 
 You can download `themevanilla.zip` from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
@@ -91,15 +90,16 @@ directories (`js.zip` and `css.zip`) from the [release page](https://github.com/
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
 
----
 
 ## Configuration
 
 ### Basic usage
+
 In order to use this module as theme you need to set in the
 `config/config.php`: `'theme.use' => 'themevanilla:ssp'`
 
 ### Using IdP login buttons with icons
+
 The theme splits the discopower IdP discovery page into 2 sections.
 The first section contains all IdPs in a simple list of links, while the second
 one contains login buttons for a selected subset of the IdPs.
@@ -120,7 +120,6 @@ button can then be specified using the `login_button` configuration as follows:
 To set style rules for the button, the configured css_classname value must be
 defined in the `idps_buttons.scss` file. See more information bellow.
 
----
 
 ## Customization
 
@@ -142,11 +141,10 @@ By default, the logo has height 60px. See below how you can modify it.
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.
 
-
 ### CSS
 
 To produce the css files for this theme follow these steps:
-- Install sass: ([installation guide](http://sass-lang.com/install) )
+- Install sass ([installation guide](http://sass-lang.com/install))
 - Go to the directory `themevanilla/www/resources`
 - Run the cli sass: `sass --update sass:css`
 
@@ -178,12 +176,12 @@ mentioned above.
 Please, check the help page of the cli tool sass if you want to use more
 compiling options.
 
----
 
 ## About SimpleSAMLphp themes
 
 You can read more about themes in a SimpleSAMLphp installation from the
 [official documentation](https://simplesamlphp.org/docs/stable/simplesamlphp-theming).
+
 
 ## License
 
