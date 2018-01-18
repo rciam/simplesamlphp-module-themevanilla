@@ -11,18 +11,64 @@ You can install the theme using any of the methods below.
 Add the following lines in the `composer.json` file that is located in your
 SimpleSAMLphp installation:
 ```
+"require": {
+
+    ...
+
+    "rciam/simplesamlphp-module-themevanilla": "1.0.0",
+    "rciam/css": "1.0.0",
+    "rciam/js": "1.0.0"
+},
 "repositories": [
+
+    ...
+
     {
         "type": "vcs",
         "url": "https://github.com/rciam/simplesamlphp-module-themevanilla"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "rciam/css",
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "<zip file url>"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "rciam/js",
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "<zip file url>"
+        }
+      }
     }
-  ]
+    ],
+    "scripts": {
+
+      ...
+
+      "post-update-cmd": [
+        "cp -r 'vendor/rciam/css' 'modules/themevanilla/www/resources'",
+        "cp -r 'vendor/rciam/js' 'modules/themevanilla/www/resources'"
+      ]
+    },
 ```
-Note that composer will include in the module the css files or the minified
-javascript files.
-You'll need to download or produce them. You can download the compressed directories
-from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
-If you want to produce them, you may read the customisation instructions below.
+
+With the above configuration composer will do several operations:
+- It will put the module `themevanilla` in the `modules` directory.
+- It will download and extract the compressed `css` and `js` directories that
+  include the minified css and javascript files.
+- It will copy the `css` and `js` directories from the `vendor/rciam` directory
+  in the `themevanilla/www/resources` directory, where the static files of the
+  theme should be placed.
+
 
 ### Direct download
 
@@ -40,9 +86,10 @@ git clone https://github.com/rciam/simplesamlphp-module-themevanilla.git themeva
 ```
 Note that the cloned repository will not include the css files or minified
 javascript files.
-You'll need to download or produce them. You can download the compressed directories (`js.zip` and `css.zip`)
-from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases) and extract them under `modules/themevanilla/www/resources`.
-If you want to produce them, you may read the customisation instructions below.
+You'll need to download or produce them. You can download the compressed
+directories (`js.zip` and `css.zip`) from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases) and
+extract them under `modules/themevanilla/www/resources`.  If you want to produce
+them, you may read the customisation instructions below.
 
 ---
 
