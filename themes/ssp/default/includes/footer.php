@@ -93,7 +93,7 @@ if ($includeLanguageBar) {
         <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
       </a>
       <div class="ssp-footer__item__copyright">
-        Copyright &copy; 2016-2017
+        Copyright &copy; 2016-2018
       </div>
     </div>
     <div class="col-sm-3 ssp-footer__item">
