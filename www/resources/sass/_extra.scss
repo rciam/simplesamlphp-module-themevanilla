@@ -1,0 +1,424 @@
+/*
+ * Naming conventions: BEM with prefix "b" (b comes from bem).
+ * Using this method can also separate the custom css rules from bootstrap's
+ * rules.
+ * Form:
+ * block--modifier__element
+ *
+ * Sections in this file:
+ * - Overall
+ * - Headings
+ * - Bottom
+ * - Buttons
+ * - Content
+ */
+
+
+// Overall
+
+.font-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.ssp-container {
+    flex: 1;
+    margin-top: 12px;
+}
+
+.header, .ssp-footer {
+    flex: none;
+}
+
+a {
+    border: 1px solid transparent;
+}
+*:focus {
+    outline: none !important;
+    border:1px solid $silver !important;
+    box-shadow: 0 0 10px $btn-action !important;
+}
+
+form {
+    margin: 0;
+}
+
+// Headings
+// No use of bem, when we want to override every instance of them
+
+.ssp-logo {
+    margin-top: $header-margin-top;
+    a {
+        display: inline-block;
+        padding: 10px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    img {
+       height: $logo-height;
+    }
+
+    .ssp-logo__link--right {
+        margin-left: 20px;
+    }
+
+    .ssp-logo-openminted {
+        position: relative;
+        bottom: -10px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: $header-margin-top;
+    margin-bottom: $header-margin-bottom;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $header-font-weight;
+    font-size: 26px;
+    text-transform: none!important;
+    color: $scorpion;
+}
+
+
+h1 small {
+    display: block;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $manatee;
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    font-family: 'Open Sans';
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $header-font-weight;
+    font-size: 20px;
+    text-transform: none!important;
+}
+
+h3 {
+    font-weight: $header-font-weight;
+    font-size: 18px;
+    text-transform: none!important;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+
+// Bottom
+
+.ssp-footer {
+    @extend .font-smooth;
+    background: $footer-bg;
+    color: $footer-text;
+    font-weight: $footer-font-weight;
+    margin-top: 32px;
+    &--container {
+        padding: 12px 18px 18px;
+    }
+    a {
+        color: $footer-link;
+        &:hover {
+            color: darken($footer-link, 10%);
+        }
+    }
+    &__item {
+        font-size: $footer-font-size;
+        letter-spacing: 1px;
+        &__logo {
+            height: $footer-logo-height;
+        }
+    }
+}
+
+@media screen and (min-width: 768px ) {
+    .ssp-footer__item {
+        min-height: $footer-logo-height + 20px;
+        &__powered {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &__lang {
+            position: absolute;
+            bottom: -($btn-padding-y-axis + 2px); // padding + borders
+            left: -($btn-padding-x-axis + 2px); // padding + borders
+        }
+
+        &__copyright {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ssp-footer__item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    .ssp-content-group--footer {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+// Buttons
+
+.ssp-btn {
+    @extend .font-smooth;
+    letter-spacing: 1px;
+    font-size: 11px;
+    padding: $btn-padding-y-axis $btn-padding-x-axis;
+    line-height: 1.4;
+    border: 1px solid;
+    border-radius: 0;
+    margin: $btn-margin;
+    white-space: normal;
+    .caret {
+        margin-left: 12px;
+    }
+    @at-root &__action {
+        background-color: $btn-action;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $btn-action;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: darken($btn-action, 10%);
+            border-color: $btn-action;
+        }
+    }
+    @at-root &__secondary {
+        background-color: $mouse;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $mouse;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: $gray;
+            border-color: $mouse;
+        }
+    }
+    @at-root &__warning {
+        background-color: $btn-warning;
+        color: $white;
+        border-color: transparent;
+        &:focus, &:active {
+            background-color: $btn-warning;
+            color: $white;
+            border-color: transparent;
+        }
+        &:hover {
+            background-color: $white;
+            color: $btn-warning;
+            border-color: $btn-warning;
+        }
+    }
+    @at-root &__footer {
+        background-color: transparent;
+        color: $btn-footer-text;
+        border-color: transparent;
+        font-size: $footer-font-size;
+        font-weight: $footer-font-weight;
+        &:focus, &:active {
+            color: $btn-footer-text;
+        }
+        &:hover {
+            color: $btn-footer-text;
+            border-color: $btn-footer-border-hover;
+        }
+    }
+    &--round-icon {
+        padding: 0;
+        display: inline-block;
+        margin-right: $btn-distance*2;
+        margin-top: $btn-distance/2;
+        border-radius: $btn-img-no-label-height/2;
+        img {
+            height: $btn-img-no-label-height;
+            border-radius: $btn-img-no-label-height/2;
+        }
+    }
+    &--copy {
+        img {
+            height: $btn-img-copy-height;
+        }
+    }
+    &__icon-with-label {
+        color: $white;
+        display: inline-block;
+        position: relative;
+        padding: 6px;
+        background-color: $denim;
+        margin-right: 18px;
+        border: 1px solid;
+        &:hover, &:focus {
+            color: $white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        img {
+            height: $btn-img-with-label-height;
+            margin-right: 12px
+        }
+    }
+    &__icon-no-label {
+        color: $white;
+        display: inline-block;
+        position: relative;
+        padding: 0px 6px;
+        background-color: $denim;
+        margin-right: 18px;
+        border: 1px solid;
+        &:hover, &:focus {
+            color: $white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        img {
+            height: $btn-img-no-label-height;
+            margin: 0px;
+        }
+    }
+}
+
+.ssp-btn__show-more {
+    color: $text-color;
+    &:hover {
+        color: $curious-blue;
+    }
+}
+
+.ssp-btns-container {
+    text-align: center;
+    padding-top: 32px;
+    @at-root &--btn__right.ssp-btn {
+        margin-left:  $btn-distance;
+    }
+    @at-root &--btn__left.ssp-btn {
+        margin-right: $btn-distance;
+    }
+}
+
+
+.ssp-dropdown__two_cols {
+    width: 400px;
+    padding: 6px;
+    @at-root &--item {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        height: 30px;
+    }
+}
+
+
+// Content
+
+.ssp-content-group {
+    padding: 0px 42px;
+    &__provider-list {
+        overflow: auto;
+        &--all {
+            margin: 6px 6px 6px 42px;
+            height: 23vh;
+            a {
+                display: block;
+                position: relative;
+                padding: 4px 12px;
+                &:hover {
+                    background-color: $alabaster;
+                }
+            }
+        }
+        &--other {
+            margin: 2px 6px 2px 54px;
+        }
+    }
+}
+
+.ssp-attrs--container {
+    height: 34vh;
+    overflow: auto;
+    padding: 16px;
+}
+
+.ssp-table {
+    margin-bottom: 0;
+    @at-root &--tr__odd {
+        background-color: lighten($alabaster, 1%);
+    }
+    @at-root &--attrname {
+        width: 35%;
+        overflow: hidden;
+        float: left;
+        word-break: break-word;
+        text-align: right;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+    @at-root &--attrvalue {
+        overflow: hidden;
+        word-break: break-word;
+        @at-root &--list--item {
+            border-bottom: 1px solid $gray-lighter;
+            padding: 6px 0;
+        }
+    }
+}
+
+.ssp-line-or-line {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+    margin-top: 6px;
+    .ssp-line-or-line__or {
+        @extend h2;
+        position: relative;
+        background: $white;
+        padding: 0 24px;
+        bottom: -10px;
+
+    }
+}
+
+body .ssp-modal-body {
+    padding: 30px;
+}
+
+.ssp-error-code {
+    padding: 18px;
+    white-space: pre-line;
+}
+
+.ssp-modal-or {
+    font-size: 22px;
+    color: $manatee;
+    margin: 18px;
+}
