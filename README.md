@@ -10,6 +10,12 @@ You can install the theme using any of the methods below.
 
 Add the following lines in the `composer.json` file that is located in your
 SimpleSAMLphp installation:
+
+If you want to use [composer](https://getcomposer.org/) to install this theme
+you need to edit `composer.json` file that is located in your SimpleSAMLphp
+installation. Check the following example, that includes all the necessary
+additions for the installation of the **simplesamlphp-module-themevanilla v1.0.0**.
+
 ```
 "require": {
 
@@ -32,9 +38,10 @@ SimpleSAMLphp installation:
       "package": {
         "name": "rciam/css",
         "version": "1.0.0",
-        "dist": {
+     :w
+   "dist": {
           "type": "zip",
-          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/files/1642891/css.zip"
+          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/css.zip"
         }
       }
     },
@@ -45,7 +52,7 @@ SimpleSAMLphp installation:
         "version": "1.0.0",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/files/1642892/js.zip"
+          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/js.zip"
         }
       }
     }
