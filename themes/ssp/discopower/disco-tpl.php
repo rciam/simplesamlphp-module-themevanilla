@@ -84,7 +84,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
   }
   else {
     $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= htmlspecialchars($metadata['UIInfo']['DisplayName']['en']) . '';
+    $html .= htmlspecialchars(getTranslatedName($t, $metadata)) . '';
 
     if(array_key_exists('icon', $metadata) && $metadata['icon'] !== NULL) {
       $iconUrl = \SimpleSAML\Utils\HTTP::resolveURL($metadata['icon']);
