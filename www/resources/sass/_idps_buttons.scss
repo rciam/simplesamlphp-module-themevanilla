@@ -1,6 +1,21 @@
 // Color rules for the buttons that have icons
 
 .ssp-btn {
+    &.b2access-orange {
+        background-color: $b2access-orange;
+        padding: 3px 6px;
+        font-weight: 500;
+        img {
+            height: 30px;
+        }
+    }
+    &.b2access {
+        background-color: $b2access-blue;
+        padding: 3px 6px;
+        img {
+            height: 30px;
+        }
+    }
     &.elixir {
         background-color: $elixir;
     }
