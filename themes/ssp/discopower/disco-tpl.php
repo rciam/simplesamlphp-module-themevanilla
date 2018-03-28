@@ -38,7 +38,7 @@ $this->data['head'] .= '<script type="text/javascript">
   $(document).ready(function() {';
     $i = 0;
     foreach ($this->data['idplist'] AS $tab => $slist) {
-  if ($tab == 'all') {
+  if ($tab == 'idps_in_searchable_list') {
       $this->data['head'] .= "\n" . '$("#query_' . $tab . '").liveUpdate("#list_' . $tab . '")' .
         (($i++ == 0) && (empty($faventry)) ? '.focus()' : '') . ';';
   }
@@ -159,10 +159,12 @@ if (!empty($faventry)) {
   ');
 }
 
-
+$idps_in_searchable_list_index;
+$idps_with_logos_index;
 foreach( $this->data['idplist'] AS $tab => $slist) {
   if (!empty($slist)) {
-    if($tab == 'all') {
+    if($tab == 'idps_in_searchable_list') {
+      $idps_in_searchable_list_index = array_search($tab, array_keys($this->data['idplist']));
       $top = '<div class="row ssp-content-group js-spread">
                 <div class="col-sm-12 js-spread">';
       $search_name = 'query_' . $tab;
@@ -173,7 +175,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
                     . $search_name . '" id="' . $search_name . '" />'
                 . '</form>'
                 . '</div>';
-      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--all js-spread" id="list_' . $tab . '">';
+      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--idps_in_searchable_list js-spread" id="list_' . $tab . '">';
       $list_items = '';
       $close = '</div></div></div>'; // /metalist /ssp-content-group /row
 
@@ -190,12 +192,13 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
       echo($top . $search . $list_open . $list_items . $close);
     }
     else if($tab == "idps_with_logos") {
+      $idps_with_logos_index = array_search($tab, array_keys($this->data['idplist']));
       $top = '<div class="row ssp-content-group">
-            <div class="col-sm-12">';
-      $or = '<div class="text-center ssp-line-or-line"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
-      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
+            ';
+      $list_open = '<div class="col-sm-12"><div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
       $list_items = '';
-      $close = '</div></div></div>'; // /metalist /ssp-content-group /row
+      $close_list = '</div>';
+      $close = '</div></div>'; // /metalist /ssp-content-group /row
       if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
         $idpentry = $slist[$this->data['preferredidp']];
         $list_items .=  (showEntry($this, $idpentry, TRUE, TRUE));
@@ -206,7 +209,14 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $list_items .= (showEntry($this, $idpentry, FALSE, TRUE));
         }
       }
-      echo $top . $or . $list_open . $list_items . $close;
+      if($idps_in_searchable_list_index < $idps_with_logos_index) {
+        $or = '<div class="col-sm-12"><div class="col-sm-12 text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        echo $top . $or . $list_open . $list_items . $close_list . $close;
+      }
+      else {
+        $or = '<div class="col-sm-12 text-center ssp-line-or-line ssp-line-or-line--bottom"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        echo $top . $list_open . $list_items . $close_list . $or . $close;
+      }
     }
   }
 }

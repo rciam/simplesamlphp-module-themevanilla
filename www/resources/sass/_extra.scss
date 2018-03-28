@@ -345,7 +345,7 @@ h4 {
     padding: 0px 42px;
     &__provider-list {
         overflow: auto;
-        &--all {
+        &--idps_in_searchable_list {
             margin: 6px 6px 6px 42px;
             height: 23vh;
             a {
@@ -396,8 +396,14 @@ h4 {
 .ssp-line-or-line {
     position: relative;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 18px;
-    margin-top: 6px;
+    &--top {
+        margin-bottom: 18px;
+        margin-top: 6px;
+    }
+    &--bottom {
+    margin-bottom: 30px;
+    margin-top: 0;
+    }
     .ssp-line-or-line__or {
         @extend h2;
         position: relative;
