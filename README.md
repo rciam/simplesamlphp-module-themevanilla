@@ -8,71 +8,68 @@ You can install the theme using any of the methods below.
 
 ### Composer
 
-Add the following lines in the `composer.json` file that is located in your
-SimpleSAMLphp installation:
-
 If you want to use [composer](https://getcomposer.org/) to install this theme
-you need to edit `composer.json` file that is located in your SimpleSAMLphp
+you need to edit `composer.json`. The file is located in your SimpleSAMLphp
 installation. Check the following example, that includes all the necessary
-additions for the installation of the **simplesamlphp-module-themevanilla v1.0.0**.
+additions for the installation of the **simplesamlphp-module-themevanilla
+v1.0.0**.
 
 ```
 "require": {
 
-    ...
+  ...
 
-    "rciam/simplesamlphp-module-themevanilla": "1.0.0",
-    "rciam/css": "1.0.0",
-    "rciam/js": "1.0.0"
+  "rciam/simplesamlphp-module-themevanilla": "1.0.0",
+  "rciam/css": "1.0.0",
+  "rciam/js": "1.0.0"
 },
 "repositories": [
 
-    ...
+  ...
 
-    {
-        "type": "vcs",
-        "url": "https://github.com/rciam/simplesamlphp-module-themevanilla"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "rciam/css",
-        "version": "1.0.0",
-     :w
-   "dist": {
-          "type": "zip",
-          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/css.zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "rciam/js",
-        "version": "1.0.0",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/js.zip"
-        }
+  {
+    "type": "vcs",
+    "url": "https://github.com/rciam/simplesamlphp-module-themevanilla"
+  },
+  {
+    "type": "package",
+    "package": {
+      "name": "rciam/css",
+      "version": "1.0.0",
+      "dist": {
+        "type": "zip",
+        "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/css.zip"
       }
     }
-    ],
-    "scripts": {
+  },
+  {
+    "type": "package",
+    "package": {
+      "name": "rciam/js",
+      "version": "1.0.0",
+      "dist": {
+        "type": "zip",
+        "url": "https://github.com/rciam/simplesamlphp-module-themevanilla/releases/download/v1.0.0/js.zip"
+      }
+    }
+  }
+],
+"scripts": {
 
-      ...
+  ...
 
-      "post-update-cmd": [
-        "cp -r 'vendor/rciam/css' 'modules/themevanilla/www/resources'",
-        "cp -r 'vendor/rciam/js' 'modules/themevanilla/www/resources'"
-      ]
-    },
+  "post-update-cmd": [
+    "cp -r 'vendor/rciam/css' 'modules/themevanilla/www/resources'",
+    "cp -r 'vendor/rciam/js' 'modules/themevanilla/www/resources'"
+  ]
+},
 ```
 
 With the above configuration composer will do several operations:
-- It will put the module `themevanilla` in the `modules` directory.
-- It will download and extract the compressed `css` and `js` directories that
+* It will put the module `themevanilla` in the `modules` directory.
+* It will download and extract the compressed `css` and `js` directories that
   include the minified css and javascript files.
-- It will copy the `css` and `js` directories from the `vendor/rciam` directory
+* It will copy the `css` and `js` directories from the `vendor/rciam` directory
   in the `themevanilla/www/resources` directory, where the static files of the
   theme should be placed.
 
@@ -107,13 +104,27 @@ In order to use this module as theme you need to set in the
 
 ### Using IdP login buttons with icons
 
-The theme splits the discopower IdP discovery page into 2 sections.
-The first section contains all IdPs in a simple list of links, while the second
-one contains login buttons for a selected subset of the IdPs.
+The theme splits the discopower IdP discovery page into 2 sections, depending on
+the tags of the included IdPs:
+* The section that its IdPs have the tag `idps_in_searchable_list` contains all
+  the IdPs in a list of links with a search box.
+* The section that its IdPs have the tag `idps_with_logos` contains login
+  buttons with specified style rules for each IdP. Each button may have a logo
+  icon, too.
 
-If you want to include an IdP in the second section, you need to attach the
-`idps_with_logos` tag to that IdP. The css class name, icon and label of the IdP login
-button can then be specified using the `login_button` configuration as follows:
+Also, you need to define the order of the 2 sections. You can set this in the
+file `config/module_discopower.php` from the variable `taborder`.
+For example:
+```
+'taborder' => array(
+  'idps_in_searchable_list',
+  'idps_with_logos'
+)
+```
+
+Especially for the of the `idps_with_logos`, you need to specify the css class
+name, icon and label of the IdP login button using the `login_button`
+configuration as follows:
 ```
 'tags' => array(
   'idps_with_logos',
@@ -124,8 +135,18 @@ button can then be specified using the `login_button` configuration as follows:
   'label' => 'ORCID',
 )
 ```
-To set style rules for the button, the configured css_classname value must be
-defined in the `idps_buttons.scss` file. See more information bellow.
+To set style rules for the each button, the configured css_classname value must
+be defined in the `idps_buttons.scss` file. See more information bellow.
+
+At the moment there are style rules for the IdPs:
+* B2ACCESS
+* DARIAH
+* Elixir
+* Facebook
+* Google
+* IGTF
+* LinkedIn
+* ORCID
 
 
 ## Customization
@@ -151,9 +172,9 @@ If you want to make any changes in the footer you need to modify the template
 ### CSS
 
 To produce the css files for this theme follow these steps:
-- Install sass ([installation guide](http://sass-lang.com/install))
-- Go to the directory `themevanilla/www/resources`
-- Run the cli sass: `sass --update sass:css`
+* Install sass ([installation guide](http://sass-lang.com/install))
+* Go to the directory `themevanilla/www/resources`
+* Run the cli sass: `sass --update sass:css`
 
 After these steps the css files will be in the directory
 `themevanilla/www/resources/css`
