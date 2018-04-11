@@ -193,12 +193,12 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
     }
     else if($tab == "idps_with_logos") {
       $idps_with_logos_index = array_search($tab, array_keys($this->data['idplist']));
-      $top = '<div class="row ssp-content-group">
+      $top = '<div class="row ssp-content-group"><div class="col-sm-12">
             ';
-      $list_open = '<div class="col-sm-12"><div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other">';
+      $list_open = '<div class="metalist ssp-content-group__provider-list ssp-content-group__provider-list--other js-idps">';
       $list_items = '';
-      $close_list = '</div>';
-      $close = '</div></div>'; // /metalist /ssp-content-group /row
+      $close_list = '</div>'; // /metalist
+      $close = '</div></div>'; // /ssp-content-group /col-sm-12
       if (!empty($this->data['preferredidp']) && array_key_exists($this->data['preferredidp'], $slist)) {
         $idpentry = $slist[$this->data['preferredidp']];
         $list_items .=  (showEntry($this, $idpentry, TRUE, TRUE));
@@ -210,11 +210,11 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
         }
       }
       if($idps_in_searchable_list_index < $idps_with_logos_index) {
-        $or = '<div class="col-sm-12"><div class="col-sm-12 text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
         echo $top . $or . $list_open . $list_items . $close_list . $close;
       }
       else {
-        $or = '<div class="col-sm-12 text-center ssp-line-or-line ssp-line-or-line--bottom"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--bottom"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
         echo $top . $list_open . $list_items . $close_list . $or . $close;
       }
     }

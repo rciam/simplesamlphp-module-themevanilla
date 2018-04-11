@@ -276,8 +276,11 @@ h4 {
         position: relative;
         padding: 6px;
         background-color: $denim;
-        margin-right: 18px;
+        margin-right: 9px;
+        margin-left: 9px;
         border: 1px solid;
+        min-width: 145px;
+        text-align: center;
         &:hover, &:focus {
             color: $white;
             text-decoration: none;
@@ -289,13 +292,16 @@ h4 {
         }
     }
     &__icon-no-label {
+        text-align: center;
         color: $white;
         display: inline-block;
         position: relative;
         padding: 0px 6px;
         background-color: $denim;
-        margin-right: 18px;
+        margin-right: 9px;
+        margin-left: 9px;
         border: 1px solid;
+        min-width: 145px;
         &:hover, &:focus {
             color: $white;
             text-decoration: none;
@@ -358,7 +364,8 @@ h4 {
             }
         }
         &--other {
-            margin: 2px 6px 2px 54px;
+            margin: 2px 0px 2px 46px;
+            text-align: center;
         }
     }
 }
