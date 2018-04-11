@@ -1,14 +1,6 @@
 // Color rules for the buttons that have icons
 
 .ssp-btn {
-    &.b2access-orange {
-        background-color: $b2access-orange;
-        padding: 3px 6px;
-        font-weight: 500;
-        img {
-            height: 30px;
-        }
-    }
     &.b2access {
         background-color: $b2access-blue;
         padding: 3px 6px;
@@ -29,14 +21,6 @@
         background-color: $white;
         border: 1px solid $dariah-border;
         font-weight: 500;
-        padding-top: 7px;
-        padding-bottom: 5px;
-    }
-    &.dariah-reverse {
-        color: $white;
-        background-color: #003563;
-        font-weight: 500;
-        text-transform: uppercase;
         padding-top: 7px;
         padding-bottom: 5px;
     }
