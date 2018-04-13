@@ -6,7 +6,7 @@
     "en": "<strong>What is the problem?</strong> %IDP% does not return a persistent identifier to help us uniquely identify you."
   },
   "resolution_description": {
-    "en": "<strong>What can you do?</strong> At the moment, the only way to log in is to <a href=\"%RETRY_URL%\">use a different account</a>. For future use, you may ask your institution administrator to release the required information, by sending them a print screen of this error, or asking them to contact our support at <a href=\"mailto:support@example.com\">support@example.com</a>."
+    "en": "<strong>What can you do?</strong> At the moment, the only way to log in is to <a href=\"%RETRY_URL%\">use a different account</a>. For future use, you may ask your institution administrator to release the required information, by sending them a print screen of this error, or asking them to contact our support at <a href=\"mailto:support@example.org\">support@example.org</a>."
   },
   "details_title": {
     "en": "Error details"
