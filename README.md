@@ -1,6 +1,10 @@
-# simplesamlphp-module-themevanilla
+# Vanilla theme for SimpleSAMLphp
+
+![discopower](/screenshots/disco_buttons_bottom.png)
 
 A customisable theme for SimpleSAMLphp based on Bootstrap.
+See more screens in the directory [screenshots](screenshots/).
+
 
 ## Installation
 
