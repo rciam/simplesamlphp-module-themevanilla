@@ -1,23 +1,20 @@
 {
   "friendly_title": {
-    "en": "Missing data from"
+    "en": "Sorry, we were not able to log you in"
   },
   "friendly_description": {
-    "en": "Friendly description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    "en": "<strong>What is the problem?</strong> %IDP% does not return a persistent identifier to help us uniquely identify you."
+  },
+  "resolution_description": {
+    "en": "<strong>What can you do?</strong> At the moment, the only way to log in is to <a href=\"%RETRY_URL%\">use a different account</a>. For future use, you may ask your institution administrator to release the required information, by sending them a print screen of this error, or asking them to contact our support at <a href=\"mailto:support@example.org\">support@example.org</a>."
   },
   "details_title": {
     "en": "Error details"
   },
   "details_description": {
-    "en": "Details description: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-  },
-  "contact_title": {
-    "en": "How to get help"
-  },
-  "contact_description": {
-    "en": "Contact description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+    "en": "Your identity provider needs to release any of the following user identifiers to help us uniquely identify you:"
   },
   "go2disco": {
-    "en": "Choose another provider"
+    "en": "Log in with a different account"
   }
 }

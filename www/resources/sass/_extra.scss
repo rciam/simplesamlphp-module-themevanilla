@@ -276,8 +276,11 @@ h4 {
         position: relative;
         padding: 6px;
         background-color: $denim;
-        margin-right: 18px;
+        margin-right: 9px;
+        margin-left: 9px;
         border: 1px solid;
+        min-width: 145px;
+        text-align: center;
         &:hover, &:focus {
             color: $white;
             text-decoration: none;
@@ -289,13 +292,16 @@ h4 {
         }
     }
     &__icon-no-label {
+        text-align: center;
         color: $white;
         display: inline-block;
         position: relative;
         padding: 0px 6px;
         background-color: $denim;
-        margin-right: 18px;
+        margin-right: 9px;
+        margin-left: 9px;
         border: 1px solid;
+        min-width: 145px;
         &:hover, &:focus {
             color: $white;
             text-decoration: none;
@@ -345,7 +351,7 @@ h4 {
     padding: 0px 42px;
     &__provider-list {
         overflow: auto;
-        &--all {
+        &--idps_in_searchable_list {
             margin: 6px 6px 6px 42px;
             height: 23vh;
             a {
@@ -358,7 +364,8 @@ h4 {
             }
         }
         &--other {
-            margin: 2px 6px 2px 54px;
+            margin: 2px 46px 2px 46px;
+            text-align: center;
         }
     }
 }
@@ -396,8 +403,14 @@ h4 {
 .ssp-line-or-line {
     position: relative;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 18px;
-    margin-top: 6px;
+    &--top {
+        margin-bottom: 18px;
+        margin-top: 6px;
+    }
+    &--bottom {
+    margin-bottom: 30px;
+    margin-top: 0;
+    }
     .ssp-line-or-line__or {
         @extend h2;
         position: relative;

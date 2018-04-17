@@ -1,6 +1,29 @@
 // Color rules for the buttons that have icons
 
 .ssp-btn {
+    &.b2access {
+        background-color: $b2access-blue;
+        padding: 3px 6px;
+        img {
+            height: 30px;
+        }
+    }
+    &.elixir {
+        background-color: $elixir;
+    }
+    &.igtf {
+        color: $igtf;
+        background-color: $white;
+        border: 1px solid $igtf;
+    }
+    &.dariah {
+        color: $dariah-text;
+        background-color: $white;
+        border: 1px solid $dariah-border;
+        font-weight: 500;
+        padding-top: 7px;
+        padding-bottom: 5px;
+    }
     &.google {
         background-color: $google;
     }
