@@ -1,4 +1,4 @@
-# Vanilla theme for SimpleSAMLphp
+<h1 align="center">Vanilla theme for SimpleSAMLphp</h1>
 
 ![discopower](/screenshots/disco_buttons_bottom.png)
 
