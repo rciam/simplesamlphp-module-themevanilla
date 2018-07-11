@@ -435,3 +435,34 @@ body .ssp-modal-body {
     color: $manatee;
     margin: 18px;
 }
+
+// #cookies
+#cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 60%;
+    z-index: 1000;
+    min-width: 400px;
+    p {
+        margin: 20px;
+        border: 1px solid #90929D;
+        padding: 20px;
+        background: white;
+        position: relative;
+    }
+    .cookies-ok {
+        float: right;
+        display: block;
+        margin: 0 0 20px 20px;
+        padding: 10px;
+        background: #0a559c;
+        color: white;
+        font-size: 11px;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+    }
+}

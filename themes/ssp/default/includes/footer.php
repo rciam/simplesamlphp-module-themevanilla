@@ -8,6 +8,19 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 ?>
   </div><!-- /container -->
   </div><!-- /ssp-container -->
+
+
+  <!-- cookies popup -->
+  <div id="cookies">
+    <p>
+      <a id="js-accept-cookies" class="cookies-ok" href="#">
+        <?php echo $this->t('{themevanilla:discopower:cookies_accept_btn_text}'); ?>
+      </a>
+      <?php echo $this->t('{themevanilla:discopower:cookies_text}'); ?>
+      <a href="<?php echo $this->t('{themevanilla:discopower:cookies_link_url}'); ?>" target="_blank"><?php echo $this->t('{themevanilla:discopower:cookies_link_text}'); ?></a>
+    </p>
+  </div>
+  <!-- /cookies popup -->
   <footer class="ssp-footer text-center">
     <div class="container ssp-footer--container">
       <div class="row ssp-content-group--footer">
@@ -103,7 +116,9 @@ if ($includeLanguageBar) {
     </div>
   </div> <!-- /container-fluid -->
 </footer>
-
+  <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/cookie.js')); ?>">
+  </script>
   <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
   </script>

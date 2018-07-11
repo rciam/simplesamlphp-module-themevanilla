@@ -10,5 +10,17 @@
   },
   "favourite_dialog_button_close": {
     "en": "Choose another account"
+  },
+  "cookies_link_text": {
+    "en": "Click here to read our privacy and cookies policy."
+  },
+  "cookies_text": {
+    "en": "We use cookies to give you a better browsing experience."
+  },
+  "cookies_accept_btn_text": {
+    "en": "Accept"
+  },
+  "cookies_link_url": {
+    "en": "https://www.example.org"
   }
 }
