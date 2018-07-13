@@ -29,10 +29,9 @@ function resizeAll() {
 };
 
 $(document).ready(function() {
-  if (Cookies.get('cookies_accepted')) {
-    $('#cookies').hide();
+  if (!Cookies.get('cookies_accepted')) {
+    $('#cookies').show();
   };
-
 
   resizeAll();
   // loader for discopower view
