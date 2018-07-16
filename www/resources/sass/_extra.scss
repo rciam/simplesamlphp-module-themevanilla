@@ -441,15 +441,15 @@ body .ssp-modal-body {
     position: fixed;
     bottom: 0;
     right: 0;
-    left: 60%;
+    left: 0;
     z-index: 1000;
     min-width: 400px;
     display: none;
     p {
-        margin: 20px;
+        margin: 0;
         border: 1px solid #90929D;
         padding: 20px;
-        background: white;
+        background: #eee;
         position: relative;
     }
     .cookies-ok {
