@@ -64,7 +64,7 @@ form {
         }
     }
     img {
-       height: $logo-height;
+       max-height: $logo-height;
     }
 
     .ssp-logo__link--right {
