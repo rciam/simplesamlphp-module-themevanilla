@@ -38,4 +38,11 @@
     &.facebook {
         background-color: $facebook;
     }
+    &.aria {
+        background-color: $aria;
+        img {
+            height: 24px;
+            margin: 6px 0;
+        }
+    }
 }
