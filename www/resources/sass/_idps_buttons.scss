@@ -45,4 +45,15 @@
             margin: 6px 0;
         }
     }
+    &.eduTeams {
+        background-color: transparent;
+        border: $eduTeams-yellow 1px solid;
+        &:hover {
+            border-color: $eduTeams-yellow-dark;
+        }
+        img {
+            height: 32px;
+            margin: 2px 0;
+        }
+    }
 }
