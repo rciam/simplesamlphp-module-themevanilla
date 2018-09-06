@@ -56,4 +56,23 @@
             margin: 2px 0;
         }
     }
+    &.egi {
+        background-color: transparent;
+        border: $egi-gray 1px solid;
+        color: $black;
+        padding: 2px 6px;
+        &:hover {
+            border-color: $egi-cyan;
+            color: darken($egi-cyan, 30%);
+        }
+        span {
+            position: relative;
+            bottom: -4px;
+        }
+        img {
+            height: 30px;
+            margin-right: 6px;
+        }
+
+    }
 }
