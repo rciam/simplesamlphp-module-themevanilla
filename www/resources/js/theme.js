@@ -55,8 +55,8 @@ $(document).ready(function() {
   });
 
     $('#js-accept-cookies').click(function(e){
-    e.preventDefault();
-    $('#cookies').hide();
-    Cookies.set('cookies_accepted', true);
+      e.preventDefault();
+      $('#cookies').hide();
+      Cookies.set('cookies_accepted', true);
   })
 });
