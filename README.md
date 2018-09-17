@@ -176,6 +176,12 @@ By default, the logo has height 60px. See below how you can modify it.
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.
 
+### Header ribbon
+
+The text in the header ribbon can be altered by changing the `ribbon_text`
+definition in `dictionaries/default.definition.json` file.
+If you want to hide the ribbon, set `ribbon_text` to `""`.
+
 ### CSS
 
 To produce the css files for this theme follow these steps:

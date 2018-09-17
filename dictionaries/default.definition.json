@@ -4,5 +4,8 @@
   },
   "header_subtitle": {
     "en": "Use the same credentials for all our services"
+  },
+  "ribbon_text": {
+    "en": "Demo"
   }
 }

@@ -120,6 +120,13 @@ if($onLoad !== '') {
 <body<?php echo $onLoad; ?>>
 
 <div class="header">
+<?php
+  if ($this->t('{themevanilla:default:ribbon_text}')) {
+    echo '<div class="corner-ribbon red">';
+    echo $this->t('{themevanilla:default:ribbon_text}');
+    echo '</div>';
+  }
+  ?>
   <div class="text-center ssp-logo">
     <a href="https://simplesamlphp.org/">
       <img src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
