@@ -12,13 +12,15 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 
   <!-- cookies popup -->
   <div id="cookies">
-    <p>
+    <div id="cookies-wrapper">
+      <p>
+        <?php echo $this->t('{themevanilla:discopower:cookies_text}'); ?>
+        <a href="<?php echo $this->t('{themevanilla:discopower:cookies_link_url}'); ?>" target="_blank"><?php echo $this->t('{themevanilla:discopower:cookies_link_text}'); ?></a>
+      </p>
       <a id="js-accept-cookies" class="cookies-ok" href="#">
         <?php echo $this->t('{themevanilla:discopower:cookies_accept_btn_text}'); ?>
       </a>
-      <?php echo $this->t('{themevanilla:discopower:cookies_text}'); ?>
-      <a href="<?php echo $this->t('{themevanilla:discopower:cookies_link_url}'); ?>" target="_blank"><?php echo $this->t('{themevanilla:discopower:cookies_link_text}'); ?></a>
-    </p>
+    </div>
   </div>
   <!-- /cookies popup -->
   <footer class="ssp-footer text-center">

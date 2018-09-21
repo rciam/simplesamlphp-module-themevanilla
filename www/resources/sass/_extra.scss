@@ -438,27 +438,31 @@ body .ssp-modal-body {
 
 // #cookies
 #cookies {
+    display: none;
+}
+
+#cookies-wrapper {
     position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 1000;
-    min-width: 400px;
-    display: none;
+    display: flex;
+    border: 1px solid #90929D;
+    padding: 20px;
+    background: #eee;
     p {
         margin: 0;
-        border: 1px solid #90929D;
-        padding: 20px;
-        background: #eee;
         position: relative;
+        padding: 0;
     }
     .cookies-ok {
-        float: right;
         display: block;
-        margin: 0 0 20px 20px;
+        margin: 0 0 0 20px;
         padding: 10px;
         background: #0a559c;
         color: white;
+        align-self: center;
         font-size: 11px;
         text-transform: uppercase;
         &:hover {
@@ -468,6 +472,15 @@ body .ssp-modal-body {
     }
 }
 
+
+@media screen and (max-width: 600px ) {
+    #cookies-wrapper {
+       flex-direction: column;
+       .cookies-ok {
+            margin: 20px 0 0 ;
+       }
+    }
+}
 
 // #ribbon
 
