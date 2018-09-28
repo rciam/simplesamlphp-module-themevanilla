@@ -10,7 +10,7 @@ if ($config->getBoolean('admin.protectindexpage', false)) {
 $loginurl = SimpleSAML\Utils\Auth::getAdminLoginURL();
 $isadmin = SimpleSAML\Utils\Auth::isAdmin();
 
-$t = new SimpleSAML_XHTML_Template($config, 'themevanilla:policy.tpl.php');
+$t = new SimpleSAML_XHTML_Template($config, 'core:policy.tpl.php');
 $t->data['pageid'] = 'policy';
 $t->data['isadmin'] = $isadmin;
 $t->data['loginurl'] = $loginurl;
