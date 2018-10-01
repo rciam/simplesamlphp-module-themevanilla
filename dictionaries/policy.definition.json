@@ -30,21 +30,21 @@
 		"en": "<p><em>Cookies are important for identifying you, thereby enabling us to grant you access to the RCIAM service and other Infrastructure services and for optimizing your browsing experience. <\/em><\/p>"
 	},
 	"table_type": {
-		"en": "<p><strong>Cookie Type<\/strong><\/p>"
+		"en": "Cookie Type"
 	},
 	"table_provider": {
-		"en": "<p><strong>Cookie Provider<\/strong><\/p>"
+		"en": "Cookie Provider"
 	},
 	"table_name": {
-		"en": "<p><strong>Cookie Name<\/strong><\/p>"
+		"en": "Cookie Name"
 	},
 	"table_third_party": {
-		"en": "<p><strong>Third party Cookie<\/strong><\/p>"
+		"en": "Third party Cookie"
 	},
 	"table_category": {
-		"en": "<p><strong>Persistent or session Cookie<\/strong><\/p>"
+		"en": "Persistent or session Cookie"
 	},
 	"table_purpose": {
-		"en": "<p><strong>Purpose of Cookie<\/strong><\/p>"
+		"en": "Purpose of Cookie"
 	}
 }

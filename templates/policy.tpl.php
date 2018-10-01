@@ -9,57 +9,55 @@ $this->includeAtTemplateBase('includes/header.php');
 <h2><?php echo($this->data['header']); ?></h2>
 
 <div>
-<ol>
-    <li><?php echo($this->t('{themevanilla:policy:purpose_head}')); ?></li>
-</ol>
-<?php echo($this->t('{themevanilla:policy:purpose_body}')); ?>
+  <ol>
+      <li><?php echo($this->t('{themevanilla:policy:purpose_head}')); ?></li>
+  </ol>
+  <?php echo($this->t('{themevanilla:policy:purpose_body}')); ?>
 
-<ol start="2">
-    <li><?php echo($this->t('{themevanilla:policy:cookie_list_head}')); ?></li>
-</ol>
-<?php echo($this->t('{themevanilla:policy:cookie_list_body}')); ?>
+  <ol start="2">
+      <li><?php echo($this->t('{themevanilla:policy:cookie_list_head}')); ?></li>
+  </ol>
+  <?php echo($this->t('{themevanilla:policy:cookie_list_body}')); ?>
 
-<table>
-<tbody>
-<tr>
-    <td><?php echo($this->t('{themevanilla:policy:table_type}')); ?></td>
-    <td><?php echo($this->t('{themevanilla:policy:table_provider}')); ?></td>
-    <td><?php echo($this->t('{themevanilla:policy:table_name}')); ?></td>
-    <td><?php echo($this->t('{themevanilla:policy:table_third_party}')); ?></td>
-    <td><?php echo($this->t('{themevanilla:policy:table_category}')); ?></td>
-    <td><?php echo($this->t('{themevanilla:policy:table_purpose}')); ?></td>
-</tr>
+  <table class="table">
+    <thead>
+      <tr>
+          <th><?php echo($this->t('{themevanilla:policy:table_type}')); ?></th>
+          <th><?php echo($this->t('{themevanilla:policy:table_provider}')); ?></th>
+          <th><?php echo($this->t('{themevanilla:policy:table_name}')); ?></th>
+          <th><?php echo($this->t('{themevanilla:policy:table_third_party}')); ?></th>
+          <th><?php echo($this->t('{themevanilla:policy:table_category}')); ?></th>
+          <th><?php echo($this->t('{themevanilla:policy:table_purpose}')); ?></th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($cookies as $row) {
+    ?>
+      <tr>
+          <td><?php echo($row['type']);?></td>
+          <td><u><?php echo($row['provider']);?></u></td>
+          <td><?php echo($row['name']);?></td>
+          <td><?php echo ($row['thirdParty'] ? 'Yes' : 'No' );?></td>
+          <td><?php echo($row['category']);?></td>
+          <td><?php echo($row['purpose']);?></td>
+      </tr>
+    <?php
+    }
+    ?>
+    </tbody>
+  </table>
 
-<?php
-foreach($cookies as $row) {
-?>
-<tr>
-    <td><p><?php echo($row['type']);?></p></td>
-    <td><p><u><?php echo($row['provider']);?></u></p></td>
-    <td><p><?php echo($row['name']);?></p></td>
-    <td><p><?php echo ($row['thirdParty'] ? 'Yes' : 'No' );?></p></td>
-    <td><p><?php echo($row['category']);?></p></td>
-    <td><p><?php echo($row['purpose']);?></p></td>
-</tr>
-<?php
-}
-?>
+  <ol start="3">
+      <li><?php echo($this->t('{themevanilla:policy:endurance_head}')); ?></li>
+  </ol>
+  <?php echo($this->t('{themevanilla:policy:endurance_body}')); ?>
 
-</tbody>
-</table>
-<p>&nbsp;</p>
-
-<ol start="3">
-    <li><?php echo($this->t('{themevanilla:policy:endurance_head}')); ?></li>
-</ol>
-<?php echo($this->t('{themevanilla:policy:endurance_body}')); ?>
-
-<ol start="4">
-    <li><?php echo($this->t('{themevanilla:policy:disable_cookie_head}')); ?></li>
-</ol>
-<?php echo($this->t('{themevanilla:policy:disable_cookie_body}')); ?>
-<p>&nbsp;</p>
-<?php echo($this->t('{themevanilla:policy:note}')); ?>
+  <ol start="4">
+      <li><?php echo($this->t('{themevanilla:policy:disable_cookie_head}')); ?></li>
+  </ol>
+  <?php echo($this->t('{themevanilla:policy:disable_cookie_body}')); ?>
+  <?php echo($this->t('{themevanilla:policy:note}')); ?>
 </div>
 
 <?php $this->includeAtTemplateBase('includes/footer.php'); ?>
