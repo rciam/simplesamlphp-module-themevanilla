@@ -143,8 +143,11 @@ To set style rules for the each button, the configured css_classname value must
 be defined in the `idps_buttons.scss` file. See more information bellow.
 
 At the moment there are style rules for the IdPs:
+* ARIA
 * B2ACCESS
+* Check-in
 * DARIAH
+* EduTeams
 * Elixir
 * Facebook
 * Google
