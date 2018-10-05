@@ -172,6 +172,11 @@ them differently you need to modify the template `header.php` that is placed in:
 
 By default, the logo has height 60px. See below how you can modify it.
 
+### Header logo link
+
+You can customise the url of the link of the logo in the header by changing
+the `logo_link_url` definition in `dictionaries/default.definition.json` file.
+
 ### Footer
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.

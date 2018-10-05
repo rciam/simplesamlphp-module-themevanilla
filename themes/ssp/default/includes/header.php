@@ -130,7 +130,7 @@ if($onLoad !== '') {
   }
   ?>
   <div class="text-center ssp-logo">
-    <a href="https://simplesamlphp.org/">
+    <a href="<?php echo $this->t('{themevanilla:default:logo_link_url}'); ?>" title="<?php echo $this->t('{themevanilla:default:header_title}'); ?>">
       <img src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
     </a>
   </div>
