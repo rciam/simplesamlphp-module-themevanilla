@@ -123,20 +123,21 @@ if($onLoad !== '') {
 
 <div class="header">
 <?php
-  if ($this->t('{themevanilla:default:ribbon_text}')) {
+  if (strpos($this->t('{themevanilla:default:ribbon_text}'), 'not translated') === FALSE || $this->t('{themevanilla:default:ribbon_text}')) {
     echo '<div class="corner-ribbon red">';
     echo $this->t('{themevanilla:default:ribbon_text}');
     echo '</div>';
   }
   ?>
   <div class="text-center ssp-logo">
-    <a href="<?php echo $this->t('{themevanilla:default:logo_link_url}'); ?>" title="<?php echo $this->t('{themevanilla:default:header_title}'); ?>">
+    <a <?php echo (strpos($this->t('{themevanilla:default:logo_link_url}'), 'not translated') === FALSE ? 'href="' .  $this->t('{themevanilla:default:logo_link_url}') . '"' : '');
+             echo (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? 'title="' .  $this->t('{themevanilla:default:header_title}') . '"' : ''); ?> >
       <img src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
     </a>
   </div>
   <h1 class="text-center">
-    <?php echo $this->t('{themevanilla:default:header_title}'); ?>
-    <small><?php echo $this->t('{themevanilla:default:header_subtitle}'); ?></small>
+    <?php echo (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_title}') : ''); ?>
+    <small><?php echo (strpos($this->t('{themevanilla:default:header_subtitle}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_subtitle}') : ''); ?></small>
   </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">
