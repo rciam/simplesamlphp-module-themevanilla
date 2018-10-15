@@ -1,4 +1,7 @@
 {
+  "browser_tab_title": {
+    "en": "SimpleSAMLphp"
+  },
   "header_title": {
     "en": "Identity Access Management for Research Communities"
   },

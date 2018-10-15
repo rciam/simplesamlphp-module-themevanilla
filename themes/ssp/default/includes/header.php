@@ -48,7 +48,11 @@ header('X-Frame-Options: SAMEORIGIN');
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 <script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/script.js"></script>
 <title>
-  SimpleSAMLphp
+  <?php
+  if (strpos($this->t('{themevanilla:default:browser_tab_title}'), 'not translated') === FALSE) {
+    echo $this->t('{themevanilla:default:browser_tab_title}');
+  }
+  ?>
   <?php if(array_key_exists('header', $this->data)) { echo (' | ' . $this->data['header']); } ?>
 </title>
 
