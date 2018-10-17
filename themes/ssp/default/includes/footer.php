@@ -8,6 +8,26 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 ?>
   </div><!-- /container -->
   </div><!-- /ssp-container -->
+
+<?php if(strpos($this->t('{themevanilla:discopower:cookies_text}'), 'not translated') === FALSE || strpos($this->t('{themevanilla:discopower:cookies_accept_btn_text}'), 'not translated') === FALSE) { ?>
+  <!-- cookies popup -->
+  <div id="cookies">
+    <div id="cookies-wrapper">
+      <p>
+        <?php echo $this->t('{themevanilla:discopower:cookies_text}'); ?>
+        <?php if(strpos($this->t('{themevanilla:discopower:cookies_link_text}'), 'not translated') === FALSE) { ?>
+        <a href="<?php echo $this->t('{themevanilla:discopower:cookies_link_url}'); ?>" target="_blank"><?php echo $this->t('{themevanilla:discopower:cookies_link_text}'); ?></a>
+        <?php } ?>
+      </p>
+      <a id="js-accept-cookies" class="cookies-ok" href="#">
+        <?php echo $this->t('{themevanilla:discopower:cookies_accept_btn_text}'); ?>
+      </a>
+    </div>
+  </div>
+  <!-- /cookies popup -->
+<?php
+}
+?>
   <footer class="ssp-footer text-center">
     <div class="container ssp-footer--container">
       <div class="row ssp-content-group--footer">
@@ -93,7 +113,7 @@ if ($includeLanguageBar) {
         <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
       </a>
       <div class="ssp-footer__item__copyright">
-        Copyright &copy; 2016-2018
+        Copyright &copy;<?php echo (strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-' : ''); echo date("Y"); ?>
       </div>
     </div>
     <div class="col-sm-3 ssp-footer__item">
@@ -103,7 +123,9 @@ if ($includeLanguageBar) {
     </div>
   </div> <!-- /container-fluid -->
 </footer>
-
+  <script type="text/javascript"
+          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/cookie.js')); ?>">
+  </script>
   <script type="text/javascript"
           src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
   </script>

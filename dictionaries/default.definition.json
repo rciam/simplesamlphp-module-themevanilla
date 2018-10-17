@@ -1,8 +1,17 @@
 {
+  "browser_tab_title": {
+    "en": "SimpleSAMLphp"
+  },
   "header_title": {
     "en": "Identity Access Management for Research Communities"
   },
   "header_subtitle": {
     "en": "Use the same credentials for all our services"
+  },
+  "logo_link_url": {
+    "en": "https://www.example.com"
+  },
+  "ribbon_text": {
+    "en": "Demo"
   }
 }
