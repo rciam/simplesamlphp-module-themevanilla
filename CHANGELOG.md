@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Change vanilla logo and favicon
   - Move wording and links from the templates of several modules to the related
     definition file
+  - Render header logo link url customisable
 
 ## [v2.0.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v1.0.0...v2.0.0) - 2018-04-17
 
