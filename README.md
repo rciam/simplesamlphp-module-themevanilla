@@ -155,7 +155,7 @@ At the moment there are style rules for the IdPs:
 * B2ACCESS
 * Check-in
 * DARIAH
-* EduTeams
+* eduTEAMS
 * Elixir
 * Facebook
 * Google
