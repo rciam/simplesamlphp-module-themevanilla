@@ -8,10 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Add banner and an extra view for cookies options
+- Add corner ribbon that displays customisable text
 - Module discopower: Add style rules and logos for the IdPs:
   - eduTeams
   - EGI
   - Aria
+
+### Changed
+  - Change vanilla logo and favicon
+  - Move wording and links from the templates of several modules to the related
+    definition file
 
 ## [v2.0.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v1.0.0...v2.0.0) - 2018-04-17
 
