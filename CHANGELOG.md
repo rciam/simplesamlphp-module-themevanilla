@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add banner and an extra view for cookies options
 - Add corner ribbon that displays customisable text
 - Add this changelog file
-- Module discopower: Add style rules and logos for the IdPs:
+- Module discopower: Add style rules and logos for the buttons of the IdPs:
   - eduTEAMS
   - EGI
   - Aria
