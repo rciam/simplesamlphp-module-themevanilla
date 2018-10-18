@@ -1,0 +1,50 @@
+{
+	"page_title": {
+		"en": "Cookie Policy"
+	},
+	"purpose_head": {
+		"en": "<strong>Purpose of this cookie policy<\/strong>"
+	},
+	"purpose_body": {
+		"en": "<p>This Website uses technologies such as \"cookies\" and \"pixel tags\". By browsing the webpage, the User agrees to the creation and use of cookies. If User does not wish to consent to the use of cookies, User may either disable them or discontinue browsing this webpage.<\/p><p>For the purpose of this Policy, the following terms shall have the following meaning:<\/p><p>\"<strong><em>Cookie\" or \"Cookies<\/em><\/strong>\": Cookies are small text or message files sent from the server of an organization and stored on your computer. Cookies do not have access to data stored on your computer's hard disk or to Cookies placed by other websites, and they may not harm or damage your system.</p><ul><li>\"<em>Persistence cookies<\/em>\" remain during multiple website visits and get stored on your hard disk.<\/li><li>\"<em>Session Cookies<\/em>\" are temporary cookies that disappear automatically after you leave a website; or<\/li><li>\"<em>Third Party Cookies<\/em>\" these are cookies used by the websites of our partners, as integrated in our own Website or used by websites, we link to.<\/li><\/ul>"
+	},
+	"cookie_list_head": {
+		"en": "<strong> Which cookies are placed on your device when using our Website?<\/strong>"
+	},
+	"cookie_list_body": {
+		"en": "<p>When you access and\/or use the Website, we place one or more Cookies on your device for the purposes described herein.<\/p><p>The following table and relevant information set out the cookies used for the Website. It also provides details of third parties setting cookies:<\/p>"
+	},
+	"endurance_head": {
+		"en": "<strong> How long are cookies stored on your device?<\/strong>"
+	},
+	"endurance_body": {
+		"en": "<p>The duration for which a cookie will be stored on your browsing device depends on whether it is a \"persistence\" or a \"session\" cookie. Session cookies will be stored on a device until you turn off your web browser. \"Persistence cookies\" shall remain on your device after you have finished browsing until they expire or until they are deleted by you<\/p>"
+	},
+	"disable_cookie_head": {
+		"en": "<strong> How can you disable cookies that have been placed on your device?<\/strong>"
+	},
+	"disable_cookie_body": {
+		"en": "<p>You can usually use your web browser to enable, disable, or delete cookies. To do so, follow the instructions provided for by your web browser (usually located in the \"Help\", \"Tools\" or \"Edit\" settings). You can also set your web browser to reject all cookies or to indicate when a cookie is being sent.<\/p>"
+	},
+	"note": {
+		"en": "<p><em>Cookies are important for identifying you, thereby enabling us to grant you access to the RCIAM service and other Infrastructure services and for optimizing your browsing experience. <\/em><\/p>"
+	},
+	"table_type": {
+		"en": "Cookie Type"
+	},
+	"table_provider": {
+		"en": "Cookie Provider"
+	},
+	"table_name": {
+		"en": "Cookie Name"
+	},
+	"table_third_party": {
+		"en": "Third party Cookie"
+	},
+	"table_category": {
+		"en": "Persistent or session Cookie"
+	},
+	"table_purpose": {
+		"en": "Purpose of Cookie"
+	}
+}

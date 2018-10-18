@@ -29,6 +29,10 @@ function resizeAll() {
 };
 
 $(document).ready(function() {
+  if (!Cookies.get('cookies_accepted')) {
+    $('#cookies').show();
+  };
+
   resizeAll();
   // loader for discopower view
   $('#loader').delay(300).fadeOut('slow', function() {
@@ -49,4 +53,10 @@ $(document).ready(function() {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   });
+
+    $('#js-accept-cookies').click(function(e){
+      e.preventDefault();
+      $('#cookies').hide();
+      Cookies.set('cookies_accepted', true);
+  })
 });

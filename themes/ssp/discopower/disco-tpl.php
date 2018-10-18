@@ -80,7 +80,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
     $html = '<a class="metaentry ssp-btn ' . $css_button_type  .  ' ' . $css_classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
-    $html .= $label . '</a>';
+    $html .= '<span>' . $label . '</span></a>';
   }
   else {
     $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
@@ -101,7 +101,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
 ?>
 
-  <h2 class="text-center"><?php echo $this->t('{themevanilla:discopower:title}'); ?></h2>
+  <h2 class="text-center"><?php echo (strpos($this->t('{themevanilla:discopower:title}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:title}') : ''); ?></h2>
 
 
 <?php
@@ -135,7 +135,7 @@ if (!empty($faventry)) {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title">' . $this->t('{themevanilla:discopower:favourite_dialog_title}') . '</h2>
+            <h2 class="modal-title">' . (strpos($this->t('{themevanilla:discopower:favourite_dialog_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:favourite_dialog_title}') : '') . '</h2>
           </div>
           <div class="modal-body ssp-modal-body">
             <div class="row text-center">
@@ -148,9 +148,9 @@ if (!empty($faventry)) {
                   . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
               </form>
             </div>
-            <div class="row text-center ssp-modal-or">' . $this->t('{themevanilla:discopower:or}') . '</div>
+            <div class="row text-center ssp-modal-or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</div>
             <div class="row text-center">
-              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">' . $this->t('{themevanilla:discopower:favourite_dialog_button_close}')  . '</button>
+              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">' . (strpos($this->t('{themevanilla:discopower:favourite_dialog_button_close}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:favourite_dialog_button_close}') : '') . '</button>
             </div>
           </div> <!-- /modal-body -->
         </div> <!-- /modal-content -->
@@ -210,11 +210,11 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
         }
       }
       if($idps_in_searchable_list_index < $idps_with_logos_index) {
-        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</span></div>';
         echo $top . $or . $list_open . $list_items . $close_list . $close;
       }
       else {
-        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--bottom"><span class="ssp-line-or-line__or">' . $this->t('{themevanilla:discopower:or}') . '</span></div>';
+        $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--bottom"><span class="ssp-line-or-line__or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</span></div>';
         echo $top . $list_open . $list_items . $close_list . $or . $close;
       }
     }

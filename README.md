@@ -98,6 +98,14 @@ directories (`js.zip` and `css.zip`) from the [release page](https://github.com/
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
 
+### Cookie Policy
+
+In order to use Cookie Policy page you must copy the configuration file
+from the `config-example` folder to core config directory.
+```
+cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
+```
+
 
 ## Configuration
 
@@ -143,8 +151,11 @@ To set style rules for the each button, the configured css_classname value must
 be defined in the `idps_buttons.scss` file. See more information bellow.
 
 At the moment there are style rules for the IdPs:
+* ARIA
 * B2ACCESS
+* Check-in
 * DARIAH
+* eduTEAMS
 * Elixir
 * Facebook
 * Google
@@ -162,16 +173,27 @@ You can find definitions and dictionaries in the `dictionaries` directory.
 ### Images
 
 Place your logo and favicon in the directory:
-`themevanilla/www/resources/images` If you name them `logo.png` and
+`themevanilla/www/resources/images` If you name them `logo.jpg` and
 `favicon.ico` they will be loaded without any other modification.  If you name
 them differently you need to modify the template `header.php` that is placed in:
 `themevanilla/themes/ssp/default/includes/`.
 
 By default, the logo has height 60px. See below how you can modify it.
 
+### Header logo link
+
+You can customise the url of the link of the logo in the header by changing
+the `logo_link_url` definition in `dictionaries/default.definition.json` file.
+
 ### Footer
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.
+
+### Header ribbon
+
+The text in the header ribbon can be altered by changing the `ribbon_text`
+definition in `dictionaries/default.definition.json` file.
+If you want to hide the ribbon, set `ribbon_text` to `""`.
 
 ### CSS
 
@@ -207,6 +229,13 @@ mentioned above.
 
 Please, check the help page of the cli tool sass if you want to use more
 compiling options.
+
+### Cookie Policy
+
+To modify the cookie banner and cookie policy page, you must edit the following files:
+`<path-to-module>/dictionaries/policy.definition.json`
+and to modify the table in cookie policy page:
+`<path-to-simplesamlphp>/config/module_themevanilla.php`
 
 
 ## About SimpleSAMLphp themes
