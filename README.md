@@ -155,7 +155,7 @@ At the moment there are style rules for the IdPs:
 * B2ACCESS
 * Check-in
 * DARIAH
-* EduTeams
+* eduTEAMS
 * Elixir
 * Facebook
 * Google
@@ -173,7 +173,7 @@ You can find definitions and dictionaries in the `dictionaries` directory.
 ### Images
 
 Place your logo and favicon in the directory:
-`themevanilla/www/resources/images` If you name them `logo.png` and
+`themevanilla/www/resources/images` If you name them `logo.jpg` and
 `favicon.ico` they will be loaded without any other modification.  If you name
 them differently you need to modify the template `header.php` that is placed in:
 `themevanilla/themes/ssp/default/includes/`.
