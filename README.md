@@ -98,14 +98,6 @@ directories (`js.zip` and `css.zip`) from the [release page](https://github.com/
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
 
-### Cookie Policy
-
-In order to use Cookie Policy page you must copy the configuration file
-from the `config-example` folder to core config directory.
-```
-cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
-```
-
 
 ## Configuration
 
@@ -163,6 +155,13 @@ At the moment there are style rules for the IdPs:
 * LinkedIn
 * ORCID
 
+### Cookie Policy
+
+In order to use Cookie Policy page you must copy the configuration file
+from the `config-example` folder to core config directory.
+```
+cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
+```
 
 ## Customization
 
@@ -186,6 +185,7 @@ You can customise the url of the link of the logo in the header by changing
 the `logo_link_url` definition in `dictionaries/default.definition.json` file.
 
 ### Footer
+
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.
 
