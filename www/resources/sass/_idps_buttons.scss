@@ -46,7 +46,7 @@
         }
     }
     &.eduteams {
-        background-color: transparent;
+        background-color: $white;
         border: $eduteams-yellow 1px solid;
         &:hover {
             border-color: $eduteams-yellow-dark;
@@ -57,7 +57,7 @@
         }
     }
     &.egi {
-        background-color: transparent;
+        background-color: $white;
         border: $egi-gray 1px solid;
         color: $black;
         padding: 2px 6px;
