@@ -86,4 +86,15 @@
             margin: 2px 0 4px;
         }
     }
+    &.openminted {
+        background-color: $white;
+        border: $openminted 1px solid;
+        &:hover {
+            border-color: darken($openminted, 20%);
+        }
+        img {
+            height: 16px;
+            margin: 10px 0;
+        }
+    }
 }

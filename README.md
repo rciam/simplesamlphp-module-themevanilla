@@ -155,6 +155,7 @@ At the moment there are style rules for the IdPs:
 * LinkedIn
 * ORCID
 * OpenAIRE
+* OpenMinTeD
 
 ### Cookie Policy
 
