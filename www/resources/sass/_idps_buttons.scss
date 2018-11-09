@@ -75,4 +75,15 @@
         }
 
     }
+    &.openaire {
+        background-color: $white;
+        border: $openaire-lightblue 1px solid;
+        &:hover {
+            border-color: $openaire-blue;
+        }
+        img {
+            height: 30px;
+            margin: 2px 0 4px;
+        }
+    }
 }
