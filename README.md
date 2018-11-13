@@ -238,6 +238,8 @@ To modify the cookie banner and cookie policy page, you must edit the following 
 `<path-to-module>/dictionaries/policy.definition.json`
 and to modify the table in cookie policy page:
 `<path-to-simplesamlphp>/config/module_themevanilla.php`
+To disable the feature, set `enable_cookies_banner` to `false` in
+`<path-to-module>/dictionaries/policy.definition.json` file.
 
 
 ## Compatibility Note
