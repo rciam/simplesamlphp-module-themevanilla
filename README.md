@@ -98,14 +98,6 @@ directories (`js.zip` and `css.zip`) from the [release page](https://github.com/
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
 
-### Cookie Policy
-
-In order to use Cookie Policy page you must copy the configuration file
-from the `config-example` folder to core config directory.
-```
-cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
-```
-
 
 ## Configuration
 
@@ -163,6 +155,13 @@ At the moment there are style rules for the IdPs:
 * LinkedIn
 * ORCID
 
+### Cookie Policy
+
+In order to use Cookie Policy page you must copy the configuration file
+from the `config-example` folder to core config directory.
+```
+cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
+```
 
 ## Customization
 
@@ -186,6 +185,7 @@ You can customise the url of the link of the logo in the header by changing
 the `logo_link_url` definition in `dictionaries/default.definition.json` file.
 
 ### Footer
+
 If you want to make any changes in the footer you need to modify the template
 `footer.php` that is placed in: `themevanilla/themes/ssp/default/includes/`.
 
@@ -237,6 +237,14 @@ To modify the cookie banner and cookie policy page, you must edit the following 
 and to modify the table in cookie policy page:
 `<path-to-simplesamlphp>/config/module_themevanilla.php`
 
+
+## Compatibility Note
+
+If you want to use the theme with **SimpleSAMLphp version greater than 1.14**, you
+need to rename the template of the discopower module:
+```
+themes/ssp/discopower/disco-tpl.php -> themes/ssp/discopower/disco.tpl.php
+```
 
 ## About SimpleSAMLphp themes
 
