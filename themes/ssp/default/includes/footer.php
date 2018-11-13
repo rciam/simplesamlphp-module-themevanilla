@@ -9,7 +9,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   </div><!-- /container -->
   </div><!-- /ssp-container -->
 
-<?php if(strpos($this->t('{themevanilla:discopower:cookies_text}'), 'not translated') === FALSE && strpos($this->t('{themevanilla:discopower:cookies_accept_btn_text}'), 'not translated') === FALSE) { ?>
+<?php if ($this->t('{themevanilla:discopower:enable_cookies_banner}')) { ?>
   <!-- cookies popup -->
   <div id="cookies">
     <div id="cookies-wrapper">
