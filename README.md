@@ -98,6 +98,15 @@ directories (`js.zip` and `css.zip`) from the [release page](https://github.com/
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
 
+### Cookie Policy
+
+In order to use Cookie Policy page you must copy the configuration file
+from the `config-example` folder to core config directory.
+```
+cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
+```
+To disable the feature, set `enable_cookies_banner` to `false` in the above
+file.
 
 ## Configuration
 
@@ -237,10 +246,7 @@ compiling options.
 To modify the cookie banner and cookie policy page, you must edit the following files:
 `<path-to-module>/dictionaries/policy.definition.json`
 and to modify the table in cookie policy page:
-`<path-to-simplesamlphp>/config/module_themevanilla.php`
-To disable the feature, set `enable_cookies_banner` to `false` in
-`<path-to-module>/dictionaries/policy.definition.json` file.
-
+`<path-to-simplesamlphp>/config/module_themevanilla.php`.
 
 ## Compatibility Note
 
