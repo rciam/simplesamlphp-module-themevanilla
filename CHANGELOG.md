@@ -10,25 +10,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Module discopower: Add style rules and logos for the buttons of the IdPs:
   - OpenAIRE
   - OpenMinTeD
-- Add info about compatiblity in README
+- Add info about compatiblity in README.
 
 
 ## [v2.1.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v2.0.0...v2.1.0) - 2018-10-18
 
 ### Added
-- Add banner and an extra view for cookies options
-- Add corner ribbon that displays customisable text
-- Add this changelog file
+- Add banner and an extra view for cookies options.
+- Add corner ribbon that displays customisable text.
+- Add this changelog file.
 - Module discopower: Add style rules and logos for the buttons of the IdPs:
   - eduTEAMS
   - EGI
   - Aria
 
 ### Changed
-  - Change vanilla logo and favicon
+  - Change vanilla logo and favicon.
   - Move wording and links from the templates of several modules to the related
-    definition file
-  - Render header logo link url customisable
+    definition file.
+  - Render header logo link url customisable.
 
 ## [v2.0.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v1.0.0...v2.0.0) - 2018-04-17
 
