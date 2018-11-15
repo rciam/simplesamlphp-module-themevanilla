@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Module discopower: Add style rules and logos for the buttons of the IdPs:
+  - OpenAIRE
+  - OpenMinTeD
 - Add info about compatiblity in README
 
 
