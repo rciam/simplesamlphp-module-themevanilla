@@ -64,7 +64,8 @@ v1.0.0**.
 
   "post-update-cmd": [
     "cp -r 'vendor/rciam/css' 'modules/themevanilla/www/resources'",
-    "cp -r 'vendor/rciam/js' 'modules/themevanilla/www/resources'"
+    "cp -r 'vendor/rciam/js' 'modules/themevanilla/www/resources'",
+    "cp 'modules/themevanilla/config-example/module_themevanilla.php' 'config/module_themevanilla.php'"
   ]
 },
 ```
@@ -76,12 +77,16 @@ With the above configuration composer will do several operations:
 * It will copy the `css` and `js` directories from the `vendor/rciam` directory
   in the `themevanilla/www/resources` directory, where the static files of the
   theme should be placed.
+* It will place the configuration file `module_themevanilla.php` inside the
+  `config` directory of the installation.
 
 ### Direct download
 
 You can download `themevanilla.zip` from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases).
 Download the zip file of the preferred release and extract its contents in the
 `modules` directory of your SimpleSAMLphp installation.
+Finally, move `example-config/module_themevanilla.php` file to the `config` directory
+of your SimpleSAMLphp installation.
 
 ### Clone repository
 
@@ -97,16 +102,9 @@ You'll need to download or produce them. You can download the compressed
 directories (`js.zip` and `css.zip`) from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases) and
 extract them under `modules/themevanilla/www/resources`.  If you want to produce
 them, you may read the customisation instructions below.
+As a last step, move `example-config/module_themevanilla.php` file to the `config`
+directory of your SimpleSAMLphp installation.
 
-### Cookie Policy
-
-In order to use Cookie Policy page you must copy the configuration file
-from the `config-example` folder to core config directory.
-```
-cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
-```
-To disable the feature, set `enable_cookies_banner` to `false` in the above
-file.
 
 ## Configuration
 
@@ -168,11 +166,12 @@ At the moment there are style rules for the IdPs:
 
 ### Cookie Policy
 
-In order to use Cookie Policy page you must copy the configuration file
-from the `config-example` folder to core config directory.
-```
-cp <path-to-module>/config-example/module_themevanilla.php <path-to-simplesamlphp>/config
-```
+Cookie policy includes a banner at the bottom of each page that prompts the user to
+accept the cookies, along with a Cookies Policy page.
+The feature is disabled by default.
+To enable it, set `enable_cookies_banner` to `true` in the configuration file:
+`<path-to-simplesamlphp>/config/module_themevanilla.php`.
+
 
 ## Customization
 
