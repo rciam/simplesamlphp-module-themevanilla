@@ -26,8 +26,33 @@
         padding-bottom: 5px;
     }
     &.google {
+        background-color: white;
+        border-color: $google;
+        color: $google-font;
+        font: 500 14px 'Roboto', sans-serif;
+    }
+    &.google-dark {
+		padding-bottom: 10px;
         background-color: $google;
-        border: 1px solid $google;
+        border-color: $google;
+        color: white;
+        font: 500 14px 'Roboto', sans-serif;
+        letter-spacing: normal;
+		span {
+			display: inline-block;
+			line-height: 20px;
+			position: relative;
+			top: 2px;
+		}
+        img {
+            background: white;
+            height: 34px;
+            padding: 8px;
+            margin-right: 24px;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+        }
     }
     &.orcid {
         color: darken($orcid, 10%);
