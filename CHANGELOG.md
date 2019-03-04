@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - QQ
   - WeChat
   - Epos
-- Add info about compatiblity in README.
+- Add info about compatibility in README.
 - Enable/disable cookie banner functionality via setting in config file.
 
 ### Changed
