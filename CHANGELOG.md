@@ -10,11 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Module discopower: Add style rules and logos for the buttons of the IdPs:
   - OpenAIRE
   - OpenMinTeD
+  - QQ
+  - WeChat
 - Add info about compatiblity in README.
 - Enable/disable cookie banner functionality via setting in config file.
 
 ### Changed
 - Update instructions on module config file usage.
+- Update style of Google login button.
 
 ## [v2.1.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v2.0.0...v2.1.0) - 2018-10-18
 
