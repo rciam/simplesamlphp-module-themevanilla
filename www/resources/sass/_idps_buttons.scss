@@ -111,4 +111,7 @@
             color: darken($wechat, 10%);
         }
     }
+    &.qq {
+        background-color: $qq;
+    }
 }
