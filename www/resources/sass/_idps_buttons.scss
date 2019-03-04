@@ -102,4 +102,13 @@
             margin: 10px 0;
         }
     }
+     &.wechat {
+        background-color: $white;
+        border: $wechat 1px solid;
+        color: $wechat;
+        font-weight: bold;
+        &:hover {
+            color: darken($wechat, 10%);
+        }
+    }
 }
