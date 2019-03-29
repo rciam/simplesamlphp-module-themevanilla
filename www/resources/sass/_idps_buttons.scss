@@ -139,4 +139,12 @@
     &.qq {
         background-color: $qq;
     }
+    &.epos {
+	border-color: $epos;
+	background-color: $white;
+	img {
+	    padding: 5px;
+	    margin-right: 0;
+	}
+    }
 }
