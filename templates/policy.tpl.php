@@ -1,5 +1,5 @@
 <?php
-$themeConfig = SimpleSAML_Configuration::getConfig('module_themevanilla.php');
+$themeConfig = SimpleSAML\Configuration::getConfig('module_themevanilla.php');
 $cookies = $themeConfig->getValue('cookiePolicy');
 $this->data['header'] = (strpos($this->t('{themevanilla:policy:page_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:policy:page_title}') : '');
 $this->includeAtTemplateBase('includes/header.php');

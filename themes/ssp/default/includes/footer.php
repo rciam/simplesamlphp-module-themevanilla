@@ -1,6 +1,6 @@
 
 <?php
-$themeConfig = SimpleSAML_Configuration::getConfig('module_themevanilla.php');
+$themeConfig = SimpleSAML\Configuration::getConfig('module_themevanilla.php');
 $enable_cookies_banner = $themeConfig->getValue('enable_cookies_banner');
 
 if(!empty($this->data['htmlinject']['htmlContentPost'])) {
@@ -113,7 +113,7 @@ if ($includeLanguageBar) {
 ?>
     <div class="copy col-sm-6 ssp-footer__item">
       <a href="https://grnet.gr/">
-        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML_Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
+        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML\Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
       </a>
       <div class="ssp-footer__item__copyright">
         Copyright &copy;<?php echo (strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-' : ''); echo date("Y"); ?>
@@ -127,19 +127,19 @@ if ($includeLanguageBar) {
   </div> <!-- /container-fluid -->
 </footer>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/cookie.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/cookie.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/modal.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/modal.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/tooltip.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/tooltip.js')); ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleURL('themevanilla/resources/js/theme.js')); ?>">
+          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/theme.js')); ?>">
   </script>
 
 </body>
