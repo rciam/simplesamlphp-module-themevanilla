@@ -16,7 +16,8 @@ $config = array(
         array('type' => 'Preferences', 'provider' => 'aai.rciam.eu', 'name' => 'rciam_co_registry_tz', 'thirdParty' => false, 'category' => 'Persistent', 'purpose' => 'Preserve preferred timezone selection for COmanage RCIAM Account Registry'),
         array('type' => 'Preferences', 'provider' => 'aai.rciam.eu', 'name' => 'i18next', 'thirdParty' => false, 'category' => 'Session', 'purpose' => 'Preserve preferred language for RCIAM AAI OpenID Connect Provider'),
         array('type' => 'Session State', 'provider' => 'aai.rciam.eu', 'name' => 'JSESSIONID', 'thirdParty' => false, 'category' => 'Session', 'purpose' => 'Preserve user session ID to retrieve session information')
-    )
+      ),
+      'enable_cookies_banner' => false
 );
 
 ?>
