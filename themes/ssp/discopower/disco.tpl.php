@@ -30,8 +30,8 @@ $this->data['header'] = $this->t($this->data['header']);
 $this->data['jquery'] = array('core' => TRUE, 'ui' => TRUE, 'css' => TRUE);
 
 
-$this->data['head'] = '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/assets/js/jquery.livesearch.js')  . '"></script>';
-$this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/assets/js/' . $this->data['score'] . '.js')  . '"></script>';
+$this->data['head'] = '<script type="text/javascript" src="' . SimpleSAML\Module::getModuleUrl('discopower/assets/js/jquery.livesearch.js')  . '"></script>';
+$this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML\Module::getModuleUrl('discopower/assets/js/' . $this->data['score'] . '.js')  . '"></script>';
 
 $this->data['head'] .= '<script type="text/javascript">
 
@@ -81,7 +81,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
     }
 
     $html = '<a class="metaentry ssp-btn ' . $css_button_type  .  ' ' . $css_classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML\Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
     if (isset($label)) {
         $html .= '<span>' . $label . '</span>';
     }
