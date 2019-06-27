@@ -30,8 +30,8 @@ $this->data['header'] = $this->t($this->data['header']);
 $this->data['jquery'] = array('core' => TRUE, 'ui' => TRUE, 'css' => TRUE);
 
 
-$this->data['head'] = '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/jquery.livesearch.js')  . '"></script>';
-$this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/' . $this->data['score'] . '.js')  . '"></script>';
+$this->data['head'] = '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/assets/js/jquery.livesearch.js')  . '"></script>';
+$this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/assets/js/' . $this->data['score'] . '.js')  . '"></script>';
 
 $this->data['head'] .= '<script type="text/javascript">
 
