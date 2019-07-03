@@ -65,7 +65,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
 
   if($withIcon) {
-    if(isset($metadata['login_button']['label']) && !isempty($metadata['login_button']['label'])) {
+    if(isset($metadata['login_button']['label']) && !empty($metadata['login_button']['label'])) {
         $label =  $metadata['login_button']['label'];
     }
     $filename = $metadata['login_button']['icon_filename'];
