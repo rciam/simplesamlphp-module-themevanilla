@@ -142,9 +142,21 @@
     &.epos {
 	border-color: $epos;
 	background-color: $white;
-	img {
-	    padding: 5px;
-	    margin-right: 0;
-	}
+        img {
+            padding: 5px;
+            margin-right: 0;
+        }
     }
+    &.bitbucket {
+        border-color: $bitbucket;
+        background-color: $white;
+        span {
+            display: none;
+        }
+        img {
+            padding: 5px;
+            margin-right: 0;
+        }
+    }
+
 }
