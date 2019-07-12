@@ -158,5 +158,19 @@
             margin-right: 0;
         }
     }
-
+    &.github {
+        border-color: $github;
+        background: $white url("../images/github.png") no-repeat center center;
+        background-size: 55%;
+        span {
+            display: none;
+        }
+        img {
+            visibility: hidden;
+        }
+        &:hover {
+            background: $white url("../images/github-mark.png") no-repeat center center;
+            background-size: 26px;
+        }
+    }
 }

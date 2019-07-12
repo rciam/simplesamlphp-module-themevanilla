@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Module discopower: Add style rules and logos for the buttons of the IdPs:
-    - Bitbucket
+  - Bitbucket
+  - Github
 
 
 ## [v2.2.1](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v2.2.0...v2.2.1) - 2019-07-03
