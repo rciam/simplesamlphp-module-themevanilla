@@ -15,6 +15,7 @@
   </div>
 </div>
 <?php
+use Webmozart\Assert\Assert;
 
 $faventry = NULL;
 foreach( $this->data['idplist'] AS $tab => $slist) {
@@ -114,15 +115,15 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 function getTranslatedName($t, $metadata) {
   if (isset($metadata['UIInfo']['DisplayName'])) {
     $displayName = $metadata['UIInfo']['DisplayName'];
-    assert('is_array($displayName)'); // Should always be an array of language code -> translation
+    Assert::isArray($displayName); // Should always be an array of language code -> translation
     if (!empty($displayName)) {
-      return $t->getTranslation($displayName);
+        return $t->getTranslator()->getPreferredTranslation($displayName);
     }
   }
 
   if (array_key_exists('name', $metadata)) {
     if (is_array($metadata['name'])) {
-      return $t->getTranslation($metadata['name']);
+        return $t->getTranslator()->getPreferredTranslation($metadata['name']);
     } else {
       return $metadata['name'];
     }
