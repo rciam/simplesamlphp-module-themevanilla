@@ -53,13 +53,13 @@ if ($includeLanguageBar) {
       'no' => 'Bokmål', // Norwegian Bokmål
       'nn' => 'Nynorsk', // Norwegian Nynorsk
       'se' => 'Sámegiella', // Northern Sami
-      'sam' => 'Åarjelh-saemien giele', // Southern Sami
       'da' => 'Dansk', // Danish
       'en' => 'English',
       'de' => 'Deutsch', // German
       'sv' => 'Svenska', // Swedish
       'fi' => 'Suomeksi', // Finnish
       'es' => 'Español', // Spanish
+      'ca' => 'Català', // Catalan
       'fr' => 'Français', // French
       'it' => 'Italiano', // Italian
       'nl' => 'Nederlands', // Dutch
@@ -80,14 +80,15 @@ if ($includeLanguageBar) {
       'zh' => '简体中文', // Chinese (simplified)
       'zh-tw' => '繁體中文', // Chinese (traditional)
       'ar' => 'العربية', // Arabic
-      'fa' => 'پارسی', // Persian
-      'ur' => 'اردو', // Urdu
       'he' => 'עִבְרִית', // Hebrew
       'id' => 'Bahasa Indonesia', // Indonesian
       'sr' => 'Srpski', // Serbian
       'lv' => 'Latviešu', // Latvian
       'ro' => 'Românește', // Romanian
       'eu' => 'Euskara', // Basque
+      'af' => 'Afrikaans', // Afrikaans
+      'zu' => 'IsiZulu', // Zulu
+      'xh' => 'isiXhosa', // Xhosa
     );
 
     $textarray = array();
