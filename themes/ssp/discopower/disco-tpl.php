@@ -83,8 +83,9 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
     $html = '<a class="metaentry ssp-btn ' . $css_button_type  .  ' ' . $css_classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
     $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
     if (isset($label)) {
-        $html .= '<span>' . $label . '</span></a>';
+        $html .= '<span>' . $label . '</span>';
     }
+    $html .= '</a>';
   }
   else {
     $html = '<a class="metaentry " href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
