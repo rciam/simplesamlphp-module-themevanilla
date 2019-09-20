@@ -247,19 +247,19 @@ To modify the cookie banner and cookie policy page, you must edit the following 
 and to modify the table in cookie policy page:
 `<path-to-simplesamlphp>/config/module_themevanilla.php`.
 
-## Compatibility Note
-
-If you want to use the theme with **SimpleSAMLphp version greater than 1.14**, you
-need to rename the template of the discopower module:
-```
-themes/ssp/discopower/disco-tpl.php -> themes/ssp/discopower/disco.tpl.php
-```
-
 ## About SimpleSAMLphp themes
 
 You can read more about themes in a SimpleSAMLphp installation from the
 [official documentation](https://simplesamlphp.org/docs/stable/simplesamlphp-theming).
 
+## Compatibility matrix
+
+This table matches the theme version with the supported SimpleSAMLphp version.
+
+| Theme |  SimpleSAMLphp  |
+|:------:|:--------------:|
+| v2.3.1   | v1.14        |
+| v3.0.0   | v1.17        |
 
 ## License
 
