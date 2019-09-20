@@ -15,6 +15,7 @@
   </div>
 </div>
 <?php
+use Webmozart\Assert\Assert;
 
 $faventry = NULL;
 foreach( $this->data['idplist'] AS $tab => $slist) {
@@ -22,34 +23,17 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
     $faventry = $slist[$this->data['preferredidp']];
 }
 
-
-if(!array_key_exists('header', $this->data)) {
-  $this->data['header'] = 'selectidp';
-}
+$this->data['header'] = $this->t('selectidp');
 $this->data['header'] = $this->t($this->data['header']);
-$this->data['jquery'] = array('core' => TRUE, 'ui' => TRUE, 'css' => TRUE);
+$this->data['jquery'] = ['core' => true, 'ui' => true, 'css' => true];
 
 
-$this->data['head'] = '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/jquery.livesearch.js')  . '"></script>';
-$this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML_Module::getModuleUrl('discopower/js/' . $this->data['score'] . '.js')  . '"></script>';
+$this->data['head'] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery.livesearch.js').'"></script>'."\n";
+$this->data['head'] .= '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/' . $this->data['score'].'.js')  . '"></script>'."\n";
 
-$this->data['head'] .= '<script type="text/javascript">
-
-  $(document).ready(function() {';
-    $i = 0;
-    foreach ($this->data['idplist'] AS $tab => $slist) {
-  if ($tab == 'idps_in_searchable_list') {
-      $this->data['head'] .= "\n" . '$("#query_' . $tab . '").liveUpdate("#list_' . $tab . '")' .
-        (($i++ == 0) && (empty($faventry)) ? '.focus()' : '') . ';';
-  }
-
-
-    }
-
-    $this->data['head'] .= '
-});
-
-</script>';
+$this->data['head'] .= $this->data['search'];
 
 if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 
@@ -81,7 +65,7 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
     }
 
     $html = '<a class="metaentry ssp-btn ' . $css_button_type  .  ' ' . $css_classname . '" href="' . $basequerystring . urlencode($metadata['entityid']) . '">';
-    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML_Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
+    $html .= '<img alt="Identity Provider" class="entryicon" src="' . SimpleSAML\Module::getModuleURL('themevanilla/resources/images/' . $filename ) . '" />';
     if (isset($label)) {
         $html .= '<span>' . $label . '</span>';
     }
@@ -114,15 +98,15 @@ function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 function getTranslatedName($t, $metadata) {
   if (isset($metadata['UIInfo']['DisplayName'])) {
     $displayName = $metadata['UIInfo']['DisplayName'];
-    assert('is_array($displayName)'); // Should always be an array of language code -> translation
+    Assert::isArray($displayName); // Should always be an array of language code -> translation
     if (!empty($displayName)) {
-      return $t->getTranslation($displayName);
+        return $t->getTranslator()->getPreferredTranslation($displayName);
     }
   }
 
   if (array_key_exists('name', $metadata)) {
     if (is_array($metadata['name'])) {
-      return $t->getTranslation($metadata['name']);
+        return $t->getTranslator()->getPreferredTranslation($metadata['name']);
     } else {
       return $metadata['name'];
     }
@@ -227,9 +211,6 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
 }
 
 ?>
-
-
-
 
 
 <?php $this->includeAtTemplateBase('includes/footer.php');
