@@ -78,6 +78,9 @@ $config = [
             'purpose' => 'Preserve user session ID to retrieve session information',
         ],
     ],
+    'views' => [
+        // 'aup' => 'https://example.com/test.html',
+    ],
     'enable_cookies_banner' => false,
     'ribbon_text' => '',
 ];

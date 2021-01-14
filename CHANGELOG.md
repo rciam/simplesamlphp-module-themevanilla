@@ -15,6 +15,7 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 - Add style rules and logos for IdP umbrellaid.
 - Add exception template for attrauthcomanage module
 - Add template for Email Confirmation
+- Add configurable theme wrapper for simple html views
 
 ### Fixed
 

@@ -19,5 +19,8 @@
   },
   "message_sub": {
     "en": "<span class=\"subtitle-msg\">You will have <b>72 hours</b> to verify your account</span>"
+  },
+  "no_content": {
+    "en": "<h2>Unable to retrieve content.</h2>"
   }
 }
