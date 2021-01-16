@@ -34,6 +34,7 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 - Apply modern array syntax to comply with [SimpleSAMLphp v1.17](https://simplesamlphp.org/docs/stable/simplesamlphp-upgrade-notes-1.17)
 - Comply to [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
 - Move default loader spinner into a shared element
+- Move language list into a shared element
 
 <!-- markdownlint-disable line-length -->
 
