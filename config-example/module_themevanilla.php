@@ -79,8 +79,10 @@ $config = [
         ],
     ],
     'views' => [
-        // 'aup' => 'https://example.com/test.html',
+        // 'aup' => 'https://example.com/aup.html', // Terms and Conditions URL. The key MUST BE `aup`
+        // 'privacy' => 'https://example.com/privacy.html', // Privacy URL. The key MUST BE `privacy`
     ],
+    'loader' => 'loader', // Loading Spinner to use. Two options are available. `loader` or `cmg_loader`
     'enable_cookies_banner' => false,
     'ribbon_text' => '',
 ];
