@@ -18,6 +18,7 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 - Add configurable theme wrapper for simple html views
 - Add comanage loader
 - Add support to configure loader
+- Add view.php modal
 
 ### Fixed
 
