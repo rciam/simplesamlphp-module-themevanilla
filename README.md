@@ -202,7 +202,7 @@ If you want to make any changes in the footer you need to modify the template
 ### Header ribbon
 
 The text in the header ribbon can be altered by changing the `ribbon_text`
-definition in `dictionaries/default.definition.json` file.
+definition in `module_themevanilla.php` file.
 If you want to hide the ribbon, set `ribbon_text` to `""`.
 
 ### CSS
