@@ -34,6 +34,14 @@ if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 $this->includeAtTemplateBase('includes/header.php');
 
 $this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery-1.12.4.min.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery-ui-1.12.1.min.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery.livesearch.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/tablist.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
     SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery.livesearch.js').'"></script>'."\n";
 $this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
     SimpleSAML\Module::getModuleURL('discopower/assets/js/' . $this->data['score'].'.js') . '"></script>'."\n";
