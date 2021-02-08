@@ -197,7 +197,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $list_items .= (showEntry($this, $idpentry, FALSE, TRUE));
         }
       }
-      if($idps_in_searchable_list_index < $idps_with_logos_index) {
+      if(!empty($idps_in_searchable_list_index) && $idps_in_searchable_list_index < $idps_with_logos_index) {
         $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</span></div>';
         echo $top . $or . $list_open . $list_items . $close_list . $close;
       }
