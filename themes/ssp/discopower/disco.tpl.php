@@ -141,7 +141,7 @@ if (!empty($faventry)) {
                 <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
                 <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
                 <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action text-uppercase" value="'
-                  . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+                  . $this->t('{themevanilla:discopower:login_with}') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
               </form>
             </div>
             <div class="row text-center ssp-modal-or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</div>
