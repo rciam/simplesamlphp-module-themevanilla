@@ -25,9 +25,10 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
 
 $this->data['header'] = $this->t('selectidp');
 $this->data['header'] = $this->t($this->data['header']);
-$this->data['jquery'] = ['core' => true, 'ui' => true, 'css' => true];
+$this->data['jquery'] = ['core' => true, 'ui' => false, 'css' => false];
 
-$this->data['head'] .= $this->data['search'];
+$this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/css/uitheme1.12.1/jquery-ui.min.css').'" />';
 
 if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Load JavaScript scripts with the new way
 - Fix undefined index error for `idps_in_searchable_list_index`
+- Load jQuery CSS script
 
 ### Changed
 
