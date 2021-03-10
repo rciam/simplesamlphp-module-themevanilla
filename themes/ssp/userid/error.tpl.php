@@ -9,6 +9,9 @@ EOF;
 
 $this->includeAtTemplateBase('includes/header.php');
 $retryUrl = $this->data['parameters']['%BASEDIR%'] . 'saml2/idp/initSLO.php?RelayState=' . urlencode($this->data['parameters']['%RESTARTURL%']);
+$translationParams = [
+  '%IDPNAME%' => $this->data['parameters']['%IDPNAME%'],
+];
 ?>
 <div class="row">
   <div class="col-sm-12">
@@ -16,7 +19,7 @@ $retryUrl = $this->data['parameters']['%BASEDIR%'] . 'saml2/idp/initSLO.php?Rela
     $friendly_title = '<h2>' . (strpos($this->t('{themevanilla:userid_error:friendly_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:userid_error:friendly_title}') : '') . '</h2>';
     echo $friendly_title;
   ?>
-    <p><?php echo $this->t('{themevanilla:userid_error:friendly_description}', $this->data['parameters']); ?></p>
+    <p><?php echo $this->t('{themevanilla:userid_error:friendly_description}', $translationParams); ?></p>
     <p><?php echo $this->t('{themevanilla:userid_error:resolution_description}', array('%RETRY_URL%' => $retryUrl)); ?></p>
   </div>
 </div>
