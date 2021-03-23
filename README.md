@@ -256,10 +256,12 @@ You can read more about themes in a SimpleSAMLphp installation from the
 
 This table matches the theme version with the supported SimpleSAMLphp version.
 
-| Theme |  SimpleSAMLphp  |
-|:------:|:--------------:|
-| v2.3.1   | v1.14        |
-| v3.0.0   | v1.17        |
+| Theme | SimpleSAMLphp | Discopower |
+| :---: | :-----------: | :--------: |
+| v1.x  |     v1.14     |     -      |
+| v2.x  |     v1.14     |     -      |
+| v3.x  |     v1.17     |     -      |
+| v4.x  |       -       |   v0.9.2   |
 
 ## License
 
