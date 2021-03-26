@@ -202,7 +202,7 @@ If you want to make any changes in the footer you need to modify the template
 ### Header ribbon
 
 The text in the header ribbon can be altered by changing the `ribbon_text`
-definition in `dictionaries/default.definition.json` file.
+definition in `module_themevanilla.php` file.
 If you want to hide the ribbon, set `ribbon_text` to `""`.
 
 ### CSS
@@ -256,10 +256,12 @@ You can read more about themes in a SimpleSAMLphp installation from the
 
 This table matches the theme version with the supported SimpleSAMLphp version.
 
-| Theme |  SimpleSAMLphp  |
-|:------:|:--------------:|
-| v2.3.1   | v1.14        |
-| v3.0.0   | v1.17        |
+| Theme | SimpleSAMLphp | Discopower |
+| :---: | :-----------: | :--------: |
+| v1.x  |     v1.14     |     -      |
+| v2.x  |     v1.14     |     -      |
+| v3.x  |     v1.17     |     -      |
+| v4.x  |       -       |   v0.9.2   |
 
 ## License
 

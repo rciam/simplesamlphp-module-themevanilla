@@ -25,19 +25,25 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
 
 $this->data['header'] = $this->t('selectidp');
 $this->data['header'] = $this->t($this->data['header']);
-$this->data['jquery'] = ['core' => true, 'ui' => true, 'css' => true];
+$this->data['jquery'] = ['core' => true, 'ui' => false, 'css' => false];
 
-
-$this->data['head'] = '<script type="text/javascript" src="'.
-    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery.livesearch.js').'"></script>'."\n";
-$this->data['head'] .= '<script type="text/javascript" src="'.
-    SimpleSAML\Module::getModuleURL('discopower/assets/js/' . $this->data['score'].'.js')  . '"></script>'."\n";
-
-$this->data['head'] .= $this->data['search'];
+$this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/css/uitheme1.12.1/jquery-ui.min.css').'" />';
 
 if (!empty($faventry)) $this->data['autofocus'] = 'favouritesubmit';
 
 $this->includeAtTemplateBase('includes/header.php');
+
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery-1.12.4.min.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery-ui-1.12.1.min.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/jquery.livesearch.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/tablist.js').'"></script>'."\n";
+$this->data['htmlinject']['htmlContentPost'][] = '<script type="text/javascript" src="'.
+    SimpleSAML\Module::getModuleURL('discopower/assets/js/' . $this->data['score'].'.js') . '"></script>'."\n";
 
 function showEntry($t, $metadata, $favourite = FALSE, $withIcon = FALSE) {
 
@@ -134,7 +140,7 @@ if (!empty($faventry)) {
                 <input type="hidden" name="returnIDParam" value="' . htmlspecialchars($this->data['returnIDParam']) . '" />
                 <input type="hidden" name="idpentityid" value="' . htmlspecialchars($faventry['entityid']) . '" />
                 <input type="submit" name="formsubmit" id="favouritesubmit" class="ssp-btn ssp-btn__action text-uppercase" value="'
-                  . $this->t('login_at') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
+                  . $this->t('{themevanilla:discopower:login_with}') . ' ' . htmlspecialchars(getTranslatedName($this, $faventry)) . '" />
               </form>
             </div>
             <div class="row text-center ssp-modal-or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</div>
@@ -198,7 +204,7 @@ foreach( $this->data['idplist'] AS $tab => $slist) {
           $list_items .= (showEntry($this, $idpentry, FALSE, TRUE));
         }
       }
-      if($idps_in_searchable_list_index < $idps_with_logos_index) {
+      if(!empty($idps_in_searchable_list_index) && $idps_in_searchable_list_index < $idps_with_logos_index) {
         $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top"><span class="ssp-line-or-line__or">' . (strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:or}') : '') . '</span></div>';
         echo $top . $or . $list_open . $list_items . $close_list . $close;
       }
