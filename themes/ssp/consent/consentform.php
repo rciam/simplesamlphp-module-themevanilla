@@ -53,7 +53,7 @@ $this->data['jquery'] = array('core' => TRUE);
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
-<h2 class="text-center"><?php echo $this->data['consent_accept']; ?></h2>
+<h2 class="text-center"><?= $this->data['consent_accept'] ?></h2>
 <div class="row js-spread">
     <div class="col-sm-12 ssp-content-group js-spread">
 
@@ -87,12 +87,12 @@ function present_attributes_ssp($t, $attributes, $nameParent)
     }
 
     foreach ($attributes as $name => $value) {
-        $nameraw = $name;
-        $name = $translator->getAttributeTranslation($parentStr.$nameraw);
+        $nameRaw = $name;
+        $name = $translator->getAttributeTranslation($parentStr.$nameRaw);
 
-        if (preg_match('/^child_/', $nameraw)) {
+        if (preg_match('/^child_/', $nameRaw)) {
             // insert child table
-            $parentName = preg_replace('/^child_/', '', $nameraw);
+            $parentName = preg_replace('/^child_/', '', $nameRaw);
             foreach ($value as $child) {
                 $str .= "\n" . '<tr class="odd ssp--table--tr__odd"><td>'.
                     present_attributes_ssp($t, $child, $parentName)  . '</td></tr>';
@@ -104,7 +104,7 @@ function present_attributes_ssp($t, $attributes, $nameParent)
                 '"><td><div class="attrname ssp-table--attrname">' . htmlspecialchars($name) . '</div>';
 
 
-            $isHidden = in_array($nameraw, $t->data['hiddenAttributes'], true);
+            $isHidden = in_array($nameRaw, $t->data['hiddenAttributes'], true);
             if ($isHidden) {
                 $hiddenId = \SimpleSAML\Utils\Random::generateID();
                 $str .= '<div class="attrvalue ssp-table--attrvalue" style="display: none;" id="hidden_' . $hiddenId . '">';
@@ -115,19 +115,19 @@ function present_attributes_ssp($t, $attributes, $nameParent)
             if (sizeof($value) > 1) {
                 // we have several values
                 $str .= '<ul class="list-unstyled ssp-table--attrvalue--list">';
-                foreach ($value as $listitem) {
-                    if ($nameraw === 'jpegPhoto') {
+                foreach ($value as $listItem) {
+                    if ($nameRaw === 'jpegPhoto') {
                         $str .= '<li class="ssp-table--attrvalue--list--item"><img src="data:image/jpeg;base64,' .
-                            htmlspecialchars($listitem).'" alt="User photo" /></li>';
+                            htmlspecialchars($listItem).'" alt="User photo" /></li>';
                     } else {
-                        $str .= '<li class="ssp-table--attrvalue--list--item">' . htmlspecialchars($listitem) . '</li>';
+                        $str .= '<li class="ssp-table--attrvalue--list--item">' . htmlspecialchars($listItem) . '</li>';
                     }
                 }
                 $str .= '</ul>';
 
             } elseif (isset($value[0])) {
                 // we have only one value
-                if ($nameraw === 'jpegPhoto') {
+                if ($nameRaw === 'jpegPhoto') {
                     $str .= '<img src="data:image/jpeg;base64,'.
                         htmlspecialchars($value[0]).'" alt="User photo" />';
                 } else {
@@ -163,7 +163,7 @@ if (isset($this->data['consent_purpose'])) {
 
 
 <div class="ssp-btns-container">
-<form id="consent_yes" action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>" style="display:inline-block;">
+<form id="consent_yes" action="<?= htmlspecialchars($this->data['yesTarget']) ?>" style="display:inline-block;">
 <p  class="ssp-btns-container--checkbox">
 <?php
 if ($this->data['usestorage']) {
@@ -172,17 +172,17 @@ if ($this->data['usestorage']) {
         ' value="1" /> '.$this->t('{consent:consent:remember}');
 } // Embed hidden fields...
 ?>
-    <input type="hidden" name="StateId" value="<?php echo htmlspecialchars($this->data['stateId']); ?>" />
+    <input type="hidden" name="StateId" value="<?= htmlspecialchars($this->data['stateId']) ?>" />
 </p>
     <button type="submit" name="yes" class="ssp-btn btn ssp-btn__action ssp-btns-container--btn__left text-uppercase" id="yesbutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
+        <?= htmlspecialchars($this->t('{consent:consent:yes}')) ?>
     </button>
 </form>
 
-<form id="consent_no" action="<?php echo htmlspecialchars($this->data['noTarget']); ?>" style="display:inline-block;">
-    <input type="hidden" name="StateId" value="<?php echo htmlspecialchars($this->data['stateId']); ?>" />
+<form id="consent_no" action="<?= htmlspecialchars($this->data['noTarget']) ?>" style="display:inline-block;">
+    <input type="hidden" name="StateId" value="<?= htmlspecialchars($this->data['stateId']) ?>" />
     <button type="submit" class="ssp-btn ssp-btn__secondary btn ssp-btns-container--btn__right text-uppercase" name="no" id="nobutton">
-        <?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
+        <?= htmlspecialchars($this->t('{consent:consent:no}')) ?>
     </button>
 </form>
 </div> <!--/ssp-btns-container-->

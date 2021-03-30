@@ -47,7 +47,7 @@ header('X-Frame-Options: SAMEORIGIN');
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-<script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/script.js"></script>
+<script type="text/javascript" src="/<?= $this->data['baseurlpath'] ?>resources/script.js"></script>
 <title>
   <?php
   if (strpos($this->t('{themevanilla:default:browser_tab_title}'), 'not translated') === FALSE) {
@@ -57,8 +57,8 @@ header('X-Frame-Options: SAMEORIGIN');
   <?php if(array_key_exists('header', $this->data)) { echo (' | ' . $this->data['header']); } ?>
 </title>
 
-<link rel="stylesheet" type="text/css" href="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/css/app.css')); ?>" />
-<link rel="shortcut icon" type="image/x-icon" href="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/images/favicon.ico')); ?>"  />
+<link rel="stylesheet" type="text/css" href="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/css/app.css')) ?>" />
+<link rel="shortcut icon" type="image/x-icon" href="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/images/favicon.ico')) ?>"  />
 
 <?php
 
@@ -96,7 +96,7 @@ if(!empty($this->data['htmlinject']['htmlContentHead'])) {
 
 if ($this->isLanguageRTL()) {
 ?>
-  <link rel="stylesheet" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/default-rtl.css" />
+  <link rel="stylesheet" type="text/css" href="/<?= $this->data['baseurlpath'] ?>resources/default-rtl.css" />
 <?php
 }
 ?>
@@ -124,7 +124,7 @@ if($onLoad !== '') {
   $onLoad = ' onload="' . $onLoad . '"';
 }
 ?>
-<body<?php echo $onLoad; ?>>
+<body<?= $onLoad; ?>>
 
 <div class="header">
 <?php
@@ -135,14 +135,14 @@ if($onLoad !== '') {
   }
   ?>
   <div class="text-center ssp-logo">
-    <a <?php echo (strpos($this->t('{themevanilla:default:logo_link_url}'), 'not translated') === FALSE ? 'href="' .  $this->t('{themevanilla:default:logo_link_url}') . '"' : '');
-             echo (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? 'title="' .  $this->t('{themevanilla:default:header_title}') . '"' : ''); ?> >
-      <img src="<?php echo SimpleSAML\Module::getModuleURL('themevanilla/resources/images/logo.jpg'); ?>" alt="simplesamlphp" />
+    <a <?= (strpos($this->t('{themevanilla:default:logo_link_url}'), 'not translated') === FALSE ? 'href="' .  $this->t('{themevanilla:default:logo_link_url}') . '"' : '') ?>
+             <?= (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? 'title="' .  $this->t('{themevanilla:default:header_title}') . '"' : '') ?> >
+      <img src="<?= SimpleSAML\Module::getModuleURL('themevanilla/resources/images/logo.jpg') ?>" alt="simplesamlphp" />
     </a>
   </div>
   <h1 class="text-center">
-    <?php echo (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_title}') : ''); ?>
-    <small><?php echo (strpos($this->t('{themevanilla:default:header_subtitle}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_subtitle}') : ''); ?></small>
+    <?= (strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_title}') : '') ?>
+    <small><?= (strpos($this->t('{themevanilla:default:header_subtitle}'), 'not translated') === FALSE ? $this->t('{themevanilla:default:header_subtitle}') : '') ?></small>
   </h1>
 </div> <!-- /header -->
 <div class="ssp-container" id="content">

@@ -9,20 +9,20 @@ $this->includeAtTemplateBase('includes/header.php');
 if ($this->data['errorcode'] !== NULL) {
 ?>
 	<div style="border-left: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; background: #f5f5f5">
-		<img src="/<?php echo $this->data['baseurlpath']; ?>resources/icons/experience/gtk-dialog-error.48x48.png" class="float-l" style="margin: 15px" alt="" />
-		<h2><?php echo $this->t('{login:error_header}'); ?></h2>
-		<p><b><?php echo $this->t('{errors:title_' . $this->data['errorcode'] . '}'); ?></b></p>
-		<p><?php echo $this->t('{errors:descr_' . $this->data['errorcode'] . '}'); ?></p>
+		<img src="/<?= $this->data['baseurlpath'] ?>resources/icons/experience/gtk-dialog-error.48x48.png" class="float-l" style="margin: 15px" alt="" />
+		<h2><?= $this->t('{login:error_header}') ?></h2>
+		<p><b><?= $this->t('{errors:title_' . $this->data['errorcode'] . '}') ?></b></p>
+		<p><?= $this->t('{errors:descr_' . $this->data['errorcode'] . '}') ?></p>
 	</div>
 <?php
 }
 ?>
-	<h2 style="break: both"><?php echo $this->t('{authX509:X509error:certificate_header}'); ?></h2>
+	<h2 style="break: both"><?= $this->t('{authX509:X509error:certificate_header}') ?></h2>
 
-	<p><?php echo $this->t('{authX509:X509error:certificate_text}'); ?></p>
+	<p><?= $this->t('{authX509:X509error:certificate_text}') ?></p>
 
-	<a href="<?php echo htmlspecialchars(\SimpleSAML\Utils\HTTP::getSelfURL()); ?>">
-		<?php echo $this->t('{login:login_button}'); ?>
+	<a href="<?= htmlspecialchars(\SimpleSAML\Utils\HTTP::getSelfURL()) ?>">
+		<?= $this->t('{login:login_button}') ?>
 	</a>
 
 <?php

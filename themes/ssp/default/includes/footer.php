@@ -1,7 +1,7 @@
 
 <?php
 $themeConfig = SimpleSAML\Configuration::getConfig('module_themevanilla.php');
-$enable_cookies_banner = $themeConfig->getValue('enable_cookies_banner');
+$enableCookiesBanner = $themeConfig->getValue('enable_cookies_banner');
 
 if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   foreach($this->data['htmlinject']['htmlContentPost'] AS $c) {
@@ -12,18 +12,18 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
   </div><!-- /container -->
   </div><!-- /ssp-container -->
 
-<?php if ($enable_cookies_banner) { ?>
+<?php if ($enableCookiesBanner) { ?>
   <!-- cookies popup -->
   <div id="cookies">
     <div id="cookies-wrapper">
       <p>
-        <?php echo $this->t('{themevanilla:discopower:cookies_text}'); ?>
+        <?= $this->t('{themevanilla:discopower:cookies_text}') ?>
         <?php if(strpos($this->t('{themevanilla:discopower:cookies_link_text}'), 'not translated') === FALSE) { ?>
-        <a href="<?php echo $this->t('{themevanilla:discopower:cookies_link_url}'); ?>" target="_blank"><?php echo $this->t('{themevanilla:discopower:cookies_link_text}'); ?></a>
+        <a href="<?= $this->t('{themevanilla:discopower:cookies_link_url}') ?>" target="_blank"><?= $this->t('{themevanilla:discopower:cookies_link_text}') ?></a>
         <?php } ?>
       </p>
       <a id="js-accept-cookies" class="cookies-ok" href="#">
-        <?php echo $this->t('{themevanilla:discopower:cookies_accept_btn_text}'); ?>
+        <?= $this->t('{themevanilla:discopower:cookies_accept_btn_text}') ?>
       </a>
     </div>
   </div>
@@ -49,7 +49,7 @@ if ($includeLanguageBar) {
   if ( count($languages) > 1 ) {
     echo '<div class="col-sm-3 ssp-footer__item">
       <div class="dropup ssp-footer__item__lang">';
-    $langnames = array(
+    $langNames = array(
       'no' => 'Bokmål', // Norwegian Bokmål
       'nn' => 'Nynorsk', // Norwegian Nynorsk
       'se' => 'Sámegiella', // Northern Sami
@@ -91,22 +91,22 @@ if ($includeLanguageBar) {
       'xh' => 'isiXhosa', // Xhosa
     );
 
-    $textarray = array();
+    $textArray = array();
     foreach ($languages AS $lang => $current) {
       $lang = strtolower($lang);
       if ($current) {
-        $lang_current = $langnames[$lang];
+        $langCurrent = $langNames[$lang];
       } else {
-        $textarray[] = '<li class="ssp-dropdown__two_cols--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->getTranslator()->getLanguage()->getLanguageParameterName() => $lang))) . '">' .
-          $langnames[$lang] . '</a></li>';
+        $textArray[] = '<li class="ssp-dropdown__two_cols--item"><a href="' . htmlspecialchars(\SimpleSAML\Utils\HTTP::addURLParameters(\SimpleSAML\Utils\HTTP::getSelfURL(), array($this->getTranslator()->getLanguage()->getLanguageParameterName() => $lang))) . '">' .
+          $langNames[$lang] . '</a></li>';
       }
     }
     echo '<button class="ssp-btn btn ssp-btn__footer dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-      . $lang_current
+      . $langCurrent
       . '<span class="caret"></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-left ssp-dropdown__two_cols" aria-labelledby="dropdownMenu1">';
-    echo join(' ', $textarray);
+    echo join(' ', $textArray);
     echo '</ul></div></div>'; // /dropup /col-sm-4
   }
 }
@@ -114,10 +114,10 @@ if ($includeLanguageBar) {
 ?>
     <div class="copy col-sm-6 ssp-footer__item">
       <a href="https://grnet.gr/">
-        <img class="ssp-footer__item__logo" src="<?php echo SimpleSAML\Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg'); ?>" alt="GRNET" />
+        <img class="ssp-footer__item__logo" src="<?= SimpleSAML\Module::getModuleURL('themevanilla/resources/images/grnet_logo_en.svg') ?>" alt="GRNET" />
       </a>
       <div class="ssp-footer__item__copyright">
-        Copyright &copy;<?php echo (strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-' : ''); echo date("Y"); ?>
+        Copyright &copy;<?= (strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === FALSE ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-' : '') ?><?= date("Y") ?>
       </div>
     </div>
     <div class="col-sm-3 ssp-footer__item">
@@ -128,19 +128,19 @@ if ($includeLanguageBar) {
   </div> <!-- /container-fluid -->
 </footer>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/cookie.js')); ?>">
+          src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/cookie.js')) ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/dropdown.js')); ?>">
+          src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/dropdown.js')) ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/modal.js')); ?>">
+          src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/modal.js')) ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/tooltip.js')); ?>">
+          src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/tooltip.js')) ?>">
   </script>
   <script type="text/javascript"
-          src="<?php echo htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/theme.js')); ?>">
+          src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/theme.js')) ?>">
   </script>
 
 </body>

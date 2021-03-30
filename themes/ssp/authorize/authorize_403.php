@@ -15,12 +15,12 @@ $this->data['403_text'] = $this->t('{authorize:Authorize:403_text}');
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
-<h2><?php echo $this->data['403_header']; ?></h2>
-<p><?php echo $this->data['403_text']; ?></p>
+<h2><?= $this->data['403_header'] ?></h2>
+<p><?= $this->data['403_text'] ?></p>
 <?php
 if (isset($this->data['LogoutURL'])) {
 ?>
-<p><a href="<?php echo htmlspecialchars($this->data['LogoutURL']); ?>"><?php echo $this->t('{status:logout}'); ?></a></p>
+<p><a href="<?= htmlspecialchars($this->data['LogoutURL']) ?>"><?= $this->t('{status:logout}') ?></a></p>
 <?php
 }
 ?>
