@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Move `ribbon_text` definition to config file
 - Comply to [PSR-1: Basic Coding Standard](https://www.php-fig.org/psr/psr-1/) guidelines
+- Comply to [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/) guidelines
 
 ## [v3.0.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v2.3.1...v3.0.0) - 2019-09-20
 

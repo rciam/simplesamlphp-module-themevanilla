@@ -1,6 +1,6 @@
 <?php
 $this->data['header'] = $this->t($this->data['dictTitle']);
-$this->data['jquery'] = array('core' => TRUE);
+$this->data['jquery'] = array('core' => true);
 
 $this->data['head'] = <<<EOF
 <meta name="robots" content="noindex, nofollow" />
@@ -9,7 +9,7 @@ EOF;
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
-    <h2><?= $this->t($this->data['dictTitle']) ?></h2>
+<h2><?= $this->t($this->data['dictTitle']) ?></h2>
 <?php
 echo htmlspecialchars($this->t($this->data['dictDescr'], $this->data['parameters']));
 
@@ -18,23 +18,24 @@ if (isset($this->data['includeTemplate'])) {
     $this->includeAtTemplateBase($this->data['includeTemplate']);
 }
 ?>
-    <div class="trackidtext">
-        <p><?= $this->t('report_trackid') ?></p>
-        <div class="input-group">
-          <input class="form-control" type="text" readonly id="trackid" value="<?= $this->data['error']['trackId'] ?>">
-          <span class="input-group-btn" aria-hidden="true">
+<div class="trackidtext">
+    <p><?= $this->t('report_trackid') ?></p>
+    <div class="input-group">
+        <input class="form-control" type="text" readonly id="trackid" value="<?= $this->data['error']['trackId'] ?>">
+        <span class="input-group-btn" aria-hidden="true">
             <button data-clipboard-target="#trackid" id="btntrackid" class="btn btn-default ssp-btn--copy">
-              <img src="/<?= $this->data['baseurlpath'].'resources/icons/clipboard.svg' ?>"
-                   alt="Copy to clipboard" />
+                <img
+                    src="/<?= $this->data['baseurlpath'] . 'resources/icons/clipboard.svg' ?>"
+                    alt="Copy to clipboard"
+                />
             </button>
-          </span>
+        </span>
 
-        </div>
     </div>
+</div>
 <?php
 // print out exception only if the exception is available
-if ($this->data['showerrors']) {
-?>
+if ($this->data['showerrors']) : ?>
     <h2><?= $this->t('debuginfo_header') ?></h2>
     <p><?= $this->t('debuginfo_text') ?></p>
 
@@ -44,14 +45,12 @@ if ($this->data['showerrors']) {
         <?= htmlspecialchars($this->data['error']['exceptionTrace']) ?>
         </pre>
     </div>
-<?php
-}
+<?php endif;
 
 /* Add error report submit section if we have a valid technical contact. 'errorreportaddress' will only be set if
  * the technical contact email address has been set.
  */
-if (isset($this->data['errorReportAddress'])) {
-?>
+if (isset($this->data['errorReportAddress'])) : ?>
     <h2><?= $this->t('report_header') ?></h2>
     <form action="<?= htmlspecialchars($this->data['errorReportAddress']) ?>" method="post">
         <p><?= $this->t('report_text') ?></p>
@@ -64,17 +63,15 @@ if (isset($this->data['errorReportAddress'])) {
             </textarea>
         </p>
         <p>
-            <input type="hidden" name="reportId" value="<?= $this->data['error']['reportId'] ?>"/>
+            <input type="hidden" name="reportId" value="<?= $this->data['error']['reportId'] ?>" />
             <button type="submit" name="send" class="btn"><?= $this->t('report_submit') ?></button>
         </p>
     </form>
-    <?php
-}
-?>
-    <h2 style="clear: both"><?= $this->t('howto_header') ?></h2>
-    <p><?= $this->t('howto_text') ?></p>
-    <script type="text/javascript">
-        var clipboard = new Clipboard('#btntrackid');
-    </script>
-<?php
-$this->includeAtTemplateBase('includes/footer.php');
+<?php endif ?>
+<h2 style="clear: both"><?= $this->t('howto_header') ?></h2>
+<p><?= $this->t('howto_text') ?></p>
+<script type="text/javascript">
+    var clipboard = new Clipboard('#btntrackid');
+</script>
+
+<?php $this->includeAtTemplateBase('includes/footer.php');
