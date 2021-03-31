@@ -1,10 +1,9 @@
-<h1 align="center">Vanilla theme for SimpleSAMLphp</h1>
+# Vanilla theme for SimpleSAMLphp
 
-![discopower](/screenshots/disco_buttons_bottom.png)
+![discopower](screenshots/disco_buttons_bottom.png)
 
 A customisable theme for SimpleSAMLphp based on Bootstrap.
 See more screens in the directory [screenshots](screenshots/).
-
 
 ## Installation
 
@@ -18,7 +17,7 @@ installation. Check the following example, that includes all the necessary
 additions for the installation of the **simplesamlphp-module-themevanilla
 v1.0.0**.
 
-```
+```json
 "require": {
 
   ...
@@ -71,13 +70,14 @@ v1.0.0**.
 ```
 
 With the above configuration composer will do several operations:
-* It will put the module `themevanilla` in the `modules` directory.
-* It will download and extract the compressed `css` and `js` directories that
+
+- It will put the module `themevanilla` in the `modules` directory.
+- It will download and extract the compressed `css` and `js` directories that
   include the minified css and javascript files.
-* It will copy the `css` and `js` directories from the `vendor/rciam` directory
+- It will copy the `css` and `js` directories from the `vendor/rciam` directory
   in the `themevanilla/www/resources` directory, where the static files of the
   theme should be placed.
-* It will place the configuration file `module_themevanilla.php` inside the
+- It will place the configuration file `module_themevanilla.php` inside the
   `config` directory of the installation.
 
 ### Direct download
@@ -92,19 +92,20 @@ of your SimpleSAMLphp installation.
 
 Clone this repository into the `modules` directory of your SimpleSAMLphp
 installation as follows:
-```
+
+```sh
 cd /path/to/simplesamlphp/modules
 git clone https://github.com/rciam/simplesamlphp-module-themevanilla.git themevanilla
 ```
+
 Note that the cloned repository will not include the css files or minified
 javascript files.
 You'll need to download or produce them. You can download the compressed
-directories (`js.zip` and `css.zip`) from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases) and
-extract them under `modules/themevanilla/www/resources`.  If you want to produce
-them, you may read the customisation instructions below.
+directories (`js.zip` and `css.zip`) from the [release page](https://github.com/rciam/simplesamlphp-module-themevanilla/releases)
+and extract them under `modules/themevanilla/www/resources`. If you want to
+produce them, you may read the customisation instructions below.
 As a last step, move `example-config/module_themevanilla.php` file to the `config`
 directory of your SimpleSAMLphp installation.
-
 
 ## Configuration
 
@@ -117,16 +118,18 @@ In order to use this module as theme you need to set in the
 
 The theme splits the discopower IdP discovery page into 2 sections, depending on
 the tags of the included IdPs:
-* The section that its IdPs have the tag `idps_in_searchable_list` contains all
+
+- The section that its IdPs have the tag `idps_in_searchable_list` contains all
   the IdPs in a list of links with a search box.
-* The section that its IdPs have the tag `idps_with_logos` contains login
+- The section that its IdPs have the tag `idps_with_logos` contains login
   buttons with specified style rules for each IdP. Each button may have a logo
   icon, too.
 
 Also, you need to define the order of the 2 sections. You can set this in the
 file `config/module_discopower.php` from the variable `taborder`.
 For example:
-```
+
+```php
 'taborder' => [
   'idps_in_searchable_list',
   'idps_with_logos'
@@ -136,7 +139,8 @@ For example:
 Especially for the of the `idps_with_logos`, you need to specify the css class
 name, icon and label of the IdP login button using the `login_button`
 configuration as follows:
-```
+
+```php
 'tags' => [
   'idps_with_logos',
 ],
@@ -146,32 +150,33 @@ configuration as follows:
   'label' => 'ORCID',
 ]
 ```
+
 To set style rules for the each button, the configured css_classname value must
 be defined in the `idps_buttons.scss` file. See more information bellow.
 
 At the moment there are style rules for the IdPs:
-* ARIA
-* B2ACCESS
-* Check-in
-* DARIAH
-* eduTEAMS
-* Elixir
-* Facebook
-* Google
-* IGTF
-* LinkedIn
-* ORCID
-* OpenAIRE
-* OpenMinTeD
+
+- ARIA
+- B2ACCESS
+- Check-in
+- DARIAH
+- eduTEAMS
+- Elixir
+- Facebook
+- Google
+- IGTF
+- LinkedIn
+- ORCID
+- OpenAIRE
+- OpenMinTeD
 
 ### Cookie Policy
 
-Cookie policy includes a banner at the bottom of each page that prompts the user to
-accept the cookies, along with a Cookies Policy page.
+Cookie policy includes a banner at the bottom of each page that prompts the
+user to accept the cookies, along with a Cookies Policy page.
 The feature is disabled by default.
 To enable it, set `enable_cookies_banner` to `true` in the configuration file:
 `<path-to-simplesamlphp>/config/module_themevanilla.php`.
-
 
 ## Customization
 
@@ -183,7 +188,7 @@ You can find definitions and dictionaries in the `dictionaries` directory.
 
 Place your logo and favicon in the directory:
 `themevanilla/www/resources/images` If you name them `logo.jpg` and
-`favicon.ico` they will be loaded without any other modification.  If you name
+`favicon.ico` they will be loaded without any other modification. If you name
 them differently you need to modify the template `header.php` that is placed in:
 `themevanilla/themes/ssp/default/includes/`.
 
@@ -208,16 +213,19 @@ If you want to hide the ribbon, set `ribbon_text` to `""`.
 ### CSS
 
 To produce the css files for this theme follow these steps:
-* Install sass ([installation guide](http://sass-lang.com/install))
-* Go to the directory `themevanilla/www/resources`
-* Run the cli sass: `sass --update sass:css`
+
+- Install sass ([installation guide](http://sass-lang.com/install))
+- Go to the directory `themevanilla/www/resources`
+- Run the cli sass: `sass --update sass:css`
 
 After these steps the css files will be in the directory
 `themevanilla/www/resources/css`
 
 You can change the settings of this theme from the files:
-* `themevanilla/www/resources/sass/_settings.scss`: Here you will see the
+
+- `themevanilla/www/resources/sass/_settings.scss`: Here you will see the
   following variables:
+
   - $btn-action: background color of primary button
   - $btn-warning: background color of warning button
   - $footer-bg: footer background color
@@ -226,10 +234,10 @@ You can change the settings of this theme from the files:
   - $btn-footer-text: text color of button that is in the footer
   - $btn-footer-border: border color of button that is in the footer
 
-* `themevanilla/www/resources/sass/_colors.scss`: Here you can add or change
+- `themevanilla/www/resources/sass/_colors.scss`: Here you can add or change
   color settings.
 
-* `themevanilla/www/resources/sass/_idps_buttons.scss`: Here you can add or
+- `themevanilla/www/resources/sass/_idps_buttons.scss`: Here you can add or
   modify settings that are related with the buttons of the selected subset of
   IdPs.
 
