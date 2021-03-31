@@ -1,7 +1,7 @@
 <?php
 
 $this->data['header'] = $this->t('{consent:consent:noconsent_title}');
-$this->data['jquery'] = array('core' => true);
+$this->data['jquery'] = ['core' => true];
 
 $this->includeAtTemplateBase('includes/header.php');
 

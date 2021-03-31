@@ -53,7 +53,7 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                 if (count($languages) > 1) {
                     echo '<div class="col-sm-3 ssp-footer__item">
       <div class="dropup ssp-footer__item__lang">';
-                    $langNames = array(
+                    $langNames = [
                         'no' => 'Bokmål', // Norwegian Bokmål
                         'nn' => 'Nynorsk', // Norwegian Nynorsk
                         'se' => 'Sámegiella', // Northern Sami
@@ -93,9 +93,9 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                         'af' => 'Afrikaans', // Afrikaans
                         'zu' => 'IsiZulu', // Zulu
                         'xh' => 'isiXhosa', // Xhosa
-                    );
+                    ];
 
-                    $textArray = array();
+                    $textArray = [];
                     foreach ($languages as $lang => $current) {
                         $lang = strtolower($lang);
                         if ($current) {
@@ -105,7 +105,7 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                             . htmlspecialchars(
                                 \SimpleSAML\Utils\HTTP::addURLParameters(
                                     \SimpleSAML\Utils\HTTP::getSelfURL(),
-                                    array($this->getTranslator()->getLanguage()->getLanguageParameterName() => $lang)
+                                    [$this->getTranslator()->getLanguage()->getLanguageParameterName() => $lang]
                                 )
                             )
                             . '">' . $langNames[$lang] . '</a></li>';

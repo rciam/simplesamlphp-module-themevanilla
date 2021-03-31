@@ -6,26 +6,26 @@ $ribbonText = $themeConfig->getValue('ribbon_text');
 /**
  * Support the htmlinject hook, which allows modules to change header, pre and post body on all pages.
  */
-$this->data['htmlinject'] = array(
-    'htmlContentPre' => array(),
-    'htmlContentPost' => array(),
-    'htmlContentHead' => array(),
-);
+$this->data['htmlinject'] = [
+    'htmlContentPre' => [],
+    'htmlContentPost' => [],
+    'htmlContentHead' => [],
+];
 
 
-$jquery = array();
+$jquery = [];
 if (array_key_exists('jquery', $this->data)) {
     $jquery = $this->data['jquery'];
 }
 
 if (array_key_exists('pageid', $this->data)) {
-    $hookinfo = array(
+    $hookinfo = [
         'pre' => &$this->data['htmlinject']['htmlContentPre'],
         'post' => &$this->data['htmlinject']['htmlContentPost'],
         'head' => &$this->data['htmlinject']['htmlContentHead'],
         'jquery' => &$jquery,
         'page' => $this->data['pageid']
-    );
+    ];
 
     SimpleSAML\Module::callHooks('htmlinject', $hookinfo);
 }

@@ -1,6 +1,6 @@
 <?php
 $this->data['header'] = $this->t($this->data['dictTitle']);
-$this->data['jquery'] = array('core' => true);
+$this->data['jquery'] = ['core' => true];
 
 $this->data['head'] = <<<EOF
 <meta name="robots" content="noindex, nofollow" />

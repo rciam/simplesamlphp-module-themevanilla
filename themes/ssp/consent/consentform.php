@@ -52,7 +52,7 @@ if (array_key_exists('consent:hiddenAttributes', $state)) {
 $attributes = $this->data['attributes'];
 
 $this->data['header'] = $this->t('{consent:consent:consent_header}');
-$this->data['jquery'] = array('core' => true);
+$this->data['jquery'] = ['core' => true];
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>

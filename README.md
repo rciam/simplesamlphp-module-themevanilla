@@ -127,24 +127,24 @@ Also, you need to define the order of the 2 sections. You can set this in the
 file `config/module_discopower.php` from the variable `taborder`.
 For example:
 ```
-'taborder' => array(
+'taborder' => [
   'idps_in_searchable_list',
   'idps_with_logos'
-)
+]
 ```
 
 Especially for the of the `idps_with_logos`, you need to specify the css class
 name, icon and label of the IdP login button using the `login_button`
 configuration as follows:
 ```
-'tags' => array(
+'tags' => [
   'idps_with_logos',
-),
-'login_button' => array(
+],
+'login_button' => [
   'css_classname' => 'orcid',
   'icon_filename' => 'orcid.svg',
   'label' => 'ORCID',
-)
+]
 ```
 To set style rules for the each button, the configured css_classname value must
 be defined in the `idps_buttons.scss` file. See more information bellow.
