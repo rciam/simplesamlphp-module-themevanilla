@@ -103,9 +103,9 @@ function showEntry($t, $metadata, $favourite = false, $withIcon = false)
 
 <h2 class="text-center">
     <?=
-        strpos($this->t('{themevanilla:discopower:title}'), 'not translated') === false
-        ? $this->t('{themevanilla:discopower:title}')
-        : ''
+    strpos($this->t('{themevanilla:discopower:title}'), 'not translated') === false
+    ? $this->t('{themevanilla:discopower:title}')
+    : ''
     ?>
 </h2>
 
@@ -131,9 +131,6 @@ function getTranslatedName($t, $metadata)
     }
     return $metadata['entityid'];
 }
-
-
-
 
 if (!empty($favEntry)) {
     echo ('
@@ -235,10 +232,9 @@ foreach ($this->data['idplist'] as $tab => $sList) {
             echo ($top . $search . $listOpen . $listItems . $close);
         } elseif ($tab == "idps_with_logos") {
             $idpsWithLogosIndex = array_search($tab, array_keys($this->data['idplist']));
-            $top = '<div class="row ssp-content-group"><div class="col-sm-12">
-            ';
-            $listOpen = '<div class="metalist ssp-content-group__provider-list '
-            . 'ssp-content-group__provider-list--other js-idps">';
+            $top = '<div class="row ssp-content-group"><div class="col-sm-12">';
+            $listOpen = '<div class="metalist ssp-content-group__provider-list'
+            . ' ssp-content-group__provider-list--other js-idps">';
             $listItems = '';
             $closeList = '</div>'; // /metalist
             $close = '</div></div>'; // /ssp-content-group /col-sm-12
@@ -269,7 +265,8 @@ foreach ($this->data['idplist'] as $tab => $sList) {
                     strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === false
                     ? $this->t('{themevanilla:discopower:or}')
                     : ''
-                ) . '</span></div>';
+                )
+                . '</span></div>';
                 echo $top . $listOpen . $listItems . $closeList . $or . $close;
             }
         }

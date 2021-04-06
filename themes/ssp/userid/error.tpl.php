@@ -18,9 +18,9 @@ $translationParams = [
     <div class="col-sm-12">
         <h2>
             <?=
-                strpos($this->t('{themevanilla:userid_error:friendly_title}'), 'not translated') === false
-                ? $this->t('{themevanilla:userid_error:friendly_title}')
-                : ''
+            strpos($this->t('{themevanilla:userid_error:friendly_title}'), 'not translated') === false
+            ? $this->t('{themevanilla:userid_error:friendly_title}')
+            : ''
             ?>
         </h2>
         <p><?= $this->t('{themevanilla:userid_error:friendly_description}', $translationParams) ?></p>
@@ -32,9 +32,9 @@ $translationParams = [
         <div class="text-center">
             <a href="<?= $retryUrl ?>" class="ssp-btn btn ssp-btn__action text-uppercase">
                 <?=
-                    strpos($this->t('{themevanilla:userid_error:go2disco}'), 'not translated') === false
-                    ? $this->t('{themevanilla:userid_error:go2disco}')
-                    : ''
+                strpos($this->t('{themevanilla:userid_error:go2disco}'), 'not translated') === false
+                ? $this->t('{themevanilla:userid_error:go2disco}')
+                : ''
                 ?>
             </a>
         </div>
@@ -44,24 +44,27 @@ $translationParams = [
     <div class="col-sm-12">
         <h2>
             <?=
-                strpos($this->t('{themevanilla:userid_error:details_title}'), 'not translated') === false
-                ? $this->t('{themevanilla:userid_error:details_title}')
-                : ''
+            strpos($this->t('{themevanilla:userid_error:details_title}'), 'not translated') === false
+            ? $this->t('{themevanilla:userid_error:details_title}')
+            : ''
             ?>
         </h2>
         <p>
             <?=
-                strpos($this->t('{themevanilla:userid_error:details_description}'), 'not translated') === false
-                ? $this->t('{themevanilla:userid_error:details_description}')
-                : ''
+            strpos($this->t('{themevanilla:userid_error:details_description}'), 'not translated') === false
+            ? $this->t('{themevanilla:userid_error:details_description}')
+            : ''
             ?>
         </p>
         <pre class="ssp-error-code">
-        <?php foreach ($this->data['parameters']['%ATTRIBUTES%'] as $attr) {
+        <?php
+        foreach ($this->data['parameters']['%ATTRIBUTES%'] as $attr) {
             echo $attr . '<br>';
-        } ?>
+        }
+        ?>
         </pre>
     </div>
 </div>
 
-<?php $this->includeAtTemplateBase('includes/footer.php');
+<?php
+$this->includeAtTemplateBase('includes/footer.php');

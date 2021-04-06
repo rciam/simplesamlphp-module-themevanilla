@@ -21,4 +21,5 @@ $this->includeAtTemplateBase('includes/header.php');
     <p><a href="<?= htmlspecialchars($this->data['LogoutURL']) ?>"><?= $this->t('{status:logout}') ?></a></p>
 <?php endif ?>
 
-<?php $this->includeAtTemplateBase('includes/footer.php');
+<?php
+$this->includeAtTemplateBase('includes/footer.php');

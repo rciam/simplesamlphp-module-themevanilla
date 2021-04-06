@@ -19,7 +19,7 @@ if ($this->data['resumeFrom']) {
 }
 
 if ($this->data['aboutService']) {
-    echo ('<a href="' . htmlspecialchars($this->data['aboutService']) . '"  class="ssp-btn btn text-uppercase" >');
+    echo ('<a href="' . htmlspecialchars($this->data['aboutService']) . '" class="ssp-btn btn text-uppercase">');
     echo ($this->t('{consent:consent:noconsent_goto_about}'));
     echo ('</a>');
 }

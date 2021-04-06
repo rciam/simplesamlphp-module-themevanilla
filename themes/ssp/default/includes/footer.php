@@ -19,12 +19,13 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                 <?= $this->t('{themevanilla:discopower:cookies_text}') ?>
                 <?php
                 if (
-                    strpos($this->t('{themevanilla:discopower:cookies_link_text}'), 'not translated')
-                    === false
+                    strpos($this->t('{themevanilla:discopower:cookies_link_text}'), 'not translated') === false
                 ) : ?>
                     <a
                         href="<?= $this->t('{themevanilla:discopower:cookies_link_url}') ?>"
-                        target="_blank"><?= $this->t('{themevanilla:discopower:cookies_link_text}') ?>
+                        target="_blank"
+                    >
+                        <?= $this->t('{themevanilla:discopower:cookies_link_text}') ?>
                     </a>
                 <?php endif ?>
             </p>
@@ -35,6 +36,7 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
     </div>
     <!-- /cookies popup -->
 <?php endif ?>
+
 <footer class="ssp-footer text-center">
     <div class="container ssp-footer--container">
         <div class="row ssp-content-group--footer">
@@ -134,10 +136,10 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                 <div class="ssp-footer__item__copyright">
                     Copyright &copy;
                     <?=
-                        strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === false
-                        ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-'
-                        : ''
-                        . date("Y")
+                    strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === false
+                    ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-'
+                    : ''
+                    . date("Y")
                     ?>
                 </div>
             </div>
@@ -145,9 +147,10 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                 <div class="ssp-footer__item__powered">
                     Powered by <a href="https://github.com/rciam">RCIAM</a>
                 </div>
-            </div>
-        </div> <!-- /container-fluid -->
+        </div>
+    </div> <!-- /container-fluid -->
 </footer>
+
 <script
     type="text/javascript"
     src="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/js/cookie.js')) ?>"

@@ -63,7 +63,6 @@ $this->includeAtTemplateBase('includes/header.php');
         <?php
         echo $this->data['attributes_html'] = present_attributes_ssp($t, $attributes, '');
 
-
         /**
          * Recursive attribute array listing function
          *
@@ -99,14 +98,13 @@ $this->includeAtTemplateBase('includes/header.php');
                     $parentName = preg_replace('/^child_/', '', $nameRaw);
                     foreach ($value as $child) {
                         $str .= "\n" . '<tr class="odd ssp--table--tr__odd"><td>' .
-                            present_attributes_ssp($t, $child, $parentName)  . '</td></tr>';
+                            present_attributes_ssp($t, $child, $parentName) . '</td></tr>';
                     }
                 } else {
                     // insert values directly
 
                     $str .= "\n" . '<tr class="' . $alternate[($i++ % 2)] .
                         '"><td><div class="attrname ssp-table--attrname">' . htmlspecialchars($name) . '</div>';
-
 
                     $isHidden = in_array($nameRaw, $t->data['hiddenAttributes'], true);
                     if ($isHidden) {
@@ -144,8 +142,8 @@ $this->includeAtTemplateBase('includes/header.php');
 
                     if ($isHidden) {
                         $str .= '<div class="attrvalue consent_showattribute" id="visible_' . $hiddenId . '">';
-                        $str .= '<a class="consent_showattributelink ssp-btn__show-more" '
-                        . 'href="javascript:SimpleSAML_show(\'hidden_' . $hiddenId;
+                        $str .= '<a class="consent_showattributelink ssp-btn__show-more"'
+                        . ' href="javascript:SimpleSAML_show(\'hidden_' . $hiddenId;
                         $str .= '\'); SimpleSAML_hide(\'visible_' . $hiddenId . '\');"'
                         . ' data-toggle="tooltip" data-placement="right" title="'
                         . $t->t('{consent:consent:show_attribute}') . '">';
@@ -155,8 +153,8 @@ $this->includeAtTemplateBase('includes/header.php');
                     }
 
                     $str .= '</td></tr>';
-                }      // end else: not child table
-            }  // end foreach
+                } // end else: not child table
+            } // end foreach
             $str .= isset($attributes) ? '</table></div>' : '';
             return $str;
         }
@@ -168,7 +166,6 @@ $this->includeAtTemplateBase('includes/header.php');
             echo '<p>' . $this->data['consent_purpose'] . '</p>';
         }
         ?>
-
 
         <div class="ssp-btns-container">
             <form
@@ -211,8 +208,7 @@ $this->includeAtTemplateBase('includes/header.php');
                     <?= htmlspecialchars($this->t('{consent:consent:no}')) ?>
                 </button>
             </form>
-        </div>
-        <!--/ssp-btns-container-->
+        </div> <!-- /ssp-btns-container -->
     </div> <!-- /ssp-content-group -->
 </div> <!-- /row -->
 

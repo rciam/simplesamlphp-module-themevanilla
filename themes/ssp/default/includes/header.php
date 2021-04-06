@@ -56,8 +56,6 @@ header('X-Frame-Options: SAMEORIGIN');
         if (strpos($this->t('{themevanilla:default:browser_tab_title}'), 'not translated') === false) {
             echo $this->t('{themevanilla:default:browser_tab_title}');
         }
-        ?>
-        <?php
         if (array_key_exists('header', $this->data)) {
             echo (' | ' . $this->data['header']);
         }
@@ -146,7 +144,7 @@ if ($onLoad !== '') {
     $onLoad = ' onload="' . $onLoad . '"';
 }
 ?>
-<body<?= $onLoad; ?>>
+<body<?= $onLoad ?>>
 
     <div class="header">
         <?php
@@ -159,13 +157,14 @@ if ($onLoad !== '') {
         <div class="text-center ssp-logo">
             <a
                 <?=
-                    strpos($this->t('{themevanilla:default:logo_link_url}'), 'not translated') === false
-                    ? 'href="' .  $this->t('{themevanilla:default:logo_link_url}') . '"'
-                    : ''
+                strpos($this->t('{themevanilla:default:logo_link_url}'), 'not translated') === false
+                ? 'href="' .  $this->t('{themevanilla:default:logo_link_url}') . '"'
+                : ''
                 ?>
-                <?= strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === false
-                    ? 'title="' .  $this->t('{themevanilla:default:header_title}') . '"'
-                    : ''
+                <?=
+                strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === false
+                ? 'title="' .  $this->t('{themevanilla:default:header_title}') . '"'
+                : ''
                 ?>
             >
                 <img
@@ -176,25 +175,22 @@ if ($onLoad !== '') {
         </div>
         <h1 class="text-center">
             <?=
-                strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === false
-                ? $this->t('{themevanilla:default:header_title}')
-                : ''
+            strpos($this->t('{themevanilla:default:header_title}'), 'not translated') === false
+            ? $this->t('{themevanilla:default:header_title}')
+            : ''
             ?>
             <small>
                 <?=
-                    strpos($this->t('{themevanilla:default:header_subtitle}'), 'not translated') === false
-                    ? $this->t('{themevanilla:default:header_subtitle}')
-                    : ''
+                strpos($this->t('{themevanilla:default:header_subtitle}'), 'not translated') === false
+                ? $this->t('{themevanilla:default:header_subtitle}')
+                : ''
                 ?>
             </small>
         </h1>
     </div> <!-- /header -->
     <div class="ssp-container" id="content">
         <div class="container js-spread">
-
-
             <?php
-
             if (!empty($this->data['htmlinject']['htmlContentPre'])) {
                 foreach ($this->data['htmlinject']['htmlContentPre'] as $c) {
                     echo $c;

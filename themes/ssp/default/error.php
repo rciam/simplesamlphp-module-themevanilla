@@ -63,7 +63,7 @@ if (isset($this->data['errorReportAddress'])) : ?>
             </textarea>
         </p>
         <p>
-            <input type="hidden" name="reportId" value="<?= $this->data['error']['reportId'] ?>" />
+            <input type="hidden" name="reportId" value="<?= $this->data['error']['reportId'] ?>"/>
             <button type="submit" name="send" class="btn"><?= $this->t('report_submit') ?></button>
         </p>
     </form>
@@ -74,4 +74,5 @@ if (isset($this->data['errorReportAddress'])) : ?>
     var clipboard = new Clipboard('#btntrackid');
 </script>
 
-<?php $this->includeAtTemplateBase('includes/footer.php');
+<?php
+$this->includeAtTemplateBase('includes/footer.php');
