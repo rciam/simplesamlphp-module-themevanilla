@@ -19,6 +19,7 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 - Add comanage loader
 - Add support to configure loader
 - Add view.php modal
+- Add attrauthcomanage noty template
 
 ### Fixed
 
