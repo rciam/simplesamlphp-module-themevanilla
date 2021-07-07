@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add `login_with` key in discopower definitions
+- Add `login_with` key in discopower definitions.
+- Add style rules and logos for IdP umbrellaid.
 
 ### Fixed
 
