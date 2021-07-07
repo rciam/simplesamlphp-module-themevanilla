@@ -175,13 +175,13 @@
     }
     &.umbrellaid {
         border-color: $umbrellaid;
-        background: $white url("../images/umbrella-logo-head.jpg") no-repeat center center;
+        background: $white url("../images/umbrellaid.png") no-repeat center center;
         background-size: contain;
         img {
             visibility: hidden;
         }
         &:hover {
-            background-image: url("../images/umbrella-hover.png");
+            background-image: url("../images/umbrellaid-secondary.png");
             border-color: $umbrellaid-secondary;
         }
     }
