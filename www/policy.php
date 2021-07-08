@@ -1,4 +1,5 @@
 <?php
+
 // Load SimpleSAMLphp, configuration
 $config = SimpleSAML\Configuration::getInstance();
 
