@@ -26,6 +26,7 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 - Load JavaScript scripts with the new way
 - Fix undefined index error for `idps_in_searchable_list_index`
 - Load jQuery CSS script
+- Fix searchable list and idp buttons display order
 
 ### Changed
 
