@@ -132,67 +132,82 @@ function getTranslatedName($t, $metadata)
     return $metadata['entityid'];
 }
 
-if (!empty($favEntry)) {
-    echo ('
+if (!empty($favEntry)) : ?>
     <div class="modal fade" id="favourite-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title">'
-            . (
-                strpos($this->t('{themevanilla:discopower:favourite_dialog_title}'), 'not translated') === false
-                ? $this->t('{themevanilla:discopower:favourite_dialog_title}')
-                : ''
-            )
-            . '</h2>
-          </div>
-          <div class="modal-body ssp-modal-body">
-            <div class="row text-center">
-              <form
-                id="idpselectform" method="get" action="' . $this->data['urlpattern'] . '"
-                class="ssp-form-favourite"
-              >
-                <input type="hidden" name="entityID" value="' . htmlspecialchars($this->data['entityID']) . '" />
-                <input type="hidden" name="return" value="' . htmlspecialchars($this->data['return']) . '" />
-                <input
-                  type="hidden" name="returnIDParam"
-                  value="' . htmlspecialchars($this->data['returnIDParam']) . '"
-                />
-                <input type="hidden" name="idpentityid" value="' . htmlspecialchars($favEntry['entityid']) . '" />
-                <input
-                  type="submit" name="formsubmit" id="favouritesubmit"
-                  class="ssp-btn ssp-btn__action text-uppercase"
-                  value="'
-                  . $this->t('{themevanilla:discopower:login_with}') . ' '
-                  . htmlspecialchars(getTranslatedName($this, $favEntry)) . '"
-                />
-              </form>
-            </div>
-            <div class="row text-center ssp-modal-or">'
-              . (
-                  strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === false
-                ? $this->t('{themevanilla:discopower:or}')
-                : ''
-              )
-              . '
-            </div>
-            <div class="row text-center">
-              <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">'
-                . (strpos(
-                    $this->t('{themevanilla:discopower:favourite_dialog_button_close}'),
-                    'not translated'
-                ) === false
-                ? $this->t('{themevanilla:discopower:favourite_dialog_button_close}')
-                : '') .
-            '</button>
-            </div>
-          </div> <!-- /modal-body -->
-        </div> <!-- /modal-content -->
-      </div> <!-- /modal-dialog -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="js-close-custom close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title">
+                        <?=
+                        strpos($this->t('{themevanilla:discopower:favourite_dialog_title}'), 'not translated') === false
+                        ? $this->t('{themevanilla:discopower:favourite_dialog_title}')
+                        : ''
+                        ?>
+                    </h2>
+                </div>
+                <div class="modal-body ssp-modal-body">
+                    <div class="row text-center">
+                        <form
+                            id="idpselectform"
+                            method="get"
+                            action="<?= $this->data['urlpattern'] ?>"
+                            class="ssp-form-favourite"
+                        >
+                            <input
+                                type="hidden"
+                                name="entityID"
+                                value="<?= htmlspecialchars($this->data['entityID']) ?>"
+                            />
+                            <input
+                                type="hidden"
+                                name="return"
+                                value="<?= htmlspecialchars($this->data['return']) ?>"
+                            />
+                            <input
+                                type="hidden"
+                                name="returnIDParam"
+                                value="<?= htmlspecialchars($this->data['returnIDParam']) ?>"
+                            />
+                            <input
+                                type="hidden"
+                                name="idpentityid"
+                                value="<?= htmlspecialchars($favEntry['entityid']) ?>"
+                            />
+                            <input
+                                type="submit"
+                                name="formsubmit"
+                                id="favouritesubmit"
+                                class="ssp-btn ssp-btn__action text-uppercase"
+                                value="<?= $this->t('{themevanilla:discopower:login_with}') . ' '
+                                . htmlspecialchars(getTranslatedName($this, $favEntry)) ?>"
+                            />
+                        </form>
+                    </div>
+                    <div class="row text-center ssp-modal-or">
+                        <?=
+                        strpos($this->t('{themevanilla:discopower:or}'), 'not translated') === false
+                        ? $this->t('{themevanilla:discopower:or}')
+                        : ''
+                        ?>
+                    </div>
+                    <div class="row text-center">
+                        <button class="ssp-btn text-uppercase ssp-btn ssp-btn__secondary js-close-custom">
+                            <?=
+                            strpos(
+                                $this->t('{themevanilla:discopower:favourite_dialog_button_close}'),
+                                'not translated'
+                            ) === false
+                            ? $this->t('{themevanilla:discopower:favourite_dialog_button_close}')
+                            : ''
+                            ?>
+                        </button>
+                    </div>
+                </div> <!-- /modal-body -->
+            </div> <!-- /modal-content -->
+        </div> <!-- /modal-dialog -->
     </div> <!-- /modal -->
-  ');
-}
+<?php endif;
 
 $idpsInSearchableListIndex;
 $idpsWithLogosIndex;
