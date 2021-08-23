@@ -54,9 +54,9 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   });
 
-    $('#js-accept-cookies').click(function(e){
-      e.preventDefault();
-      $('#cookies').hide();
-      Cookies.set('cookies_accepted', true);
+  $('#js-accept-cookies').click(function(e){
+    e.preventDefault();
+    $('#cookies').hide();
+    Cookies.set('cookies_accepted', true);
   })
 });
