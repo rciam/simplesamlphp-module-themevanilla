@@ -134,13 +134,13 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                     />
                 </a>
                 <div class="ssp-footer__item__copyright">
-                    Copyright &copy;
-                    <?=
-                    strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === false
-                    ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-'
-                    : ''
-                    . date("Y")
-                    ?>
+                    Copyright &copy;<?=
+                    (
+                        (strpos($this->t('{themevanilla:discopower:copyright_year_start}'), 'not translated') === false)
+                        ? $this->t('{themevanilla:discopower:copyright_year_start}') . '-'
+                        : ''
+                    )
+                    . date("Y") ?>
                 </div>
             </div>
             <div class="col-sm-3 ssp-footer__item">
