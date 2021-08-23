@@ -19,7 +19,7 @@ $this->includeAtTemplateBase('includes/header.php');
 <p><?= $this->data['403_text'] ?></p>
 <?php if (isset($this->data['LogoutURL'])) : ?>
     <p><a href="<?= htmlspecialchars($this->data['LogoutURL']) ?>"><?= $this->t('{status:logout}') ?></a></p>
-<?php endif ?>
+<?php endif; ?>
 
 <?php
 $this->includeAtTemplateBase('includes/footer.php');

@@ -27,7 +27,7 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
                     >
                         <?= $this->t('{themevanilla:discopower:cookies_link_text}') ?>
                     </a>
-                <?php endif ?>
+                <?php endif; ?>
             </p>
             <a id="js-accept-cookies" class="cookies-ok" href="#">
                 <?= $this->t('{themevanilla:discopower:cookies_accept_btn_text}') ?>
@@ -35,7 +35,7 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
         </div>
     </div>
     <!-- /cookies popup -->
-<?php endif ?>
+<?php endif; ?>
 
 <footer class="ssp-footer text-center">
     <div class="container ssp-footer--container">

@@ -17,7 +17,7 @@ $this->includeAtTemplateBase('includes/header.php');
         <p><b><?= $this->t('{errors:title_' . $this->data['errorcode'] . '}') ?></b></p>
         <p><?= $this->t('{errors:descr_' . $this->data['errorcode'] . '}') ?></p>
     </div>
-<?php endif ?>
+<?php endif; ?>
 <h2 style="break: both"><?= $this->t('{authX509:X509error:certificate_header}') ?></h2>
 
 <p><?= $this->t('{authX509:X509error:certificate_text}') ?></p>

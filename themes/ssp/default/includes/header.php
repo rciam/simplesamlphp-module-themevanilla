@@ -119,7 +119,7 @@ header('X-Frame-Options: SAMEORIGIN');
 
     if ($this->isLanguageRTL()) : ?>
         <link rel="stylesheet" type="text/css" href="/<?= $this->data['baseurlpath'] ?>resources/default-rtl.css" />
-    <?php endif ?>
+    <?php endif; ?>
 
 
     <meta name="robots" content="noindex, nofollow" />

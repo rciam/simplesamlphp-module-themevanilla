@@ -67,7 +67,7 @@ if (isset($this->data['errorReportAddress'])) : ?>
             <button type="submit" name="send" class="btn"><?= $this->t('report_submit') ?></button>
         </p>
     </form>
-<?php endif ?>
+<?php endif; ?>
 <h2 style="clear: both"><?= $this->t('howto_header') ?></h2>
 <p><?= $this->t('howto_text') ?></p>
 <script type="text/javascript">

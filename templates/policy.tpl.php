@@ -100,7 +100,7 @@ $this->includeAtTemplateBase('includes/header.php');
                     <td><?= isset($row['category']) ? $row['category'] : '' ?></td>
                     <td><?= isset($row['purpose']) ? $row['purpose'] : '' ?></td>
                 </tr>
-            <?php endforeach ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
