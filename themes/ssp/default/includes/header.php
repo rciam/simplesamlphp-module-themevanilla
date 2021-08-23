@@ -57,7 +57,7 @@ header('X-Frame-Options: SAMEORIGIN');
             echo $this->t('{themevanilla:default:browser_tab_title}');
         }
         if (array_key_exists('header', $this->data)) {
-            echo (' | ' . $this->data['header']);
+            echo ' | ' . $this->data['header'];
         }
         ?>
     </title>
@@ -83,22 +83,16 @@ header('X-Frame-Options: SAMEORIGIN');
 
         if ($version == '1.8') {
             if (isset($jquery['core']) && $jquery['core']) {
-                echo (
-                    '<script type="text/javascript" src="/' . $this->data['baseurlpath']
-                    . 'resources/jquery-1.8.js"></script>' . "\n"
-                );
+                echo '<script type="text/javascript" src="/' . $this->data['baseurlpath']
+                . 'resources/jquery-1.8.js"></script>' . "\n";
             }
             if (isset($jquery['ui']) && $jquery['ui']) {
-                echo (
-                    '<script type="text/javascript" src="/' . $this->data['baseurlpath']
-                    . 'resources/jquery-ui-1.8.js"></script>' . "\n"
-                );
+                echo '<script type="text/javascript" src="/' . $this->data['baseurlpath']
+                . 'resources/jquery-ui-1.8.js"></script>' . "\n";
             }
             if (isset($jquery['css']) && $jquery['css']) {
-                echo (
-                    '<link rel="stylesheet" media="screen" type="text/css" href="/' . $this->data['baseurlpath'] .
-                    'resources/uitheme1.8/jquery-ui.css" />' . "\n"
-                );
+                echo '<link rel="stylesheet" media="screen" type="text/css" href="/' . $this->data['baseurlpath'] .
+                'resources/uitheme1.8/jquery-ui.css" />' . "\n";
             }
         }
     }
