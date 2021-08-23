@@ -141,13 +141,11 @@ if ($onLoad !== '') {
 <body<?= $onLoad ?>>
 
     <div class="header">
-        <?php
-        if (!empty($ribbonText)) {
-            echo '<div class="corner-ribbon red">';
-            echo $ribbonText;
-            echo '</div>';
-        }
-        ?>
+        <?php if (!empty($ribbonText)) : ?>
+        <div class="corner-ribbon red">
+            <?= $ribbonText ?>
+        </div>
+        <?php endif; ?>
         <div class="text-center ssp-logo">
             <a
                 <?=

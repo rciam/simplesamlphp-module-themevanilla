@@ -26,16 +26,16 @@ $this->includeAtTemplateBase('includes/header.php');
     <?= $this->t('{login:login_button}') ?>
 </a>
 
-<?php
-
-if (!empty($this->data['links'])) {
-    echo '<ul class="links list-unstyled" style="margin-top: 2em">';
-    foreach ($this->data['links'] as $l) {
-        echo '<li><a href="' . htmlspecialchars($l['href']) . '">'
-        . htmlspecialchars($this->t($l['text']))
-        . '</a></li>';
-    }
-    echo '</ul>';
-}
+<?php if (!empty($this->data['links'])) : ?>
+<ul class="links list-unstyled" style="margin-top: 2em">
+    <?php foreach ($this->data['links'] as $l) : ?>
+    <li>
+        <a href="<?= htmlspecialchars($l['href']) ?>">
+            <?= htmlspecialchars($this->t($l['text'])) ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ul>
+<?php endif;
 
 $this->includeAtTemplateBase('includes/footer.php');

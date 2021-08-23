@@ -212,11 +212,10 @@ $this->includeAtTemplateBase('includes/header.php');
     </div> <!-- /ssp-content-group -->
 </div> <!-- /row -->
 
-<?php
-if ($this->data['sppp'] !== false) {
-    echo "<p>" . htmlspecialchars($this->t('{consent:consent:consent_privacypolicy}')) . " ";
-    echo '<a target="_blank" href="' . htmlspecialchars($this->data['sppp']) . '">' . $dstName . "</a>";
-    echo "</p>";
-}
+<?php if ($this->data['sppp'] !== false) : ?>
+<p><?= htmlspecialchars($this->t('{consent:consent:consent_privacypolicy}')) ?> 
+<a target="_blank" href="<?= htmlspecialchars($this->data['sppp']) ?>"><?= $dstName ?></a>
+</p>
+<?php endif;
 
 $this->includeAtTemplateBase('includes/footer.php');
