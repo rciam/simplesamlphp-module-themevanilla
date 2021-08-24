@@ -265,7 +265,7 @@ You can read more about themes in a SimpleSAMLphp installation from the
 This table matches the theme version with the supported SimpleSAMLphp version.
 
 | Theme | SimpleSAMLphp | Discopower |
-| :---: | :-----------: | :--------: |
+|:-----:|:-------------:|:----------:|
 | v1.x  |     v1.14     |     -      |
 | v2.x  |     v1.14     |     -      |
 | v3.x  |     v1.17     |     -      |
