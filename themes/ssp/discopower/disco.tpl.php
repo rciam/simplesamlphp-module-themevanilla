@@ -17,7 +17,6 @@ foreach ($this->data['idplist'] as $tab => $sList) {
 }
 
 $this->data['header'] = $this->t('selectidp');
-$this->data['header'] = $this->t($this->data['header']);
 $this->data['jquery'] = ['core' => true, 'ui' => false, 'css' => false];
 
 $this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' .

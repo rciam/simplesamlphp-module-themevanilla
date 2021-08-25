@@ -56,7 +56,7 @@ header('X-Frame-Options: SAMEORIGIN');
         if (strpos($this->t('{themevanilla:default:browser_tab_title}'), 'not translated') === false) {
             echo $this->t('{themevanilla:default:browser_tab_title}');
         }
-        if (array_key_exists('header', $this->data)) {
+        if (array_key_exists('header', $this->data) && strpos($this->data['header'], 'not translated') === false) {
             echo ' | ' . $this->data['header'];
         }
         ?>
