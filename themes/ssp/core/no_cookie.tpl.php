@@ -9,14 +9,15 @@ $retry = htmlspecialchars($this->t('{core:no_cookie:retry}'));
 
 $this->data['header'] = $header;
 $this->includeAtTemplateBase('includes/header.php');
+?>
 
-echo('<h2>' . $header . '</h2>');
-echo('<p>' . $description . '</p>');
+<h2><?= $header ?></h2>
+<p><?= $description ?></p>
 
-if ($retryURL !== NULL) {
-	echo('<ul class="list-unstyled">');
-	echo('<li><a href="' . htmlspecialchars($retryURL) . '" id="retry">' . $retry . '</a></li>');
-	echo('</ul>');
-}
+<?php if ($retryURL !== null) : ?>
+    <ul class="list-unstyled">
+    <li><a href="<?= htmlspecialchars($retryURL) ?>" id="retry"><?= $retry ?></a></li>
+    </ul>
+<?php endif;
 
 $this->includeAtTemplateBase('includes/footer.php');
