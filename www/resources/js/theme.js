@@ -35,8 +35,11 @@ $(document).ready(function() {
 
   resizeAll();
   // loader for discopower view
-  $('#loader').delay(300).fadeOut('slow', function() {
+  $('.loader-container').delay(300).fadeOut('slow', function() {
     $('#favourite-modal').modal('show');
+  });
+  $("#yesbutton").on("click", function(){
+    $(".loader-container").show();
   });
 
   // hide modal smoothly

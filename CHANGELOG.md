@@ -13,12 +13,21 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
 
 - Add `login_with` key in discopower definitions.
 - Add style rules and logos for IdP umbrellaid.
+- Add exception template for attrauthcomanage module
+- Add template for Email Confirmation
+- Add configurable theme wrapper for simple html views
+- Add comanage loader
+- Add support to configure loader
+- Add view.php modal
+- Add attrauthcomanage noty template
 
 ### Fixed
 
 - Load JavaScript scripts with the new way
 - Fix undefined index error for `idps_in_searchable_list_index`
 - Load jQuery CSS script
+- Fix searchable list and idp buttons display order
+- Fix "Not translated" error in HTML title
 
 ### Changed
 
@@ -28,6 +37,8 @@ This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/
   guidelines
 - Apply modern array syntax to comply with [SimpleSAMLphp v1.17](https://simplesamlphp.org/docs/stable/simplesamlphp-upgrade-notes-1.17)
 - Comply to [markdownlint rules](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
+- Move default loader spinner into a shared element
+- Move language list into a shared element
 
 <!-- markdownlint-disable line-length -->
 

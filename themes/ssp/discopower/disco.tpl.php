@@ -1,20 +1,11 @@
-<div id="loader">
-    <div class="sk-circle">
-        <div class="sk-circle1 sk-child"></div>
-        <div class="sk-circle2 sk-child"></div>
-        <div class="sk-circle3 sk-child"></div>
-        <div class="sk-circle4 sk-child"></div>
-        <div class="sk-circle5 sk-child"></div>
-        <div class="sk-circle6 sk-child"></div>
-        <div class="sk-circle7 sk-child"></div>
-        <div class="sk-circle8 sk-child"></div>
-        <div class="sk-circle9 sk-child"></div>
-        <div class="sk-circle10 sk-child"></div>
-        <div class="sk-circle11 sk-child"></div>
-        <div class="sk-circle12 sk-child"></div>
-    </div>
-</div>
 <?php
+
+// Get Configuration and set the loader
+$themeConfig = SimpleSAML\Configuration::getConfig('module_themevanilla.php');
+$loader = $themeConfig->getValue('loader');
+if (!empty($loader)) {
+    $this->includeAtTemplateBase('includes/' . $loader . '.php');
+}
 
 use Webmozart\Assert\Assert;
 
@@ -26,7 +17,6 @@ foreach ($this->data['idplist'] as $tab => $sList) {
 }
 
 $this->data['header'] = $this->t('selectidp');
-$this->data['header'] = $this->t($this->data['header']);
 $this->data['jquery'] = ['core' => true, 'ui' => false, 'css' => false];
 
 $this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' .
@@ -209,8 +199,8 @@ if (!empty($favEntry)) : ?>
     </div> <!-- /modal -->
 <?php endif;
 
-$idpsInSearchableListIndex;
-$idpsWithLogosIndex;
+$idpsInSearchableListIndex = -1;
+$idpsWithLogosIndex = -1;
 foreach ($this->data['idplist'] as $tab => $sList) {
     if (!empty($sList)) {
         if ($tab == 'idps_in_searchable_list') {
@@ -263,7 +253,8 @@ foreach ($this->data['idplist'] as $tab => $sList) {
                     $listItems .= (showEntry($this, $idpEntry, false, true));
                 }
             }
-            if (!empty($idpsInSearchableListIndex) && $idpsInSearchableListIndex < $idpsWithLogosIndex) {
+            // if (!empty($idpsInSearchableListIndex) && $idpsInSearchableListIndex < $idpsWithLogosIndex) {
+            if ($idpsInSearchableListIndex > -1 && $idpsInSearchableListIndex < $idpsWithLogosIndex) {
                 $or = '<div class="text-center ssp-line-or-line ssp-line-or-line--top">'
                 . '<span class="ssp-line-or-line__or">'
                 . (
