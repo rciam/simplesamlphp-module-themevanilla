@@ -44,8 +44,11 @@ if (!empty($this->data['htmlinject']['htmlContentPost'])) {
             <!--   Add language bar   -->
             <?php
             $includeLanguageBar = (!empty($_POST)) ? false : true;
-            $includeLanguageBar = (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === true)
-            ? false : true;
+            $includeLanguageBar = (
+                (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === true)
+                ? false
+                : true
+            );
 
             if ($includeLanguageBar) {
                 $this->includeAtTemplateBase('includes/language_bar.php');

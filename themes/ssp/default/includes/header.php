@@ -70,7 +70,9 @@ header('X-Frame-Options: SAMEORIGIN');
     <link
         rel="shortcut icon"
         type="image/x-icon"
-        href="<?= htmlspecialchars(SimpleSAML\Module::getModuleURL('themevanilla/resources/images/favicon.ico')) ?>"
+        href="<?= htmlspecialchars(
+            SimpleSAML\Module::getModuleURL('themevanilla/resources/images/favicon.ico')
+        ) ?>"
     />
 
     <?php
@@ -91,8 +93,8 @@ header('X-Frame-Options: SAMEORIGIN');
                 . 'resources/jquery-ui-1.8.js"></script>' . "\n";
             }
             if (isset($jquery['css']) && $jquery['css']) {
-                echo '<link rel="stylesheet" media="screen" type="text/css" href="/' . $this->data['baseurlpath'] .
-                'resources/uitheme1.8/jquery-ui.css" />' . "\n";
+                echo '<link rel="stylesheet" media="screen" type="text/css" href="/' . $this->data['baseurlpath']
+                . 'resources/uitheme1.8/jquery-ui.css" />' . "\n";
             }
         }
     }

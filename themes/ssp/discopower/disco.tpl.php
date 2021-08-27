@@ -1,13 +1,13 @@
 <?php
 
+use Webmozart\Assert\Assert;
+
 // Get Configuration and set the loader
 $themeConfig = SimpleSAML\Configuration::getConfig('module_themevanilla.php');
 $loader = $themeConfig->getValue('loader');
 if (!empty($loader)) {
     $this->includeAtTemplateBase('includes/' . $loader . '.php');
 }
-
-use Webmozart\Assert\Assert;
 
 $favEntry = null;
 foreach ($this->data['idplist'] as $tab => $sList) {

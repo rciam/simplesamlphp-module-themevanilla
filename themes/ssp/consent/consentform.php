@@ -167,8 +167,8 @@ $this->includeAtTemplateBase('includes/header.php');
                     <?php
                     if ($this->data['usestorage']) {
                         $checked = ($this->data['checked'] ? 'checked="checked"' : '');
-                        echo '<input type="checkbox" name="saveconsent" ' . $checked .
-                            ' value="1" /> ' . $this->t('{consent:consent:remember}');
+                        echo '<input type="checkbox" name="saveconsent" ' . $checked
+                        . ' value="1" /> ' . $this->t('{consent:consent:remember}');
                     } // Embed hidden fields...
                     ?>
                     <input type="hidden" name="StateId" value="<?= htmlspecialchars($this->data['stateId']) ?>" />
