@@ -9,24 +9,24 @@ $body = $this->t('{themevanilla:default:no_content}');
 
 // Get request parameter and load Content
 if (!empty($_REQUEST['id']) && !empty($views)) {
-    $ld_view = $views[$_REQUEST['id']];
-    $contextOptions = array(
-        'ssl' => array(
+    $ldView = $views[$_REQUEST['id']];
+    $contextOptions = [
+        'ssl' => [
             'verify_peer'   => false,
-        ),
-        'http' => array(
+        ],
+        'http' => [
             'timeout' => 2,  // 2 Seconds
-        ),
-    );
+        ],
+    ];
     $sslContext = stream_context_create($contextOptions);
-    $loaded_content = file_get_contents($ld_view, false, $sslContext);
-    if (!empty($loaded_content)) {
-        $body = $loaded_content;
+    $loadedContent = file_get_contents($ldView, false, $sslContext);
+    if (!empty($loadedContent)) {
+        $body = $loadedContent;
     }
 }
 
 // Load Head and Dependencies
-$this->data['jquery'] = array('core' => true, 'ui' => true, 'css' => true);
+$this->data['jquery'] = ['core' => true, 'ui' => true, 'css' => true];
 // Load Header
 $this->includeAtTemplateBase('includes/header.php');
 // Load Body
