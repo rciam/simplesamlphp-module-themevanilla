@@ -2,7 +2,12 @@
   "name": "rciam/simplesamlphp-module-themevanilla",
   "description": "A customisable theme for SimpleSAMLphp based on Bootstrap",
   "type": "simplesamlphp-module",
-  "keywords": ["simplesamlphp", "module", "theme", "bootsrtap"],
+  "keywords": [
+    "bootstrap",
+    "module",
+    "simplesamlphp",
+    "theme"
+  ],
   "license": "Apache License 2.0",
   "authors": [
     {

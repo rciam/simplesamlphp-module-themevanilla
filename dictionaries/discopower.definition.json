@@ -25,5 +25,8 @@
   },
   "cookies_link_url": {
     "en": "../themevanilla/policy.php"
+  },
+  "login_with": {
+    "en": "Log in with"
   }
 }

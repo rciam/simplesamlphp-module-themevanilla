@@ -173,4 +173,16 @@
             background-size: 26px;
         }
     }
+    &.umbrellaid {
+        border-color: $umbrellaid;
+        background: $white url("../images/umbrellaid.png") no-repeat center center;
+        background-size: contain;
+        img {
+            visibility: hidden;
+        }
+        &:hover {
+            background-image: url("../images/umbrellaid-secondary.png");
+            border-color: $umbrellaid-secondary;
+        }
+    }
 }

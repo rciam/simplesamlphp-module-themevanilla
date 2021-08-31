@@ -1,9 +1,6 @@
-<?php
+<p><?= $this->t('{core:no_metadata:config_problem}') ?></p>
 
-echo('<p>' . $this->t('{core:no_metadata:config_problem}') . '</p>');
-
-echo('<ul class="list-unstyled">');
-echo('<li>' . $this->t('{core:no_metadata:suggestion_user_link}') . '</li>');
-echo('<li>' . $this->t('{core:no_metadata:suggestion_developer}') . '</li>');
-echo('</ul>');
-
+<ul class="list-unstyled">
+    <li><?= $this->t('{core:no_metadata:suggestion_user_link}') ?></li>
+    <li><?= $this->t('{core:no_metadata:suggestion_developer}') ?></li>
+</ul>

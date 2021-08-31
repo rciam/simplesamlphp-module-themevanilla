@@ -35,8 +35,11 @@ $(document).ready(function() {
 
   resizeAll();
   // loader for discopower view
-  $('#loader').delay(300).fadeOut('slow', function() {
+  $('.loader-container').delay(300).fadeOut('slow', function() {
     $('#favourite-modal').modal('show');
+  });
+  $("#yesbutton").on("click", function(){
+    $(".loader-container").show();
   });
 
   // hide modal smoothly
@@ -54,9 +57,9 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   });
 
-    $('#js-accept-cookies').click(function(e){
-      e.preventDefault();
-      $('#cookies').hide();
-      Cookies.set('cookies_accepted', true);
+  $('#js-accept-cookies').click(function(e){
+    e.preventDefault();
+    $('#cookies').hide();
+    Cookies.set('cookies_accepted', true);
   })
 });

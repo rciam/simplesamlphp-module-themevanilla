@@ -1,0 +1,35 @@
+{
+  "exception_SUSPENDED_USER": {
+    "en": "Your account has been suspended. Please contact example@email.org for further assistance."
+  },
+  "exception_USERIDATTRIBUTE_NOTAVAILABLE": {
+    "en": "attrauthcomanage configuration error: 'userIdAttribute' not available"
+  },
+  "exception_CONFIG_VALIDATION_RULES_MISSING": {
+    "en": "[attrauthcomanage] Config or validation Rules missing."
+  },
+  "exception_ATTRIBUTE_NOT_SPECIFIED": {
+    "en": "attrauthcomanage configuration error: '%REQATTR%' not specified"
+  },
+  "exception_ATTRIBUTE_WRONG_FORMAT": {
+    "en": "attrauthcomanage configuration error: '%REQATTR%' wrong format(array required)"
+  },
+  "exception_ATTRIBUTE_KEY_CONFIGURATION_ERROR": {
+    "en": "attrauthcomanage configuration error: '%REQATTR%' key configuration error. Required keys missing: %NONKEYS%"
+  },
+  "exception_ATTRIBUTE_INVALID_VALUE": {
+    "en": "attrauthcomanage configuration error: '%REQATTR%' invalid value"
+  },
+  "exception_ATTRIBUTE_NOT_BOOLEAN": {
+    "en": "attrauthcomanage configuration error: %OPTATTR% not a boolean"
+  },
+  "exception_header": {
+    "en": "Error in attribute aggregation"
+  },
+  "exception_title": {
+    "en": "Oops! Something went wrong."
+  },
+  "exception_description": {
+    "en": "An unexpected error occurred while retrieving attributes from an external attribute authority. The exception was:"
+  }
+}
