@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- markdownlint-disable line-length -->
+## [Unreleased]
+
+### Added
+
+- Add style rules and logos for IdP d4science.
+
 
 ## [v3.1.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v3.0.0...v3.1.0) - 2021-08-27
 
