@@ -185,4 +185,15 @@
             border-color: $umbrellaid-secondary;
         }
     }
+    &.d4science {
+        border: 1px solid $d4science;
+        background-color: white;
+        img {
+            height: 32px;
+            margin: 2px auto;
+        }
+        &:hover {
+            border-color: $d4science-secondary;
+        }
+    }
 }
