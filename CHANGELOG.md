@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdownlint-disable line-length -->
 
+## [unreleased]
+
+<!-- markdownlint-enable line-length -->
+
+This version is compatible with [SimpleSAMLphp v1.18](https://simplesamlphp.org/docs/1.18/simplesamlphp-changelog)
+
+### Changed
+
+- Improve error handling using showNoty
+
+<!-- markdownlint-disable line-length -->
+
 ## [v3.1.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v3.0.0...v3.1.0) - 2021-08-27
 
 <!-- markdownlint-enable line-length -->

@@ -1,30 +1,42 @@
 {
-  "yes": {
-    "en": "Resend Verification Email"
-  },
-  "no": {
-    "en": "Abort Login"
-  },
-  "title": {
-    "en": "Please verify your email address by clicking the link in the email we sent you"
-  },
-  "msg_title": {
-    "en": "<b>This is your current status:</b>"
+  "account_pending_confirmation": {
+    "en": "Account in Pending Email Confirmation Status"
   },
   "default_status": {
     "en": "Action Required"
   },
-  "account_pending_confirmation": {
-    "en": "Account in Pending Email Confirmation Status"
-  },
   "invitation_restored": {
     "en": "Invitation has been restored."
+  },
+  "msg_title": {
+    "en": "<b>This is your current status:</b>"
+  },
+  "no": {
+    "en": "Abort Login"
+  },
+  "org_identity_expired_banner": {
+    "en": "Identity Expired"
+  },
+  "org_identity_expired_description": {
+    "en": "Your identity (%ORGID%) has expired. Please contact <a href=\"mailto:support@rciam.example.org\">our support</a> and make sure to include the error message above."
+  },
+  "org_identity_nologin_banner": {
+    "en": "Identity not enabled for login"
+  },
+  "org_identity_nologin_description": {
+    "en": "Your identity (%ORGID%) cannot be used for login. Please contact <a href=\"mailto:support@rciam.example.org\">our support</a> and make sure to include the error message above."
+  },
+  "org_identity_removed_banner": {
+    "en": "Identity not valid for login"
+  },
+  "org_identity_removed_description": {
+    "en": "Your identity (%ORGID%) has been removed. Please contact <a href=\"mailto:support@rciam.example.org\">our support</a> and make sure to include the error message above."
   },
   "petition_info": {
     "en": "The identifier <cite><b>%ORGIDENT%</b></cite> is in Email Pending Confirmation Status.&nbsp;Please check your Mail <cite><b>%MAIL%</b></cite> Inbox or Spam for further information.&nbsp;"
   },
-  "petition_user_notify": {
-    "en": "<p class=\"petition-user-notify\">We have sent an email with a confirmation link to your email address <cite><b>%MAIL%</b></cite>. In order to complete the sign-up process, please click the confirmation link. If you do not find the email in your Inbox, please check your Spam or Junk folder for an email from \"RCIAM Notifications\". If you do find the email in these folders, mark the email as \"safe\" or \"not spam\" to ensure that you receive any future notifications about your RCIAM ID.</p><p>You can also click the <strong>\"Resend Verification Email\"</strong> button below to have another email sent to you."
+  "petition_invalidate_msg": {
+    "en": "<p><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>This action will invalidate any previous confirmation links.</p>"
   },
   "petition_token_expired": {
     "en": "<div class=\"invite-expire\">Email confirmation token EXPIRED <b>&nbsp;%DATE%</b>&nbsp;ago</div>"
@@ -32,7 +44,19 @@
   "petition_token_expires": {
     "en": "<div class=\"invite-expire\">Email confirmation token EXPIRES in <b>&nbsp;%DATE%</b></div>"
   },
-  "petition_invalidate_msg": {
-    "en": "<p><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>This action will invalidate any previous confirmation links.</p>"
+  "petition_user_notify": {
+    "en": "<p class=\"petition-user-notify\">We have sent an email with a confirmation link to your email address <cite><b>%MAIL%</b></cite>. In order to complete the sign-up process, please click the confirmation link. If you do not find the email in your Inbox, please check your Spam or Junk folder for an email from \"RCIAM Notifications\". If you do find the email in these folders, mark the email as \"safe\" or \"not spam\" to ensure that you receive any future notifications about your RCIAM ID.</p><p>You can also click the <strong>\"Resend Verification Email\"</strong> button below to have another email sent to you."
+  },
+  "resend_confirmation_email": {
+    "en": "Please verify your email address by clicking the link in the email we sent you"
+  },
+  "user_suspended": {
+    "en": "Your identity (%ORGID%) has been suspended. Please contact our <a href=\"mailto:support@rciam.example.org\">support</a> and make sure to include the error message above"
+  },
+  "user_suspended_title": {
+    "en": "Identity suspended"
+  },
+  "yes": {
+    "en": "Resend Verification Email"
   }
 }
