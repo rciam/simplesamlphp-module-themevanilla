@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdownlint-disable line-length -->
 
-## [unreleased]
+## [v3.1.1](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v3.1.0...v3.1.1) - 2021-12-01
 
 <!-- markdownlint-enable line-length -->
 
