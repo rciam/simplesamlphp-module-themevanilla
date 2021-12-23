@@ -1,0 +1,41 @@
+/* CSS Style for notification boxes*/
+.noty-top-info, .noty-top-success, .noty-top-warning, .noty-top-error {
+  border-bottom: 1px solid;
+  /*padding:15px 10px 15px 50px;*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: 10px center;*/
+}
+.noty-top-info {
+  color: #00529B;
+  background-color: #BDE5F8;
+  /*background-image: url('../../resources/icons/info.png');*/
+}
+.noty-top-success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  /*background-image:url('../../resources/icons/success.png');*/
+}
+.noty-top-warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  /*background-image: url('../../resources/icons/warning.png');*/
+}
+.noty-top-error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  /*background-image: url('../../resources/icons/error.png');*/
+}
+.noty-top-global {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  z-index: 2000;
+  padding: 0.5em; /* Use this property only without the icons */
+}
+.noty-top-close {
+  text-decoration: none;
+  color: unset;
+}
+/*/*/

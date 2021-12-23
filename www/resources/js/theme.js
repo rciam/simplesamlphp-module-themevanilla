@@ -28,6 +28,11 @@ function resizeAll() {
   }
 };
 
+// Hide Top Bar notification
+function closeNoty(element) {
+  $(element).parent().hide()
+}
+
 $(document).ready(function() {
   if (!Cookies.get('cookies_accepted')) {
     $('#cookies').show();
