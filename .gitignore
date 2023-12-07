@@ -29,7 +29,7 @@ Temporary Items
 # Misc
 *.swp
 *.swo
-**/css
+#**/css
 **/.sass-cache
 **/*.un~
 
