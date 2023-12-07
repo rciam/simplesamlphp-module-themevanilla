@@ -1,0 +1,5 @@
+msgid  "403_header"
+msgstr "Invalid certificate"
+
+msgid  "403_text"
+msgstr "Access requires a valid personal certificate, issued by an IGTF-accredited CA (Classic or MICS)."
