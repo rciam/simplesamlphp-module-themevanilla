@@ -1,5 +1,7 @@
-msgid  "403_header"
+msgid "Access forbidden"
 msgstr "Invalid certificate"
 
-msgid  "403_text"
+msgid ""
+"You don't have the needed privileges to access this application. Please "
+"contact the administrator if you find this to be incorrect."
 msgstr "Access requires a valid personal certificate, issued by an IGTF-accredited CA (Classic or MICS)."
