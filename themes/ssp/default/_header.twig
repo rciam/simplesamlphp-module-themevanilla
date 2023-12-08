@@ -9,18 +9,18 @@
   <header id="header">
     {% if ribbonnText is defined %}
       <div class="corner-ribbon red">
-        {{ ribbonText|trans }}
+        {{ 'ribbonText'|trans }}
       </div>
     {% endif %}
     <div class="text-center ssp-logo">
-      <a href="{{ logo_link_url|trans }}"
-         title="{{ header_title|trans }}">
+      <a href="{{ 'logo_link_url'|trans }}"
+         title="{{ 'header_title'|trans }}">
         <img src="{{baseurlpath}}module.php/themevanilla/resources/images/logo.jpg')"
              alt="simplesamlphp"/>
       </a>
     </div>
-    <h1 class="text-center">{{ header_title|trans }}
-      <small>{{ header_subtitle|trans}}</small>
+    <h1 class="text-center">{{ 'header_title'|trans }}
+      <small>{{ 'header_subtitle'|trans}}</small>
     </h1>
   </header>
 {% endblock %}
