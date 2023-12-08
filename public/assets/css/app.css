@@ -4771,7 +4771,7 @@ body
     flex:1;
     margin-top:12px
 }
-.header,.ssp-footer
+#header,.ssp-footer
 {
     flex: none;
     background-color: inherit;
