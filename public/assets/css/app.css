@@ -4774,7 +4774,7 @@ body
 #header,.ssp-footer
 {
     flex: none;
-    background-color: inherit;
+    background: none;
 }
 a
 {
