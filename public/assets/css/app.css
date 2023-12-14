@@ -4797,6 +4797,10 @@ a
 {
     border:1px solid transparent
 }
+a:hover
+{
+    background-color: transparent;
+}
 *:focus
 {
     outline:none !important;
