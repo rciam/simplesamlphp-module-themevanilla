@@ -4773,8 +4773,11 @@ body
 }
 #header,.ssp-footer
 {
-    flex: none;
     background: none;
+    display: flex;
+    margin: auto;
+    padding: 0;
+    align-items: center;
 }
 a
 {
