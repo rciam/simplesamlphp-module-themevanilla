@@ -4780,6 +4780,14 @@ body
     justify-content: center;
     align-items: center;
 }
+#push
+{
+    display: none;
+}
+#footer a, #footer a:visited
+{
+    color: unset;
+}
 a
 {
     border:1px solid transparent
