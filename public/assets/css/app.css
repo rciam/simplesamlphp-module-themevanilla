@@ -4771,12 +4771,13 @@ body
     flex:1;
     margin-top:12px
 }
-#header,.ssp-footer
+#header, #footer
 {
     background: none;
     display: flex;
-    margin: auto;
+    margin: 4rem auto auto;
     padding: 0;
+    justify-content: center;
     align-items: center;
 }
 a
