@@ -4801,6 +4801,9 @@ a:hover
 {
     background-color: transparent;
 }
+.rciam-pure-button {
+    margin-left: 1em;
+}
 *:focus
 {
     outline:none !important;
