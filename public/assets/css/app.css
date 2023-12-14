@@ -4787,6 +4787,7 @@ body
 #footer
 {
     color: unset;
+    margin: 0 0 2em;
 }
 #footer a, #footer a:visited
 {
