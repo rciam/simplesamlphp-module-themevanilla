@@ -4784,6 +4784,10 @@ body
 {
     display: none;
 }
+#footer
+{
+    color: unset;
+}
 #footer a, #footer a:visited
 {
     color: unset;
