@@ -1,0 +1,23 @@
+msgid  "browser_tab_title"
+msgstr "SimpleSAMLphp"
+
+msgid  "header_title"
+msgstr "Identity Access Management for Research Communities"
+
+msgid  "header_subtitle"
+msgstr "Use the same credentials for all our services"
+
+msgid  "logo_link_url"
+msgstr "https://www.example.com"
+
+msgid  "message_title"
+msgstr "We Sent You An Email"
+
+msgid  "message_bd"
+msgstr "<p>Just <b>click the link in that email</b> to complete your signup.</p><p>If you do not find the email in your Inbox, please check your <b>Spam</b> or <b>Junk</b> folder for an email from <b>RCIAM Notifications</b>&nbsp<a href=\"mailto:example@email.org\"><i class=\"glyphicon-envelope email-address\">&nbspnoreply@faai.grnet.gr</i></a>. If you do find the email in these folders, mark the email as \"safe\" or \"not spam\" to ensure that you receive any future notifications about your RCIAM ID.</p>"
+
+msgid  "message_sub"
+msgstr "<span class=\"subtitle-msg\">You will have <b>72 hours</b> to verify your account</span>"
+
+msgid  "no_content"
+msgstr "<h2>Unable to retrieve content.</h2>"

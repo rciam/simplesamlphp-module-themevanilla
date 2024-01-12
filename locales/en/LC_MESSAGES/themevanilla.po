@@ -1,0 +1,69 @@
+msgid "Access forbidden"
+msgstr "Invalid certificate"
+
+msgid ""
+"You don't have the needed privileges to access this application. Please "
+"contact the administrator if you find this to be incorrect."
+msgstr ""
+"Access requires a valid personal certificate, issued by an IGTF-accredited "
+"CA (Classic or MICS)."
+
+msgid "browser_tab_title"
+msgstr "SimpleSAMLphp"
+
+msgid "header_title"
+msgstr "Identity Access Management for Research Communities"
+
+msgid "header_subtitle"
+msgstr "Use the same credentials for all our services"
+
+msgid "logo_link_url"
+msgstr "https://www.example.com"
+
+msgid "message_title"
+msgstr "We Sent You An Email"
+
+msgid "message_bd"
+msgstr ""
+"<p>Just <b>click the link in that email</b> to complete your signup.</"
+"p><p>If you do not find the email in your Inbox, please check your <b>Spam</"
+"b> or <b>Junk</b> folder for an email from <b>RCIAM Notifications</b>&nbsp<a "
+"href=\"mailto:example@email.org\"><i class=\"glyphicon-envelope email-address"
+"\">&nbspnoreply@faai.grnet.gr</i></a>. If you do find the email in these "
+"folders, mark the email as \"safe\" or \"not spam\" to ensure that you "
+"receive any future notifications about your RCIAM ID.</p>"
+
+msgid "message_sub"
+msgstr ""
+"<span class=\"subtitle-msg\">You will have <b>72 hours</b> to verify your "
+"account</span>"
+
+msgid "no_content"
+msgstr "<h2>Unable to retrieve content.</h2>"
+
+msgid "friendly_title"
+msgstr "Sorry, we were not able to log you in"
+
+msgid "friendly_description"
+msgstr ""
+"<strong>What is the problem?</strong> %IDPNAME% does not return a persistent "
+"identifier to help us uniquely identify you."
+
+msgid "resolution_description"
+msgstr ""
+"<strong>What can you do?</strong> At the moment, the only way to log in is "
+"to <a href=\"%RETRY_URL%\">use a different account</a>. For future use, you "
+"may ask your institution administrator to release the required information, "
+"by sending them a print screen of this error, or asking them to contact our "
+"support at <a href=\"mailto:support@example.org\">support@example.org</a>."
+
+msgid "details_title"
+msgstr "Error details"
+
+msgid "details_description"
+msgstr ""
+"Your identity provider needs to release any of the following user "
+"identifiers to help us uniquely identify you:"
+
+msgid "go2disco"
+msgstr "Log in with a different account"

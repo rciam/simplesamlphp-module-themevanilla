@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- markdownlint-disable line-length -->
+## [v4.0.0] - 2023-12-21
+
+### Added
+
+- Add support for simplesamlphp twig
+- Supports simplesamlphp v2 or greater
+
 
 ## [v3.1.0](https://github.com/rciam/simplesamlphp-module-themevanilla/compare/v3.0.0...v3.1.0) - 2021-08-27
 
