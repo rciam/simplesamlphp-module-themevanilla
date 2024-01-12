@@ -1,8 +1,8 @@
 {% block header %}
   <header id="header">
-    {% if ribbonnText is defined %}
+    {% if config.ribbon_text is defined %}
       <div class="corner-ribbon red">
-        {{ 'ribbonText'|trans }}
+        {{ 'config.ribbon_text'|trans }}
       </div>
     {% endif %}
     <div class="text-center ssp-logo">
