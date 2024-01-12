@@ -1,0 +1,10 @@
+<?php
+/**
+ * Configuration of SimpleSAMLphp themevanila.
+ */
+$config = [
+    'cookiePolicy' => [
+    ],
+    'enable_cookies_banner' => False,
+    'ribbon_text' => 'Demo',
+];
