@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SimpleSAML\Module\mymodule;
+namespace SimpleSAML\Module\themevanilla\Controller;
 
-use SimpleSAML\Configuration;
-use SimpleSAML\Session;
+use SimpleSAML\{Configuration, Logger, Session};
 use Twig\Environment;
 use SimpleSAML\XHTML\TemplateControllerInterface;
 
@@ -14,19 +13,19 @@ class VanillaThemeController implements TemplateControllerInterface
   protected Configuration $themeconfig;
 
   /**
+   * @var \SimpleSAML\Logger|string
+   * @psalm-var \SimpleSAML\Logger|class-string
+   */
+  protected $logger = Logger::class;
+
+  /**
    * Controller constructor.
    *
    * It initializes the global configuration and auth source configuration for the controllers implemented here.
    *
-   * @param \SimpleSAML\Configuration              $config The configuration to use by the controllers.
-   * @param \SimpleSAML\Session                    $session The session to use by the controllers.
-   *
    * @throws \Exception
    */
-  public function __construct(
-    protected Configuration $config,
-    protected Session $session
-  ) {
+  public function __construct() {
     $this->themeconfig = Configuration::getConfig('module_themevanilla.php');
   }
 
@@ -50,6 +49,10 @@ class VanillaThemeController implements TemplateControllerInterface
    */
   public function display(array &$data): void
   {
-    $data['config'] = $this->themeconfig;
+    $data['config'] = $this->themeconfig->toArray() ?? [];
+
+    $this->logger::debug(
+      __METHOD__ . "::config data:" . var_export($data['config'], true)
+    );
   }
 }
